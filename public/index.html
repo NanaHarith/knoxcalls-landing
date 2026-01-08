@@ -3,743 +3,1138 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Night Watch by KnoxCalls | AI After-Hours Dispatcher for Knoxville Contractors</title>
-    <meta name="description" content="How many $2,000 jobs did you sleep through? AI dispatcher that captures emergency calls, filters spam, and only wakes you for real money. Built in Knoxville for HVAC & plumbing pros.">
-    
+
+    <!-- SEO Meta Tags -->
+    <title>Night Watch by KnoxCalls | AI After-Hours Answering for Knoxville Contractors</title>
+    <meta name="description" content="Stop losing $2,000 emergency jobs to voicemail. Night Watch is your AI dispatcher that answers after-hours calls, filters emergencies, and only wakes you for real money. Built in Knoxville for HVAC, plumbing & refrigeration pros.">
+    <meta name="keywords" content="after hours answering service, HVAC answering service, plumbing answering service, Knoxville contractors, AI dispatcher, emergency call filtering, contractor answering service Tennessee">
+    <meta name="author" content="KnoxCalls">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph / Social -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Night Watch | AI After-Hours Dispatcher for Contractors">
+    <meta property="og:description" content="Your AI dispatcher that captures emergency calls, filters spam, and only wakes you for real money.">
+    <meta property="og:url" content="https://knoxcalls.com">
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://knoxcalls.com">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <script>
+    // ============================================
+    // SITE CONFIGURATION - Edit these values
+    // ============================================
+    const SITE_CONFIG = {
+        // Company Info
+        companyName: "KnoxCalls",
+        productName: "Night Watch",
+        tagline: "Your AI dispatcher that never sleeps",
+        location: "Knoxville, TN",
+        email: "info@knoxcalls.com",
+
+        // Pilot Program
+        pilot: {
+            spotsTotal: 15,
+            spotsClaimed: 12,
+            foundingPrice: 149,
+            standardPrice: 299,
+            trialDays: 30
+        },
+
+        // Calculator Defaults
+        calculator: {
+            defaultCalls: 10,
+            defaultJobValue: 2000,
+            defaultMissRate: 50
+        },
+
+        // Add-ons
+        addons: {
+            memory: { name: "The Memory", price: 49, desc: "AI remembers customer history, equipment details, and preferences" },
+            bulldog: { name: "The Bulldog", price: 49, desc: "Aggressive SMS + voice escalation for true emergencies" },
+            vault: { name: "The Vault", price: 29, desc: "90-day call recordings with searchable transcripts" }
+        }
+    };
+    </script>
+
     <style>
         :root {
-            --primary-orange: #FF8200;
-            --dark-bg: #0f0f0f;
-            --card-bg: #1a1a1a;
-            --border: #2a2a2a;
-            --text-primary: #e0e0e0;
-            --text-secondary: #888;
-            --success: #4ade80;
-            --warning: #fbbf24;
-            --danger: #ef4444;
-            --light-bg: #f5f5f5;
-            --light-text: #222;
+            --vols-orange: #FF8200;
+            --deep-navy: #0a1628;
+            --warm-white: #faf9f7;
+            --steel-gray: #4a5568;
+            --light-gray: #e8e6e3;
+            --success-green: #2d8a5f;
+            --danger-red: #dc2626;
         }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        
-        body { 
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; 
-            background: var(--dark-bg); 
-            color: var(--text-primary); 
-            line-height: 1.6; 
-            overflow-x: hidden;
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Source Sans 3', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--warm-white);
+            color: var(--deep-navy);
+            line-height: 1.6;
         }
 
         /* Typography */
-        h1, h2, h3 { font-family: 'Teko', 'Impact', sans-serif; text-transform: uppercase; letter-spacing: 1px; }
-        h1 { font-size: clamp(2.5rem, 8vw, 4.5rem); font-weight: 700; }
-        h2 { font-size: clamp(1.8rem, 5vw, 3rem); color: var(--primary-orange); }
-        h3 { font-size: 1.5rem; }
+        h1, h2, h3, .display-font {
+            font-family: 'Bebas Neue', Impact, sans-serif;
+            letter-spacing: 1px;
+        }
+
+        /* Layout */
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(10, 22, 40, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 16px 0;
+        }
+
+        .nav-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 24px;
+            color: white;
+            text-decoration: none;
+        }
+
+        .logo span {
+            color: var(--vols-orange);
+        }
+
+        .nav-cta {
+            background: var(--vols-orange);
+            color: white;
+            padding: 10px 24px;
+            border: none;
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 16px;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .nav-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(255, 130, 0, 0.4);
+        }
 
         /* Hero Section */
         .hero {
             min-height: 100vh;
             display: flex;
             align-items: center;
-            justify-content: center;
-            text-align: center;
-            padding: 2rem;
+            background: var(--deep-navy);
+            color: white;
             position: relative;
-            background: radial-gradient(ellipse at center, rgba(255,130,0,0.1) 0%, transparent 70%);
+            overflow: hidden;
+            padding-top: 80px;
         }
 
-        .hero-content { max-width: 900px; z-index: 2; }
-        
-        .catch-line {
-            font-size: clamp(1.2rem, 3vw, 2rem);
-            color: var(--primary-orange);
-            margin-bottom: 1rem;
-            font-weight: 600;
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 80%;
+            height: 200%;
+            background: radial-gradient(ellipse, rgba(255, 130, 0, 0.15) 0%, transparent 60%);
+            pointer-events: none;
         }
 
-        .main-headline {
-            background: linear-gradient(135deg, var(--primary-orange), #ff8c42);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            margin-bottom: 1rem;
-            line-height: 1.1;
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
         }
 
-        .sub-headline {
-            font-size: clamp(1rem, 2.5vw, 1.5rem);
-            color: var(--text-secondary);
-            margin-bottom: 2rem;
-        }
-
-        .waitlist-badge {
+        .hero-badge {
             display: inline-block;
-            background: rgba(255,130,0,0.15);
-            border: 1px solid var(--primary-orange);
-            padding: 0.5rem 1.5rem;
-            border-radius: 50px;
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 0.9rem;
-            margin-bottom: 2rem;
+            background: rgba(255, 130, 0, 0.15);
+            border: 1px solid var(--vols-orange);
+            color: var(--vols-orange);
+            padding: 8px 20px;
+            font-size: 14px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 24px;
         }
 
-        .cta-buttons { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+        .hero h1 {
+            font-size: clamp(48px, 8vw, 80px);
+            line-height: 1;
+            margin-bottom: 24px;
+        }
+
+        .hero h1 span {
+            color: var(--vols-orange);
+        }
+
+        .hero-subtitle {
+            font-size: 20px;
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 40px;
+            max-width: 600px;
+        }
+
+        .hero-cta {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
 
         .btn {
-            padding: 1rem 2.5rem;
+            padding: 16px 32px;
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 18px;
+            letter-spacing: 1px;
             border: none;
-            border-radius: 50px;
-            font-family: 'Inter', sans-serif;
-            font-weight: 700;
-            font-size: 1rem;
             cursor: pointer;
-            transition: all 0.3s ease;
+            transition: all 0.2s;
             text-decoration: none;
             display: inline-block;
         }
 
         .btn-primary {
-            background: var(--primary-orange);
+            background: var(--vols-orange);
             color: white;
         }
 
         .btn-primary:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 30px rgba(255,130,0,0.4);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255, 130, 0, 0.4);
         }
 
         .btn-secondary {
             background: transparent;
-            color: var(--text-primary);
-            border: 2px solid var(--border);
+            color: white;
+            border: 2px solid rgba(255, 255, 255, 0.3);
         }
 
         .btn-secondary:hover {
-            border-color: var(--primary-orange);
-            color: var(--primary-orange);
+            border-color: var(--vols-orange);
+            color: var(--vols-orange);
         }
 
-        /* Night/Day Toggle */
-        .mode-toggle {
-            position: fixed;
-            top: 2rem;
-            right: 2rem;
-            z-index: 1000;
+        .hero-stats {
+            display: flex;
+            gap: 48px;
+            margin-top: 60px;
+            padding-top: 40px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .stat {
+            text-align: left;
+        }
+
+        .stat-number {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 48px;
+            color: var(--vols-orange);
+            line-height: 1;
+        }
+
+        .stat-label {
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.6);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Section Styling */
+        .section {
+            padding: 100px 0;
+        }
+
+        .section-header {
             display: flex;
             align-items: center;
-            gap: 0.5rem;
-            background: var(--card-bg);
-            padding: 0.5rem 1rem;
-            border-radius: 50px;
-            border: 1px solid var(--border);
+            margin-bottom: 40px;
         }
 
-        .mode-toggle span { font-size: 0.9rem; }
-        
-        .toggle-switch {
-            width: 50px;
-            height: 25px;
-            background: var(--border);
-            border-radius: 25px;
-            position: relative;
-            cursor: pointer;
-            transition: background 0.3s;
+        .section-number {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 64px;
+            color: var(--vols-orange);
+            opacity: 0.3;
+            margin-right: 20px;
+            line-height: 1;
         }
 
-        .toggle-switch.active { background: var(--primary-orange); }
-
-        .toggle-switch::after {
-            content: '';
-            position: absolute;
-            width: 21px;
-            height: 21px;
-            background: white;
-            border-radius: 50%;
-            top: 2px;
-            left: 2px;
-            transition: transform 0.3s;
-        }
-
-        .toggle-switch.active::after { transform: translateX(25px); }
-
-        /* Money Meter */
-        .money-meter {
-            position: fixed;
-            left: 2rem;
-            top: 50%;
-            transform: translateY(-50%);
-            z-index: 100;
-            display: none;
-        }
-
-        @media (min-width: 1024px) {
-            .money-meter { display: block; }
-        }
-
-        .money-meter .dollar-sign {
-            font-size: 2rem;
-            color: var(--success);
-            opacity: 0;
-            animation: float-up 3s ease-out forwards;
-        }
-
-        @keyframes float-up {
-            0% { transform: translateY(0); opacity: 0; }
-            50% { opacity: 1; }
-            100% { transform: translateY(-200px); opacity: 0; }
-        }
-
-        /* Section Layout */
-        .section { padding: 4rem 2rem; max-width: 1200px; margin: 0 auto; }
-        
         .section-title {
-            text-align: center;
-            margin-bottom: 3rem;
-            position: relative;
+            font-size: 42px;
+            color: var(--deep-navy);
         }
 
-        .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: -1rem;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 60px;
-            height: 3px;
-            background: var(--primary-orange);
+        .section-subtitle {
+            font-size: 18px;
+            color: var(--steel-gray);
+            max-width: 600px;
+            margin-bottom: 40px;
+        }
+
+        /* Problem Section */
+        .problem-section {
+            background: var(--deep-navy);
+            color: white;
+        }
+
+        .problem-section .section-title {
+            color: white;
+        }
+
+        .problem-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+        }
+
+        .problem-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 32px;
+        }
+
+        .problem-icon {
+            font-size: 32px;
+            margin-bottom: 16px;
+        }
+
+        .problem-card h3 {
+            font-size: 24px;
+            margin-bottom: 12px;
+        }
+
+        .problem-card p {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 15px;
         }
 
         /* How It Works */
-        .steps {
+        .steps-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+        }
+
+        @media (max-width: 768px) {
+            .steps-grid {
+                grid-template-columns: 1fr;
+            }
         }
 
         .step {
-            background: var(--card-bg);
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            padding: 2rem;
-            text-align: center;
             position: relative;
         }
 
         .step-number {
-            width: 50px;
-            height: 50px;
-            background: var(--primary-orange);
+            width: 60px;
+            height: 60px;
+            background: var(--vols-orange);
             color: white;
-            border-radius: 50%;
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 28px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-family: 'Teko', sans-serif;
-            font-size: 1.5rem;
-            margin: 0 auto 1rem;
+            margin-bottom: 20px;
         }
 
-        /* Sample Call Player */
-        .call-player {
-            background: var(--card-bg);
-            border: 2px solid var(--border);
-            border-radius: 16px;
-            padding: 2rem;
-            margin: 2rem 0;
+        .step h3 {
+            font-size: 24px;
+            margin-bottom: 12px;
         }
 
-        .call-controls {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            margin-bottom: 1rem;
+        .step p {
+            color: var(--steel-gray);
         }
 
-        .play-btn {
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            background: var(--primary-orange);
-            border: none;
+        /* Features Box */
+        .features-box {
+            background: var(--deep-navy);
             color: white;
-            font-size: 1.5rem;
-            cursor: pointer;
+            padding: 48px;
+            margin-top: 60px;
         }
 
-        .waveform {
-            flex: 1;
-            height: 60px;
-            background: linear-gradient(to right, var(--primary-orange) 0%, var(--primary-orange) 30%, transparent 30%);
-            border-radius: 30px;
-            position: relative;
+        .features-box h3 {
+            font-size: 28px;
+            margin-bottom: 32px;
+            text-align: center;
         }
 
-        .transcript {
-            background: #111;
-            border-radius: 8px;
-            padding: 1rem;
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 0.9rem;
-            line-height: 1.8;
-            max-height: 200px;
-            overflow-y: auto;
-        }
-
-        .transcript .speaker { color: var(--primary-orange); }
-        .transcript .customer { color: var(--success); }
-        .transcript .highlight { background: rgba(255,130,0,0.3); padding: 2px 4px; border-radius: 4px; }
-
-        /* Add-On Builder */
-        .addon-grid {
+        .features-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 1.5rem;
-            margin: 2rem 0;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
         }
 
-        .addon-card {
-            background: var(--card-bg);
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            padding: 1.5rem;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            position: relative;
+        .feature-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
         }
 
-        .addon-card:hover { border-color: var(--primary-orange); transform: translateY(-3px); }
-        .addon-card.selected { border-color: var(--success); background: rgba(74, 222, 128, 0.05); }
-
-        .addon-card h4 {
-            color: white;
-            margin-bottom: 0.5rem;
-            font-size: 1.2rem;
+        .feature-check {
+            color: var(--vols-orange);
+            font-size: 20px;
+            font-weight: bold;
+            flex-shrink: 0;
         }
 
-        .addon-card p {
-            font-size: 0.9rem;
-            color: var(--text-secondary);
-            margin-bottom: 1rem;
+        .feature-item span {
+            font-size: 15px;
+            color: rgba(255, 255, 255, 0.85);
         }
 
-        .addon-price {
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 1.5rem;
-            color: var(--primary-orange);
-            font-weight: 700;
+        /* Calculator Section */
+        .calculator-section {
+            background: linear-gradient(135deg, #f8f7f5 0%, #fff 100%);
         }
 
-        /* ROI Calculator */
         .calculator {
-            background: var(--card-bg);
-            border: 2px solid var(--primary-orange);
-            border-radius: 16px;
-            padding: 2rem;
-            margin: 2rem 0;
+            background: white;
+            border: 2px solid var(--vols-orange);
+            padding: 48px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
         }
 
-        .calc-controls {
+        .calc-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1rem;
-            margin-bottom: 2rem;
-        }
-
-        .calc-input {
-            display: flex;
-            flex-direction: column;
-            gap: 0.5rem;
+            gap: 24px;
+            margin-bottom: 32px;
         }
 
         .calc-input label {
-            font-size: 0.9rem;
-            color: var(--text-secondary);
+            display: block;
+            font-size: 14px;
+            color: var(--steel-gray);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
         }
 
         .calc-input input {
-            background: #111;
-            border: 1px solid var(--border);
-            color: var(--primary-orange);
-            padding: 0.75rem;
-            border-radius: 6px;
-            font-family: 'JetBrains Mono', monospace;
+            width: 100%;
+            padding: 16px;
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 24px;
+            color: var(--deep-navy);
+            border: 2px solid var(--light-gray);
+            background: var(--warm-white);
+            text-align: center;
+        }
+
+        .calc-input input:focus {
+            outline: none;
+            border-color: var(--vols-orange);
         }
 
         .calc-result {
-            text-align: center;
-            padding: 2rem;
-            background: rgba(255,130,0,0.1);
-            border-radius: 12px;
-        }
-
-        .calc-result .number {
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 3rem;
-            font-weight: 800;
-            color: var(--success);
-        }
-
-        /* Waitlist Form */
-        .waitlist-section {
-            background: linear-gradient(135deg, var(--primary-orange), #ff8c42);
+            background: var(--deep-navy);
             color: white;
-            padding: 4rem 2rem;
+            padding: 40px;
             text-align: center;
-            margin: 4rem -2rem;
+        }
+
+        .calc-result-label {
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: rgba(255, 255, 255, 0.6);
+            margin-bottom: 8px;
+        }
+
+        .calc-result-number {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 64px;
+            color: var(--vols-orange);
+        }
+
+        .calc-result-note {
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.6);
+            margin-top: 8px;
+        }
+
+        /* Pricing Section */
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 32px;
+            margin-top: 40px;
+        }
+
+        .pricing-card {
+            background: white;
+            border: 2px solid var(--light-gray);
+            padding: 40px;
+            position: relative;
+        }
+
+        .pricing-card.featured {
+            border-color: var(--vols-orange);
+            transform: scale(1.02);
+        }
+
+        .pricing-badge {
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--vols-orange);
+            color: white;
+            padding: 6px 20px;
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 14px;
+            letter-spacing: 1px;
+        }
+
+        .pricing-tier {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 24px;
+            color: var(--steel-gray);
+            margin-bottom: 8px;
+        }
+
+        .pricing-price {
+            display: flex;
+            align-items: baseline;
+            margin-bottom: 24px;
+        }
+
+        .pricing-amount {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 64px;
+            color: var(--deep-navy);
+        }
+
+        .pricing-period {
+            font-size: 16px;
+            color: var(--steel-gray);
+            margin-left: 8px;
+        }
+
+        .pricing-desc {
+            color: var(--steel-gray);
+            margin-bottom: 24px;
+            padding-bottom: 24px;
+            border-bottom: 1px solid var(--light-gray);
+        }
+
+        .pricing-features {
+            list-style: none;
+        }
+
+        .pricing-features li {
+            padding: 8px 0;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: var(--steel-gray);
+        }
+
+        .pricing-features li::before {
+            content: "\2713";
+            color: var(--vols-orange);
+            font-weight: bold;
+        }
+
+        /* Add-ons */
+        .addons-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+            margin-top: 40px;
+        }
+
+        .addon-card {
+            background: white;
+            border: 2px solid var(--light-gray);
+            padding: 32px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .addon-card:hover {
+            border-color: var(--vols-orange);
+            transform: translateY(-4px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        }
+
+        .addon-card.selected {
+            border-color: var(--success-green);
+            background: rgba(45, 138, 95, 0.05);
+        }
+
+        .addon-name {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 24px;
+            margin-bottom: 8px;
+        }
+
+        .addon-desc {
+            color: var(--steel-gray);
+            font-size: 15px;
+            margin-bottom: 16px;
+        }
+
+        .addon-price {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 28px;
+            color: var(--vols-orange);
+        }
+
+        /* Waitlist Section */
+        .waitlist-section {
+            background: var(--vols-orange);
+            color: white;
+        }
+
+        .waitlist-section .section-title {
+            color: white;
+        }
+
+        .waitlist-section .section-number {
+            color: white;
+            opacity: 0.3;
+        }
+
+        .waitlist-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        @media (max-width: 768px) {
+            .waitlist-content {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .waitlist-info h3 {
+            font-size: 32px;
+            margin-bottom: 16px;
+        }
+
+        .waitlist-info p {
+            font-size: 18px;
+            opacity: 0.9;
+            margin-bottom: 24px;
+        }
+
+        .spots-counter {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            background: rgba(0, 0, 0, 0.2);
+            padding: 16px 24px;
+        }
+
+        .spots-counter .number {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 32px;
         }
 
         .waitlist-form {
-            max-width: 600px;
-            margin: 2rem auto;
-            display: grid;
-            gap: 1rem;
+            background: white;
+            padding: 40px;
         }
 
-        .waitlist-form input,
-        .waitlist-form textarea {
-            padding: 1rem;
-            border: none;
-            border-radius: 8px;
-            font-family: 'Inter', sans-serif;
+        .waitlist-form h4 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 24px;
+            color: var(--deep-navy);
+            margin-bottom: 24px;
         }
 
-        .waitlist-form textarea {
+        .form-group {
+            margin-bottom: 16px;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 14px;
+            border: 2px solid var(--light-gray);
+            font-family: 'Source Sans 3', sans-serif;
+            font-size: 16px;
+            transition: border-color 0.2s;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--vols-orange);
+        }
+
+        .form-group textarea {
             resize: vertical;
-            min-height: 100px;
+            min-height: 80px;
         }
 
         .waitlist-form button {
-            background: white;
-            color: var(--primary-orange);
-            padding: 1rem 2rem;
+            width: 100%;
+            padding: 16px;
+            background: var(--deep-navy);
+            color: white;
             border: none;
-            border-radius: 50px;
-            font-weight: 700;
-            font-size: 1rem;
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 18px;
+            letter-spacing: 1px;
             cursor: pointer;
-            transition: all 0.3s ease;
+            transition: all 0.2s;
         }
 
         .waitlist-form button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+            background: var(--vols-orange);
         }
 
         /* Footer */
         footer {
-            text-align: center;
-            padding: 2rem;
-            border-top: 1px solid var(--border);
-            color: var(--text-secondary);
-            font-size: 0.9rem;
+            background: var(--deep-navy);
+            color: white;
+            padding: 60px 0 30px;
         }
 
-        /* Print Styles */
-        @media print {
-            .mode-toggle, .money-meter, .waitlist-section, .cta-buttons { display: none !important; }
-            body { background: white; color: black; }
-            .hero { min-height: auto; padding: 1rem; }
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 30px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            margin-bottom: 30px;
         }
 
-        /* Responsive */
+        .footer-logo {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 28px;
+        }
+
+        .footer-logo span {
+            color: var(--vols-orange);
+        }
+
+        .footer-tagline {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 14px;
+        }
+
+        .footer-bottom {
+            display: flex;
+            justify-content: space-between;
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.5);
+        }
+
         @media (max-width: 768px) {
-            .calc-controls { grid-template-columns: 1fr; }
-            .cta-buttons { flex-direction: column; }
-            .cta-buttons .btn { width: 100%; }
+            .footer-content,
+            .footer-bottom {
+                flex-direction: column;
+                text-align: center;
+                gap: 16px;
+            }
+
+            .hero-stats {
+                flex-direction: column;
+                gap: 24px;
+            }
+        }
+
+        /* Smooth scroll */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Selection color */
+        ::selection {
+            background: var(--vols-orange);
+            color: white;
         }
     </style>
-<base target="_blank">
 </head>
 <body>
-    <!-- Night/Day Toggle -->
-    <div class="mode-toggle">
-        <span>☀️ Day</span>
-        <div class="toggle-switch" id="mode-switch"></div>
-        <span>🌙 Night</span>
-    </div>
-
-    <!-- Money Meter -->
-    <div class="money-meter" id="money-meter"></div>
+    <!-- Navigation -->
+    <nav>
+        <div class="container nav-content">
+            <a href="#" class="logo">KNOX<span>CALLS</span></a>
+            <button class="nav-cta" onclick="scrollToSection('waitlist')">Join Pilot Program</button>
+        </div>
+    </nav>
 
     <!-- Hero Section -->
     <section class="hero">
-        <div class="hero-content">
-            <div class="catch-line">How many $2,000 jobs did you sleep through last month?</div>
-            <h1 class="main-headline">Your Phone Rings at 2 AM. You Don't Hear It. They Call Your Competitor.</h1>
-            <p class="sub-headline">Night Watch is your AI dispatcher that captures emergency calls, filters spam, and only wakes you for real money.</p>
-            
-            <div class="waitlist-badge" id="waitlist-badge">
-                Pilot Program: <span id="waitlist-current">12</span> / <span id="waitlist-max">15</span> spots claimed
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-badge">Pilot Program Open</div>
+                <h1>Your Phone Rings at 2 AM.<br><span>You Sleep Through It.</span></h1>
+                <p class="hero-subtitle">Night Watch is your AI dispatcher that answers after-hours calls, filters emergencies from spam, and only wakes you when there's real money on the line.</p>
+                <div class="hero-cta">
+                    <button class="btn btn-primary" onclick="scrollToSection('waitlist')">Claim Your Spot</button>
+                    <button class="btn btn-secondary" onclick="scrollToSection('how-it-works')">See How It Works</button>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <div class="stat-number">$2,000+</div>
+                        <div class="stat-label">Avg Emergency Job Value</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">67%</div>
+                        <div class="stat-label">Callers Who Won't Leave Voicemail</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">5 min</div>
+                        <div class="stat-label">Setup Time</div>
+                    </div>
+                </div>
             </div>
+        </div>
+    </section>
 
-            <div class="cta-buttons">
-                <button class="btn btn-primary" onclick="scrollToSection('waitlist')">Join Pilot Program</button>
-                <button class="btn btn-secondary" onclick="playSampleCall()">🔊 Hear Sample Call</button>
+    <!-- Problem Section -->
+    <section class="section problem-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-number">01</span>
+                <h2 class="section-title">The Problem</h2>
+            </div>
+            <div class="problem-grid">
+                <div class="problem-card">
+                    <div class="problem-icon">&#128564;</div>
+                    <h3>You're Exhausted</h3>
+                    <p>Every after-hours call could be a $2,000 emergency or a spam caller. You can't know without answering. So you answer everything. And you're running on empty.</p>
+                </div>
+                <div class="problem-card">
+                    <div class="problem-icon">&#128176;</div>
+                    <h3>You're Losing Jobs</h3>
+                    <p>67% of callers won't leave a voicemail. They'll just call the next contractor. That's thousands in revenue walking out the door every month.</p>
+                </div>
+                <div class="problem-card">
+                    <div class="problem-icon">&#128260;</div>
+                    <h3>Answering Services Don't Get It</h3>
+                    <p>Generic call centers read scripts. They don't know a compressor from a condenser. They can't tell a true emergency from a minor issue.</p>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- How It Works -->
     <section class="section" id="how-it-works">
-        <h2 class="section-title">How It Works (Setup in 5 Minutes)</h2>
-        <div class="steps">
-            <div class="step">
-                <div class="step-number">1</div>
-                <h3>Forward Your Phone</h3>
-                <p>Set *71 forwarding at 6pm. That's it. No new number, no app.</p>
+        <div class="container">
+            <div class="section-header">
+                <span class="section-number">02</span>
+                <h2 class="section-title">How Night Watch Works</h2>
             </div>
-            <div class="step">
-                <div class="step-number">2</div>
-                <h3>AI Handles the Call</h3>
-                <p>Weather-aware triage, knows your equipment, greets by name.</p>
+            <p class="section-subtitle">Set it up in 5 minutes. Sleep through the night. Never miss a real emergency again.</p>
+
+            <div class="steps-grid">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Forward Your Line</h3>
+                    <p>At 5 PM, forward your business line to Night Watch. Takes 30 seconds. Use the same number your customers already know.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>AI Handles Everything</h3>
+                    <p>Night Watch answers professionally with your business name. It asks the right questions, identifies emergencies, and filters out the noise.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>You Get What Matters</h3>
+                    <p>True emergencies? Instant alert. General inquiries? Morning summary. Spam? Blocked. You only wake up for real money.</p>
+                </div>
             </div>
-            <div class="step">
-                <div class="step-number">3</div>
-                <h3>Get Emergency Alerts</h3>
-                <p>Only true emergencies wake you. SMS summary for everything else.</p>
+
+            <div class="features-box">
+                <h3>What's Included</h3>
+                <div class="features-grid">
+                    <div class="feature-item">
+                        <span class="feature-check">&#10003;</span>
+                        <span>24/7 after-hours call answering</span>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-check">&#10003;</span>
+                        <span>Smart emergency vs. routine filtering</span>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-check">&#10003;</span>
+                        <span>Instant SMS alerts for true emergencies</span>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-check">&#10003;</span>
+                        <span>Custom greeting with your business name</span>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-check">&#10003;</span>
+                        <span>Complete call logs and transcripts</span>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-check">&#10003;</span>
+                        <span>Spam and robocall blocking</span>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Sample Call Player -->
-    <section class="section">
-        <h2 class="section-title">Listen to Night Watch in Action</h2>
-        <div class="call-player">
-            <div class="call-controls">
-                <button class="play-btn" id="play-btn">▶</button>
-                <div class="waveform" id="waveform"></div>
-                <div>
-                    <label>
-                        <input type="checkbox" id="memory-toggle" checked> The Memory ON
-                    </label>
-                </div>
+    <!-- Calculator Section -->
+    <section class="section calculator-section" id="calculator">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-number">03</span>
+                <h2 class="section-title">Calculate Your Lost Revenue</h2>
             </div>
-            <div class="transcript" id="transcript">
-                <p><span class="speaker">AI:</span> <span class="highlight">"Hi, this is Mike's HVAC. I see you have a maintenance contract with us—your system is due for a tune-up. Are you calling about the unit on Kingston Pike?"</span></p>
-                <p><span class="customer">Customer:</span> "Actually, it's freezing up completely. I'm at the Hilton downtown, room temp is 85 degrees, we have guests checking in."</p>
-                <p><span class="speaker">AI:</span> <span class="highlight">"That's a true emergency. Dispatching Mike now. ETA 45 minutes. You'll get a text confirmation."</span></p>
+            <p class="section-subtitle">See how much money is slipping through the cracks while you sleep.</p>
+
+            <div class="calculator">
+                <div class="calc-grid">
+                    <div class="calc-input">
+                        <label>After-Hours Calls/Month</label>
+                        <input type="number" id="calc-calls" value="10" min="0">
+                    </div>
+                    <div class="calc-input">
+                        <label>Average Job Value ($)</label>
+                        <input type="number" id="calc-value" value="2000" min="0">
+                    </div>
+                    <div class="calc-input">
+                        <label>Missed Call Rate (%)</label>
+                        <input type="number" id="calc-miss" value="50" min="0" max="100">
+                    </div>
+                </div>
+                <div class="calc-result">
+                    <div class="calc-result-label">You're Losing Approximately</div>
+                    <div class="calc-result-number" id="calc-result">$10,000</div>
+                    <div class="calc-result-note">per month to missed after-hours calls</div>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- ROI Calculator -->
-    <section class="section">
-        <h2 class="section-title">Calculate Your Lost Revenue</h2>
-        <div class="calculator">
-            <div class="calc-controls">
-                <div class="calc-input">
-                    <label>Emergency Calls/Month</label>
-                    <input type="number" id="calc-calls" value="10" min="0">
-                </div>
-                <div class="calc-input">
-                    <label>Avg Job Value</label>
-                    <input type="number" id="calc-job-value" value="2000" min="0">
-                </div>
-                <div class="calc-input">
-                    <label>Capture Rate (%)</label>
-                    <input type="number" id="calc-capture" value="20" min="0" max="100">
-                </div>
+    <!-- Pricing Section -->
+    <section class="section" id="pricing">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-number">04</span>
+                <h2 class="section-title">Simple Pricing</h2>
             </div>
-            <div class="calc-result">
-                <p>You're losing</p>
-                <div class="number" id="lost-revenue">$4,000</div>
-                <p>per month to voicemail</p>
-            </div>
-        </div>
-    </section>
+            <p class="section-subtitle">No contracts. No hidden fees. Cancel anytime.</p>
 
-    <!-- Add-On Builder -->
-    <section class="section">
-        <h2 class="section-title">Build Your Perfect System</h2>
-        <div class="addon-grid">
-            <div class="addon-card" onclick="toggleAddonBuilder('memory')">
-                <h4>The Memory</h4>
-                <p>AI remembers customer history, equipment, even their dog's name</p>
-                <div class="addon-price">+$49/mo</div>
+            <div class="pricing-grid">
+                <div class="pricing-card featured">
+                    <div class="pricing-badge">Founding Member</div>
+                    <div class="pricing-tier">Pilot Program</div>
+                    <div class="pricing-price">
+                        <span class="pricing-amount">$149</span>
+                        <span class="pricing-period">/month</span>
+                    </div>
+                    <p class="pricing-desc">Lock in this rate forever. Only available during pilot.</p>
+                    <ul class="pricing-features">
+                        <li>Everything in Night Watch</li>
+                        <li>Founding member rate locked forever</li>
+                        <li>Priority support</li>
+                        <li>Input on new features</li>
+                        <li>30-day money-back guarantee</li>
+                    </ul>
+                </div>
+                <div class="pricing-card">
+                    <div class="pricing-tier">Standard</div>
+                    <div class="pricing-price">
+                        <span class="pricing-amount">$299</span>
+                        <span class="pricing-period">/month</span>
+                    </div>
+                    <p class="pricing-desc">Regular pricing after pilot program ends.</p>
+                    <ul class="pricing-features">
+                        <li>24/7 after-hours answering</li>
+                        <li>Emergency filtering & alerts</li>
+                        <li>Call logs & transcripts</li>
+                        <li>Spam blocking</li>
+                        <li>Email support</li>
+                    </ul>
+                </div>
             </div>
-            <div class="addon-card" onclick="toggleAddonBuilder('bulldog')">
-                <h4>The Bulldog</h4>
-                <p>Aggressive SMS + voice hunt for true emergencies</p>
-                <div class="addon-price">+$49/mo</div>
-            </div>
-            <div class="addon-card" onclick="toggleAddonBuilder('vault')">
-                <h4>The Vault</h4>
-                <p>90-day recordings + searchable transcripts</p>
-                <div class="addon-price">+$29/mo</div>
+
+            <!-- Add-ons -->
+            <div style="margin-top: 60px;">
+                <h3 style="font-size: 28px; margin-bottom: 16px;">Power-Ups</h3>
+                <p class="section-subtitle">Enhance Night Watch with these optional add-ons.</p>
+                <div class="addons-grid">
+                    <div class="addon-card" onclick="toggleAddon(this, 'memory')">
+                        <div class="addon-name">The Memory</div>
+                        <div class="addon-desc">AI remembers customer history, equipment details, service contracts, and preferences. Greets repeat callers by name.</div>
+                        <div class="addon-price">+$49/mo</div>
+                    </div>
+                    <div class="addon-card" onclick="toggleAddon(this, 'bulldog')">
+                        <div class="addon-name">The Bulldog</div>
+                        <div class="addon-desc">Aggressive escalation for true emergencies. SMS, voice call, and backup contact notification until someone responds.</div>
+                        <div class="addon-price">+$49/mo</div>
+                    </div>
+                    <div class="addon-card" onclick="toggleAddon(this, 'vault')">
+                        <div class="addon-name">The Vault</div>
+                        <div class="addon-desc">90-day call recording storage with searchable transcripts. Perfect for disputes, training, and quality assurance.</div>
+                        <div class="addon-price">+$29/mo</div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Waitlist Section -->
-    <section class="waitlist-section" id="waitlist">
-        <h2>Join the Pilot Program</h2>
-        <p>Founding members lock in $149/mo forever. Only 3 spots left.</p>
-        
-        <form class="waitlist-form" action="https://formsubmit.co/info@knoxcalls.com" method="POST">
-            <input type="hidden" name="_subject" value="Night Watch Pilot Application">
-            <input type="hidden" name="_captcha" value="false">
-            <input type="hidden" name="selected_addons" id="hidden-addons">
-            <input type="hidden" name="lost_revenue_calc" id="hidden-calc">
-            
-            <input type="text" name="name" placeholder="Your Name" required>
-            <input type="email" name="email" placeholder="Email Address" required>
-            <input type="tel" name="phone" placeholder="Phone Number" required>
-            <input type="text" name="business" placeholder="Business Name" required>
-            <textarea name="calls_per_month" placeholder="How many after-hours calls do you get per month?"></textarea>
-            <button type="submit">Claim My Spot</button>
-        </form>
+    <section class="section waitlist-section" id="waitlist">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-number">05</span>
+                <h2 class="section-title">Join the Pilot Program</h2>
+            </div>
+
+            <div class="waitlist-content">
+                <div class="waitlist-info">
+                    <h3>Limited Spots Available</h3>
+                    <p>We're accepting a small group of Knoxville-area HVAC, plumbing, and refrigeration contractors for our pilot program. Lock in founding member pricing forever.</p>
+                    <div class="spots-counter">
+                        <span class="number" id="spots-remaining">3</span>
+                        <span>spots remaining</span>
+                    </div>
+                </div>
+
+                <form class="waitlist-form" action="https://formsubmit.co/info@knoxcalls.com" method="POST">
+                    <h4>Claim Your Spot</h4>
+                    <input type="hidden" name="_subject" value="Night Watch Pilot Application">
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="hidden" name="selected_addons" id="hidden-addons">
+                    <input type="hidden" name="calculated_loss" id="hidden-calc">
+
+                    <div class="form-group">
+                        <input type="text" name="name" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" name="email" placeholder="Email Address" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="tel" name="phone" placeholder="Phone Number" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="business" placeholder="Business Name" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea name="notes" placeholder="How many after-hours calls do you typically get per month?"></textarea>
+                    </div>
+                    <button type="submit">Apply for Pilot Program</button>
+                </form>
+            </div>
+        </div>
     </section>
 
     <!-- Footer -->
     <footer>
-        <p>© 2024 KnoxCalls | Built in Knoxville's Old City</p>
-        <p>Proudly serving East Tennessee HVAC & plumbing contractors</p>
+        <div class="container">
+            <div class="footer-content">
+                <div>
+                    <div class="footer-logo">KNOX<span>CALLS</span></div>
+                    <div class="footer-tagline">Night Watch - Your AI Dispatcher</div>
+                </div>
+                <div class="footer-tagline">
+                    Built in Knoxville for East Tennessee contractors
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <span>&copy; 2025 KnoxCalls. All rights reserved.</span>
+                <span>Go Vols.</span>
+            </div>
+        </div>
     </footer>
 
-    <!-- Audio Player Logic -->
-    <audio id="sample-call-audio" preload="none">
-        <source src="data:audio/wav;base64,UklGRnoGAABXQVZFZm10IBAAAAABAAEAQB8AAEAfAAABAAgAZGF0YQoGAACBhYqFbF1fdJivrJBhNjVgodDbq2EcBj+a2/LDciUFLIHO8tiJNwgZaLvt559NEAxQp+PwtmMcBjiR1/LMeSwFJHfH8N2QQAoUXrTp66hVFApGn+DyvmwhBSuBzvLZiTYIG2m98OScTgwOUarm7blmFgU7k9n1unEiBC13yO/eizEIHWq+8+OWT" type="audio/wav">
-        <!-- Base64 placeholder - replace with actual audio file -->
-    </audio>
-
     <script>
-        // Config (manual updates during pilot)
-        window.KNOXCALLS_CONFIG = {
-            waitlist: { current: 12, max: 15 },
-            pricing: {
-                core: 149,
-                addons: { memory: 49, bulldog: 49, vault: 29, floodgate: 149, commercial: 149, vip: 99 }
-            }
-        };
-
-        // DOM manipulation helpers
-        function qs(sel) { return document.querySelector(sel); }
-        function qsa(sel) { return document.querySelectorAll(sel); }
-
-        // Smooth scroll
+        // Smooth scroll helper
         function scrollToSection(id) {
             document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
         }
 
-        // Sample call player
-        let isPlaying = false;
-        const playBtn = qs('#play-btn');
-        const audio = qs('#sample-call-audio');
+        // Calculator
+        function updateCalculator() {
+            const calls = parseInt(document.getElementById('calc-calls').value) || 0;
+            const value = parseInt(document.getElementById('calc-value').value) || 0;
+            const missRate = parseInt(document.getElementById('calc-miss').value) || 0;
 
-        playBtn.onclick = function() {
-            if (isPlaying) {
-                audio.pause();
-                playBtn.textContent = '▶';
-            } else {
-                audio.play();
-                playBtn.textContent = '⏸';
-            }
-            isPlaying = !isPlaying;
-        };
+            const monthlyLoss = Math.round(calls * value * (missRate / 100));
+            document.getElementById('calc-result').textContent = '$' + monthlyLoss.toLocaleString();
+            document.getElementById('hidden-calc').value = '$' + monthlyLoss.toLocaleString() + '/month estimated loss';
+        }
 
-        // Memory toggle for transcript
-        qs('#memory-toggle').onchange = function() {
-            const transcript = qs('#transcript');
-            const highlights = transcript.querySelectorAll('.highlight');
-            highlights.forEach(h => {
-                h.style.background = this.checked ? 'rgba(255,130,0,0.3)' : 'transparent';
-            });
-        };
+        document.getElementById('calc-calls').addEventListener('input', updateCalculator);
+        document.getElementById('calc-value').addEventListener('input', updateCalculator);
+        document.getElementById('calc-miss').addEventListener('input', updateCalculator);
 
-        // Add-On Builder
+        // Initialize calculator
+        updateCalculator();
+
+        // Add-on selection
         let selectedAddons = [];
-        function toggleAddonBuilder(name) {
-            const card = event.currentTarget;
-            const isSelected = card.classList.contains('selected');
-            
-            if (isSelected) {
-                card.classList.remove('selected');
+        function toggleAddon(element, name) {
+            element.classList.toggle('selected');
+            if (selectedAddons.includes(name)) {
                 selectedAddons = selectedAddons.filter(a => a !== name);
             } else {
-                card.classList.add('selected');
                 selectedAddons.push(name);
             }
-            
-            // Update hidden form field
-            qs('#hidden-addons').value = selectedAddons.join(', ');
+            document.getElementById('hidden-addons').value = selectedAddons.join(', ');
         }
 
-        // ROI Calculator
-        function updateCalculator() {
-            const calls = parseInt(qs('#calc-calls').value) || 0;
-            const jobValue = parseInt(qs('#calc-job-value').value) || 0;
-            const captureRate = parseInt(qs('#calc-capture').value) || 0;
-            
-            const lostRevenue = calls * jobValue * (captureRate / 100);
-            const monthlyLost = lostRevenue * 0.5; // Assume 50% would leave voicemail
-            
-            qs('#lost-revenue').textContent = '$' + monthlyLost.toLocaleString();
-            qs('#hidden-calc').value = `$${monthlyLost.toLocaleString()} lost/month`;
-        }
+        // Update spots counter from config
+        document.getElementById('spots-remaining').textContent =
+            SITE_CONFIG.pilot.spotsTotal - SITE_CONFIG.pilot.spotsClaimed;
 
-        qs('#calc-calls').oninput = updateCalculator;
-        qs('#calc-job-value').oninput = updateCalculator;
-        qs('#calc-capture').oninput = updateCalculator;
-
-        // Mode toggle
-        qs('#mode-switch').onclick = function() {
-            this.classList.toggle('active');
-            document.body.style.background = this.classList.contains('active') ? 
-                'linear-gradient(180deg, #0f0f0f 0%, #1a1a1a 100%)' : '';
-        };
-
-        // Money meter animation on scroll
-        let moneyCount = 0;
-        window.onscroll = function() {
-            if (window.scrollY > 500 && window.scrollY < 1000) {
-                if (moneyCount < 5) {
-                    const dollar = document.createElement('div');
-                    dollar.className = 'dollar-sign';
-                    dollar.textContent = '$';
-                    dollar.style.left = Math.random() * 100 + 'px';
-                    qs('#money-meter').appendChild(dollar);
-                    
-                    setTimeout(() => dollar.remove(), 3000);
-                    moneyCount++;
-                }
-            }
-        };
-
-        // Waitlist counter animation
-        function animateWaitlist() {
-            const current = KNOXCALLS_CONFIG.waitlist.current;
-            const max = KNOXCALLS_CONFIG.waitlist.max;
-            qs('#waitlist-current').textContent = current;
-            qs('#waitlist-max').textContent = max;
-            
-            // Pulse effect when spot gets claimed
-            setInterval(() => {
-                if (Math.random() > 0.95 && current < max) {
-                    qs('#waitlist-badge').style.transform = 'scale(1.05)';
-                    setTimeout(() => {
-                        qs('#waitlist-badge').style.transform = 'scale(1)';
-                    }, 200);
-                }
-            }, 5000);
-        }
-
-        // Initialize
-        document.addEventListener('DOMContentLoaded', function() {
-            updateCalculator();
-            animateWaitlist();
-            
-            // Pre-fill hidden form fields
-            qs('#hidden-addons').value = '';
-            qs('#hidden-calc').value = qs('#lost-revenue').textContent + ' lost/month';
-        });
-
-        // FormSubmit success handler
-        // FormSubmit will redirect to ?success=true after submission
+        // Form success handling
         const urlParams = new URLSearchParams(window.location.search);
         if (urlParams.get('success') === 'true') {
-            alert('Thanks! Check your email for confirmation. We\'ll text you within 2 hours.');
+            alert('Application received! We\'ll be in touch within 24 hours.');
         }
+    </script>
+
+    <!-- Structured Data for SEO -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "KnoxCalls",
+        "description": "AI-powered after-hours answering service for HVAC, plumbing, and refrigeration contractors in Knoxville, Tennessee.",
+        "url": "https://knoxcalls.com",
+        "areaServed": {
+            "@type": "City",
+            "name": "Knoxville",
+            "addressRegion": "TN"
+        },
+        "priceRange": "$$",
+        "serviceType": ["Answering Service", "AI Dispatcher", "After Hours Support"]
+    }
     </script>
 </body>
 </html>

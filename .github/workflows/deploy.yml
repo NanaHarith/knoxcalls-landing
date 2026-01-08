@@ -14,5 +14,5 @@ jobs:
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          projectName: knoxcalls-landing
+          projectName: ${{ secrets.CLOUDFLARE_PAGES_PROJECT }}
           directory: ./

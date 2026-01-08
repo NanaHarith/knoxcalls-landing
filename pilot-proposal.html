@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NagenticAI - Pilot Program Proposal</title>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --deep-blue: #0a1628;
+            --electric-orange: #ff6b35;
+            --warm-white: #faf9f7;
+            --steel-gray: #4a5568;
+            --light-gray: #e8e6e3;
+            --success-green: #2d8a5f;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        @page {
+            size: letter;
+            margin: 0;
+        }
+
+        body {
+            font-family: 'Source Sans 3', sans-serif;
+            background: #f0efed;
+            color: var(--deep-blue);
+        }
+
+        .page {
+            width: 8.5in;
+            min-height: 11in;
+            margin: 0 auto;
+            background: var(--warm-white);
+            padding: 0.6in;
+            position: relative;
+        }
+
+        /* Decorative corner */
+        .corner-accent {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 2in;
+            height: 2in;
+            background: linear-gradient(135deg, transparent 50%, var(--electric-orange) 50%);
+            opacity: 0.1;
+        }
+
+        /* Header */
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 0.5in;
+        }
+
+        .logo-section .logo {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 28px;
+            letter-spacing: 2px;
+        }
+
+        .logo span {
+            color: var(--electric-orange);
+        }
+
+        .tagline {
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--steel-gray);
+            margin-top: 4px;
+        }
+
+        .proposal-meta {
+            text-align: right;
+            font-size: 12px;
+            color: var(--steel-gray);
+        }
+
+        .proposal-meta strong {
+            display: block;
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 14px;
+            letter-spacing: 2px;
+            color: var(--deep-blue);
+            margin-bottom: 4px;
+        }
+
+        /* Title Section */
+        .title-section {
+            text-align: center;
+            margin-bottom: 0.5in;
+            padding: 0.4in 0;
+            border-top: 2px solid var(--deep-blue);
+            border-bottom: 2px solid var(--deep-blue);
+        }
+
+        .main-title {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 48px;
+            color: var(--deep-blue);
+            margin-bottom: 8px;
+        }
+
+        .subtitle {
+            font-size: 16px;
+            color: var(--steel-gray);
+        }
+
+        .client-name {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 24px;
+            color: var(--electric-orange);
+            margin-top: 15px;
+            padding: 10px 30px;
+            border: 2px dashed var(--light-gray);
+            display: inline-block;
+        }
+
+        /* Content Sections */
+        .section {
+            margin-bottom: 0.4in;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 0.15in;
+        }
+
+        .section-number {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 32px;
+            color: var(--electric-orange);
+            margin-right: 12px;
+            line-height: 1;
+        }
+
+        .section-title {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 20px;
+            letter-spacing: 1px;
+            color: var(--deep-blue);
+        }
+
+        .section-content {
+            font-size: 14px;
+            line-height: 1.7;
+            color: var(--steel-gray);
+            padding-left: 44px;
+        }
+
+        /* What's Included Box */
+        .included-box {
+            background: var(--deep-blue);
+            color: white;
+            padding: 0.3in;
+            margin-left: 44px;
+        }
+
+        .included-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+        }
+
+        .included-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            font-size: 13px;
+        }
+
+        .included-check {
+            color: var(--electric-orange);
+            font-weight: bold;
+            font-size: 16px;
+            flex-shrink: 0;
+        }
+
+        /* Timeline */
+        .timeline {
+            margin-left: 44px;
+            position: relative;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 8px;
+            top: 5px;
+            bottom: 5px;
+            width: 2px;
+            background: var(--light-gray);
+        }
+
+        .timeline-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 15px;
+            position: relative;
+        }
+
+        .timeline-dot {
+            width: 18px;
+            height: 18px;
+            background: var(--electric-orange);
+            border-radius: 50%;
+            flex-shrink: 0;
+            margin-right: 15px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .timeline-content {
+            flex: 1;
+        }
+
+        .timeline-day {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 14px;
+            color: var(--electric-orange);
+            letter-spacing: 1px;
+        }
+
+        .timeline-desc {
+            font-size: 13px;
+            color: var(--steel-gray);
+            margin-top: 2px;
+        }
+
+        /* Deliverable Box */
+        .deliverable-box {
+            background: rgba(255, 107, 53, 0.08);
+            border-left: 4px solid var(--electric-orange);
+            padding: 0.25in;
+            margin-left: 44px;
+        }
+
+        .deliverable-title {
+            font-weight: 700;
+            color: var(--deep-blue);
+            margin-bottom: 8px;
+            font-size: 14px;
+        }
+
+        .deliverable-list {
+            font-size: 13px;
+            color: var(--steel-gray);
+            line-height: 1.8;
+        }
+
+        /* Terms */
+        .terms-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0.2in;
+            margin-left: 44px;
+        }
+
+        .term-box {
+            text-align: center;
+            padding: 0.2in;
+            border: 2px solid var(--light-gray);
+        }
+
+        .term-label {
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--steel-gray);
+            margin-bottom: 6px;
+        }
+
+        .term-value {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 24px;
+            color: var(--deep-blue);
+        }
+
+        .term-value.highlight {
+            color: var(--electric-orange);
+        }
+
+        /* Signature Section */
+        .signature-section {
+            margin-top: 0.5in;
+            padding-top: 0.3in;
+            border-top: 1px solid var(--light-gray);
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.5in;
+        }
+
+        .signature-block {
+            font-size: 13px;
+            color: var(--steel-gray);
+        }
+
+        .signature-line {
+            border-bottom: 1px solid var(--deep-blue);
+            height: 40px;
+            margin-bottom: 8px;
+        }
+
+        .signature-label {
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Footer */
+        .footer {
+            position: absolute;
+            bottom: 0.4in;
+            left: 0.6in;
+            right: 0.6in;
+            display: flex;
+            justify-content: space-between;
+            font-size: 11px;
+            color: var(--steel-gray);
+            padding-top: 0.15in;
+            border-top: 1px solid var(--light-gray);
+        }
+
+        @media print {
+            body {
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="page">
+        <div class="corner-accent"></div>
+
+        <header class="header">
+            <div class="logo-section">
+                <div class="logo">NAGENTIC<span>AI</span></div>
+                <div class="tagline">Blue-Collar Automation</div>
+            </div>
+            <div class="proposal-meta">
+                <strong>Pilot Proposal</strong>
+                Date: _____________<br>
+                Valid for 30 days
+            </div>
+        </header>
+
+        <section class="title-section">
+            <h1 class="main-title">30-Day Pilot Program</h1>
+            <p class="subtitle">Smart After-Hours Answering for HVAC & Refrigeration</p>
+            <div class="client-name">[Business Name]</div>
+        </section>
+
+        <section class="section">
+            <div class="section-header">
+                <span class="section-number">01</span>
+                <h2 class="section-title">The Challenge</h2>
+            </div>
+            <p class="section-content">
+                You're losing sleep—and revenue—to after-hours calls. Some are real emergencies worth $1,500+. Most aren't. But you can't know which is which without answering, and every missed call is a job for someone else. This pilot will show you exactly what's happening on your phone after 5 PM.
+            </p>
+        </section>
+
+        <section class="section">
+            <div class="section-header">
+                <span class="section-number">02</span>
+                <h2 class="section-title">What's Included</h2>
+            </div>
+            <div class="included-box">
+                <div class="included-grid">
+                    <div class="included-item">
+                        <span class="included-check">✓</span>
+                        <span>Smart answering on your after-hours line (24/7 emergency coverage)</span>
+                    </div>
+                    <div class="included-item">
+                        <span class="included-check">✓</span>
+                        <span>Emergency vs. non-emergency call filtering</span>
+                    </div>
+                    <div class="included-item">
+                        <span class="included-check">✓</span>
+                        <span>Instant SMS alerts for true emergencies</span>
+                    </div>
+                    <div class="included-item">
+                        <span class="included-check">✓</span>
+                        <span>Complete call logs synced to your email or sheet</span>
+                    </div>
+                    <div class="included-item">
+                        <span class="included-check">✓</span>
+                        <span>Custom greeting using your business name</span>
+                    </div>
+                    <div class="included-item">
+                        <span class="included-check">✓</span>
+                        <span>End-of-pilot analysis report (yours to keep)</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-header">
+                <span class="section-number">03</span>
+                <h2 class="section-title">Timeline</h2>
+            </div>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-day">Day 1</div>
+                        <div class="timeline-desc">15-minute setup call. We configure your greeting, emergency keywords, and notification preferences.</div>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-day">Days 2-30</div>
+                        <div class="timeline-desc">System goes live. All after-hours calls are answered, filtered, and logged. You receive SMS alerts for emergencies only.</div>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-day">Day 31</div>
+                        <div class="timeline-desc">We deliver your call analysis report. You decide whether to continue—no pressure, no obligation.</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-header">
+                <span class="section-number">04</span>
+                <h2 class="section-title">What You'll Get at the End</h2>
+            </div>
+            <div class="deliverable-box">
+                <div class="deliverable-title">Your 30-Day Call Analysis Report</div>
+                <div class="deliverable-list">
+                    • Total after-hours calls received<br>
+                    • Breakdown: emergencies vs. general inquiries vs. spam<br>
+                    • Peak call times (when you're getting hit the most)<br>
+                    • Estimated revenue value of emergency calls captured<br>
+                    • Caller patterns and repeat contacts<br>
+                    <em>This report is yours to keep—even if you don't continue.</em>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-header">
+                <span class="section-number">05</span>
+                <h2 class="section-title">Terms</h2>
+            </div>
+            <div class="terms-grid">
+                <div class="term-box">
+                    <div class="term-label">Pilot Cost</div>
+                    <div class="term-value highlight">$0</div>
+                </div>
+                <div class="term-box">
+                    <div class="term-label">Duration</div>
+                    <div class="term-value">30 Days</div>
+                </div>
+                <div class="term-box">
+                    <div class="term-label">Commitment</div>
+                    <div class="term-value">None</div>
+                </div>
+            </div>
+            <p class="section-content" style="margin-top: 15px; padding-left: 0;">
+                <strong>After the pilot:</strong> If you choose to continue, service is $299/month flat. No contracts. Cancel anytime. If you don't continue, you keep the report and we part as friends.
+            </p>
+        </section>
+
+        <section class="signature-section">
+            <div class="signature-block">
+                <div class="signature-line"></div>
+                <div class="signature-label">Business Owner Signature & Date</div>
+            </div>
+            <div class="signature-block">
+                <div class="signature-line"></div>
+                <div class="signature-label">NagenticAI Representative & Date</div>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <span>NagenticAI • Knoxville, TN</span>
+            <span>Blue-Collar Automation</span>
+        </footer>
+    </div>
+</body>
+</html>

@@ -8,7 +8,7 @@
     <!-- SEO Meta Tags -->
     <title>Night Watch by KnoxCalls | After-Hours Dispatch for Knoxville Contractors</title>
     <meta name="description"
-        content="Stop losing high-value emergency jobs to voicemail. Night Watch handles your nights and weekends, filters emergencies from spam, and dispatches your team instantly. Built in Knoxville for HVAC, Plumbing & Refrigeration.">
+        content="Stop losing high-value emergency jobs to voicemail. Night Watch filters real emergencies from spam and dispatches your team instantly via phone. Built in Knoxville for HVAC, Plumbing & Refrigeration.">
     <meta name="keywords"
         content="after hours answering service, HVAC answering service, plumbing answering service, Knoxville contractors, emergency call filtering, contractor answering service Tennessee, after hours dispatcher">
     <meta name="author" content="KnoxCalls">
@@ -35,9 +35,6 @@
         rel="stylesheet">
 
     <script>
-        // ============================================
-        // SITE CONFIGURATION
-        // ============================================
         const SITE_CONFIG = {
             companyName: "KnoxCalls",
             productName: "Night Watch",
@@ -271,11 +268,14 @@
             margin-bottom: 20px;
         }
 
+        /* Fixed Section Number Contrast */
         .section-number {
             font-family: 'Bebas Neue', sans-serif;
             font-size: 64px;
-            color: var(--vols-orange);
-            opacity: 0.25;
+            color: var(--deep-navy);
+            /* Changed from orange */
+            opacity: 0.15;
+            /* Subtle watermark look */
             margin-right: 20px;
             line-height: 1;
         }
@@ -300,6 +300,11 @@
 
         .problem-section .section-title {
             color: white;
+        }
+
+        .problem-section .section-number {
+            color: white;
+            opacity: 0.2;
         }
 
         .problem-section .section-subtitle {
@@ -454,54 +459,62 @@
             color: var(--steel-gray);
         }
 
-        /* Comparison Section */
+        /* UPDATED Comparison Section - Row Based for Mobile Fix */
         .comparison-section {
             background: linear-gradient(180deg, var(--warm-white) 0%, #fff 100%);
         }
 
-        .comparison-table {
+        .compare-rows {
+            background: white;
+            border: 2px solid var(--light-gray);
+        }
+
+        .compare-row {
             display: grid;
             grid-template-columns: 2fr 1fr 1fr;
-            gap: 2px;
-            background: var(--light-gray);
-            border: 2px solid var(--light-gray);
-            overflow: hidden;
+            border-bottom: 1px solid var(--light-gray);
         }
 
-        .comparison-table>div {
-            background: white;
-            padding: 20px 24px;
-            font-size: 16px;
+        .compare-row:last-child {
+            border-bottom: none;
         }
 
-        .comparison-header {
-            background: var(--deep-navy) !important;
+        .compare-header {
+            background: var(--deep-navy);
             color: white;
+            padding: 20px;
             font-family: 'Bebas Neue', sans-serif;
-            font-size: 18px !important;
+            font-size: 20px;
             letter-spacing: 1px;
             text-align: center;
         }
 
-        .comparison-header.highlight {
-            background: var(--vols-orange) !important;
+        .compare-header.highlight {
+            background: var(--vols-orange);
         }
 
-        .comparison-feature {
+        .compare-cell {
+            padding: 20px 24px;
+            display: flex;
+            align-items: center;
+        }
+
+        .compare-feature {
             font-weight: 600;
             color: var(--deep-navy);
+            background: #f8f9fa;
         }
 
-        .comparison-check {
-            text-align: center;
+        .compare-check {
+            justify-content: center;
             color: var(--success-green);
-            font-size: 20px;
+            font-size: 22px;
         }
 
-        .comparison-x {
-            text-align: center;
+        .compare-x {
+            justify-content: center;
             color: #ccc;
-            font-size: 20px;
+            font-size: 22px;
         }
 
         /* Calculator Section */
@@ -512,6 +525,11 @@
 
         .calculator-section .section-title {
             color: white;
+        }
+
+        .calculator-section .section-number {
+            color: white;
+            opacity: 0.2;
         }
 
         .calculator-section .section-subtitle {
@@ -560,6 +578,9 @@
             background: var(--vols-orange);
             padding: 40px;
             text-align: center;
+            /* Fixed padding/sizing for mobile */
+            overflow-wrap: break-word;
+            word-wrap: break-word;
         }
 
         .calc-result-label {
@@ -572,10 +593,10 @@
 
         .calc-result-number {
             font-family: 'Bebas Neue', sans-serif;
-            font-size: 72px;
+            font-size: clamp(48px, 6vw, 72px);
+            /* Responsive font size */
             line-height: 1;
             color: white;
-            /* Visibility fix */
         }
 
         .calc-result-note {
@@ -641,6 +662,7 @@
         .pricing-amount {
             font-family: 'Bebas Neue', sans-serif;
             font-size: 48px;
+            /* Slightly smaller for 'Custom' text */
             color: var(--deep-navy);
         }
 
@@ -694,7 +716,7 @@
             background: var(--vols-orange-dark);
         }
 
-        /* Add-ons */
+        /* Add-ons - PRICE HIDDEN */
         .addons-section {
             margin-top: 80px;
             padding-top: 60px;
@@ -703,7 +725,7 @@
 
         .addons-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 24px;
             margin-top: 40px;
         }
@@ -824,7 +846,7 @@
 
         .waitlist-section .section-number {
             color: white;
-            opacity: 0.25;
+            opacity: 0.2;
         }
 
         .waitlist-content {
@@ -957,21 +979,13 @@
             color: rgba(255, 255, 255, 0.5);
         }
 
-        /* Responsive */
+        /* Responsive Fixes */
         @media (max-width: 900px) {
 
             .steps-grid,
             .story-content,
             .waitlist-content {
                 grid-template-columns: 1fr;
-            }
-
-            .comparison-table {
-                grid-template-columns: 1fr;
-            }
-
-            .comparison-header:first-child {
-                display: none;
             }
 
             .faq-grid {
@@ -992,6 +1006,43 @@
 
             .story-image {
                 order: -1;
+            }
+
+            /* Comparison Table Mobile Fix */
+            .compare-row {
+                grid-template-columns: 1fr;
+                gap: 10px;
+                padding-bottom: 20px;
+                border-bottom: 2px solid var(--light-gray);
+            }
+
+            .compare-header {
+                display: none;
+                /* Hide header row on mobile */
+            }
+
+            .compare-cell {
+                padding: 5px 20px;
+                display: flex;
+                justify-content: space-between;
+                /* Spread out label vs value */
+            }
+
+            .compare-feature {
+                background: var(--deep-navy);
+                color: white;
+                padding: 10px 20px;
+                justify-content: center;
+            }
+
+            /* Add pseudo-labels for context on mobile */
+            .compare-check::before,
+            .compare-x::before {
+                content: attr(data-label);
+                font-size: 14px;
+                color: var(--steel-gray);
+                font-weight: 600;
+                margin-right: auto;
             }
         }
 
@@ -1030,7 +1081,6 @@
                     <button class="btn btn-primary" onclick="scrollToSection('waitlist')">Request Pilot Access</button>
                     <button class="btn btn-secondary" onclick="scrollToSection('demo')">Hear It In Action</button>
                 </div>
-                <!-- [Keep Stats] -->
                 <div class="hero-stats">
                     <div class="stat">
                         <div class="stat-number">$2,000+</div>
@@ -1101,14 +1151,14 @@
                 <div class="step">
                     <div class="step-number">2</div>
                     <h3>Night Watch Handles It</h3>
-                    <p>Answers professionally. Uses your customer data to greet repeat clients by name ("Hi Bob, is the
-                        Trane unit acting up again?"). Filters out the spam.</p>
+                    <p>Answers professionally. Recognizes your repeat customers by name ("Hi Bob, is the Trane unit
+                        acting up again?"). Filters out the spam.</p>
                 </div>
                 <div class="step">
                     <div class="step-number">3</div>
                     <h3>You Get What Matters</h3>
-                    <p>True emergency? You get a call/text immediately. Everything else? Morning summary with full
-                        details. Spam? Blocked and forgotten.</p>
+                    <p>True emergency? You get a priority dispatch call immediately. Everything else? Morning summary
+                        with full details. Spam? Blocked and forgotten.</p>
                 </div>
             </div>
 
@@ -1144,7 +1194,7 @@
                     </div>
                     <div class="feature-item">
                         <span class="feature-check">&#10003;</span>
-                        <span>Instant alerts for true emergencies</span>
+                        <span>Instant dispatch calls for true emergencies</span>
                     </div>
                     <div class="feature-item">
                         <span class="feature-check">&#10003;</span>
@@ -1171,7 +1221,7 @@
         </div>
     </section>
 
-    <!-- Comparison Section -->
+    <!-- Comparison Section (UPDATED) -->
     <section class="section comparison-section">
         <div class="container">
             <div class="section-header">
@@ -1181,34 +1231,50 @@
             <p class="section-subtitle">You've tried them. Or you've heard the horror stories. Here's why Night Watch is
                 different.</p>
 
-            <div class="comparison-table">
-                <div class="comparison-header">&nbsp;</div>
-                <div class="comparison-header highlight">Night Watch</div>
-                <div class="comparison-header">Typical Answering Service</div>
+            <div class="compare-rows">
+                <!-- Header Row -->
+                <div class="compare-row compare-header">
+                    <div></div>
+                    <div class="highlight">Night Watch</div>
+                    <div>Typical Service</div>
+                </div>
 
-                <div class="comparison-feature">Knows HVAC & plumbing lingo</div>
-                <div class="comparison-check">&#10003;</div>
-                <div class="comparison-x">&#10007;</div>
+                <!-- Feature Rows -->
+                <div class="compare-row">
+                    <div class="compare-cell compare-feature">Knows HVAC & plumbing lingo</div>
+                    <div class="compare-cell compare-check" data-label="Night Watch">&#10003;</div>
+                    <div class="compare-cell compare-x" data-label="Typical Service">&#10007;</div>
+                </div>
 
-                <div class="comparison-feature">Filters real emergencies from routine</div>
-                <div class="comparison-check">&#10003;</div>
-                <div class="comparison-x">&#10007;</div>
+                <div class="compare-row">
+                    <div class="compare-cell compare-feature">Filters real emergencies from routine</div>
+                    <div class="compare-cell compare-check" data-label="Night Watch">&#10003;</div>
+                    <div class="compare-cell compare-x" data-label="Typical Service">&#10007;</div>
+                </div>
 
-                <div class="comparison-feature">Flat monthly rate (no per-minute fees)</div>
-                <div class="comparison-check">&#10003;</div>
-                <div class="comparison-x">&#10007;</div>
+                <div class="compare-row">
+                    <div class="compare-cell compare-feature">Flat monthly rate (no per-minute fees)</div>
+                    <div class="compare-cell compare-check" data-label="Night Watch">&#10003;</div>
+                    <div class="compare-cell compare-x" data-label="Typical Service">&#10007;</div>
+                </div>
 
-                <div class="comparison-feature">Wakes you only for real money</div>
-                <div class="comparison-check">&#10003;</div>
-                <div class="comparison-x">&#10007;</div>
+                <div class="compare-row">
+                    <div class="compare-cell compare-feature">Wakes you only for real money</div>
+                    <div class="compare-cell compare-check" data-label="Night Watch">&#10003;</div>
+                    <div class="compare-cell compare-x" data-label="Typical Service">&#10007;</div>
+                </div>
 
-                <div class="comparison-feature">No long-term contracts</div>
-                <div class="comparison-check">&#10003;</div>
-                <div class="comparison-x">&#10007;</div>
+                <div class="compare-row">
+                    <div class="compare-cell compare-feature">No long-term contracts</div>
+                    <div class="compare-cell compare-check" data-label="Night Watch">&#10003;</div>
+                    <div class="compare-cell compare-x" data-label="Typical Service">&#10007;</div>
+                </div>
 
-                <div class="comparison-feature">Setup in under 5 minutes</div>
-                <div class="comparison-check">&#10003;</div>
-                <div class="comparison-x">&#10007;</div>
+                <div class="compare-row">
+                    <div class="compare-cell compare-feature">Setup in under 5 minutes</div>
+                    <div class="compare-cell compare-check" data-label="Night Watch">&#10003;</div>
+                    <div class="compare-cell compare-x" data-label="Typical Service">&#10007;</div>
+                </div>
             </div>
         </div>
     </section>
@@ -1267,7 +1333,7 @@
                     <p class="pricing-desc">For local HVAC, Plumbing & Electrical fleets with 2-15 trucks.</p>
                     <ul class="pricing-features">
                         <li>Unlimited after-hours screening</li>
-                        <li>Instant SMS Dispatch to On-Call Tech</li>
+                        <li>Instant Dispatch Call to On-Call Tech</li>
                         <li>Spam & Robocall Blocking</li>
                         <li>Morning Call Logs</li>
                         <li><strong>Founding Member Pricing (Locked in)</strong></li>
@@ -1289,8 +1355,8 @@
                     </div>
                     <div class="addon-card">
                         <div class="addon-name">The Bulldog</div>
-                        <div class="addon-desc">For true emergencies, Night Watch doesn't stop. Text, call, backup
-                            contacts&mdash;it keeps going until someone responds.</div>
+                        <div class="addon-desc">For true emergencies, Night Watch doesn't stop. It persistently pages
+                            you and your backup contacts until someone acknowledges the job.</div>
                         <div class="addon-availability">Available on Request</div>
                     </div>
                     <div class="addon-card">
@@ -1333,9 +1399,8 @@
                 </div>
                 <div class="faq-item">
                     <h4>What if I don't respond to an emergency alert?</h4>
-                    <p>With the Bulldog add-on, Night Watch keeps trying. Text, then call, then your backup contact. It
-                        doesn't stop until someone acknowledges. Without Bulldog, you get text alerts and can respond on
-                        your schedule.</p>
+                    <p>With the Bulldog add-on, Night Watch keeps trying. It will persist until someone acknowledges.
+                        Without Bulldog, you get a single priority dispatch call and can respond on your schedule.</p>
                 </div>
                 <div class="faq-item">
                     <h4>Can I change when Night Watch is active?</h4>
@@ -1399,16 +1464,21 @@
                 <form class="waitlist-form" action="https://formsubmit.co/info@knoxcalls.com" method="POST">
                     <h4>Request Access</h4>
                     <input type="hidden" name="_subject" value="KnoxCalls Pilot Request">
+                    <input type="hidden" name="_captcha" value="false">
                     <input type="hidden" name="_next" value="https://knoxcalls.com?success=true">
+                    <input type="hidden" name="calculated_loss" id="hidden-calc">
 
                     <div class="form-group">
                         <input type="text" name="name" placeholder="Your Name" required>
                     </div>
                     <div class="form-group">
-                        <input type="text" name="business" placeholder="Business Name" required>
+                        <input type="email" name="email" placeholder="Email Address" required>
                     </div>
                     <div class="form-group">
-                        <input type="tel" name="phone" placeholder="Best Phone Number" required>
+                        <input type="tel" name="phone" placeholder="Phone Number" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="business" placeholder="Business Name" required>
                     </div>
                     <div class="form-group">
                         <textarea name="notes"
@@ -1452,12 +1522,17 @@
 
             const monthlyLoss = Math.round(calls * value * (missRate / 100));
             document.getElementById('calc-result').textContent = '$' + monthlyLoss.toLocaleString();
+            document.getElementById('hidden-calc').value = '$' + monthlyLoss.toLocaleString() + '/month estimated loss';
         }
 
         document.getElementById('calc-calls').addEventListener('input', updateCalculator);
         document.getElementById('calc-value').addEventListener('input', updateCalculator);
         document.getElementById('calc-miss').addEventListener('input', updateCalculator);
         updateCalculator();
+
+        // Update spots counter
+        document.getElementById('spots-remaining').textContent =
+            SITE_CONFIG.pilot.spotsTotal - SITE_CONFIG.pilot.spotsClaimed;
 
         // Form success
         const urlParams = new URLSearchParams(window.location.search);

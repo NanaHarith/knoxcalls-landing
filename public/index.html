@@ -1589,6 +1589,19 @@
                         <textarea name="notes"
                             placeholder="Current after-hours setup? (e.g. Voicemail, Ruby, Answering Service)"></textarea>
                     </div>
+                    <div class="form-group checkbox-group"
+                        style="display: flex; gap: 12px; align-items: start; margin-top: 24px;">
+                        <input type="checkbox" name="opt-in" id="sms-opt-in" required
+                            style="width: 20px; height: 20px; margin-top: 4px;">
+                        <label for="sms-opt-in" style="font-size: 14px; color: var(--steel-gray); line-height: 1.4;">
+                            By checking this box, I agree to receive SMS text messages from KnoxCalls Night Watch
+                            regarding my pilot application and service alerts. Message & data rates may apply. Reply
+                            STOP to opt out. View our <a href="/privacy-policy.html" target="_blank"
+                                style="color: var(--vols-orange);">Privacy Policy</a> and <a
+                                href="/terms-of-service.html" target="_blank" style="color: var(--vols-orange);">Terms
+                                of Service</a>.
+                        </label>
+                    </div>
                     <button type="submit">Talk to the Team</button>
                 </form>
             </div>
@@ -1609,6 +1622,12 @@
             </div>
             <div class="footer-bottom">
                 <span>&copy; 2025 KnoxCalls. All rights reserved.</span>
+                <span style="display: flex; gap: 20px;">
+                    <a href="/privacy-policy.html" style="color: rgba(255,255,255,0.5); text-decoration: none;">Privacy
+                        Policy</a>
+                    <a href="/terms-of-service.html" style="color: rgba(255,255,255,0.5); text-decoration: none;">Terms
+                        of Service</a>
+                </span>
                 <span>Go Vols.</span>
             </div>
         </div>

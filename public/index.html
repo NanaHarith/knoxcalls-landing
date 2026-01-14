@@ -1155,7 +1155,7 @@
         <div class="container nav-content">
             <a href="/" class="nav-logo">
                 <img src="LogoImage.jpg" alt="KnoxCalls">
-                Knox<span style="color: var(--vols-orange)">Calls</span>
+                <span>Knox<span style="color: var(--vols-orange)">Calls</span></span>
             </a>
             <div class="nav-links">
                 <a href="/" class="nav-link">Home</a>
@@ -1423,7 +1423,7 @@
     <section class="section" id="pricing">
         <div class="container">
             <div class="section-header">
-                <span class="section-number">05</span>
+                <span class="section-number" style="color: var(--vols-orange);">05</span>
                 <h2 class="section-title">Pilot Program Access</h2>
             </div>
             <p class="section-subtitle">We don't charge per-minute fees. We don't have hidden surcharges. We offer a
@@ -1528,20 +1528,17 @@
     </section>
 
     <!-- Local Story Section -->
-    <section class="section story-section">
+    <section class="section story-section" style="text-align: center;">
         <div class="container">
-            <div class="story-content">
+            <div class="story-content" style="display: block; max-width: 800px; margin: 0 auto;">
                 <div class="story-text">
-                    <h2>Built in <span>Knoxville</span>,<br>for Knoxville</h2>
+                    <h2>Built in <span style="color: var(--vols-orange)">Knoxville</span>,<br>for Knoxville</h2>
                     <p>KnoxCalls started with a simple observation: local contractors were losing sleep and losing jobs
                         to missed after-hours calls. The big answering services didn't get the trades. And voicemail was
                         costing real money.</p>
                     <p>So we built Night Watch&mdash;an after-hours crew that actually understands HVAC, plumbing, and
                         refrigeration. That knows what's urgent and what's not. That works as hard as you do.</p>
                     <p>We're based here. We answer to you. And we're not going anywhere.</p>
-                </div>
-                <div class="story-image">
-                    <img src="LogoImage.jpg" alt="KnoxCalls">
                 </div>
             </div>
         </div>
@@ -1613,9 +1610,11 @@
     <footer>
         <div class="container">
             <div class="footer-content">
-                <div class="footer-logo">
-                    <img src="LogoLetters.jpg" alt="KnoxCalls">
-                </div>
+                <a href="/" class="footer-logo"
+                    style="text-decoration: none; display: flex; align-items: center; gap: 10px; color: white; font-family: 'Bebas Neue', sans-serif; font-size: 24px;">
+                    <img src="LogoImage.jpg" alt="KnoxCalls" style="height: 40px;">
+                    <span>Knox<span style="color: var(--vols-orange)">Calls</span></span>
+                </a>
                 <div class="footer-tagline">
                     Night Watch&mdash;Your After-Hours Crew<br>
                     Built in Knoxville for East Tennessee contractors

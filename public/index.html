@@ -8,7 +8,7 @@
     <!-- SEO Meta Tags -->
     <title>Night Watch by KnoxCalls | After-Hours Dispatch for Knoxville Contractors</title>
     <meta name="description"
-        content="Stop losing high-value emergency jobs to voicemail. Night Watch filters real emergencies from spam and dispatches your team instantly. Built in Knoxville for HVAC, plumbing & refrigeration contractors.">
+        content="Stop losing high-value emergency jobs to voicemail. Night Watch handles your nights and weekends, filters emergencies from spam, and dispatches your team instantly. Built in Knoxville for HVAC, Plumbing & Refrigeration.">
     <meta name="keywords"
         content="after hours answering service, HVAC answering service, plumbing answering service, Knoxville contractors, emergency call filtering, contractor answering service Tennessee, after hours dispatcher">
     <meta name="author" content="KnoxCalls">
@@ -18,7 +18,7 @@
     <meta property="og:type" content="website">
     <meta property="og:title" content="Night Watch | Your After-Hours Crew for Contractors">
     <meta property="og:description"
-        content="Answers your calls, filters emergencies, only wakes you for real money. Built in Knoxville.">
+        content="We handle the nights. You get the sleep. Only wakes you for real money. Built in Knoxville.">
     <meta property="og:url" content="https://knoxcalls.com">
     <meta property="og:image" content="https://knoxcalls.com/LogoLetters.jpg">
 
@@ -599,6 +599,10 @@
             position: relative;
             display: flex;
             flex-direction: column;
+            grid-column: 1 / -1;
+            /* Make single card full width on mobile/tablet, centered on desktop */
+            max-width: 600px;
+            margin: 0 auto;
         }
 
         .pricing-card.featured {
@@ -621,21 +625,22 @@
 
         .pricing-tier {
             font-family: 'Bebas Neue', sans-serif;
-            font-size: 24px;
+            font-size: 28px;
             color: var(--steel-gray);
             margin-bottom: 8px;
+            text-align: center;
         }
 
         .pricing-price {
             display: flex;
             align-items: baseline;
+            justify-content: center;
             margin-bottom: 20px;
         }
 
         .pricing-amount {
             font-family: 'Bebas Neue', sans-serif;
             font-size: 48px;
-            /* Slightly smaller for 'Custom' text */
             color: var(--deep-navy);
         }
 
@@ -645,6 +650,7 @@
             padding-bottom: 24px;
             border-bottom: 1px solid var(--light-gray);
             font-size: 16px;
+            text-align: center;
         }
 
         .pricing-features {
@@ -688,15 +694,7 @@
             background: var(--vols-orange-dark);
         }
 
-        .pricing-contact-btn.waitlist {
-            background: var(--deep-navy);
-        }
-
-        .pricing-contact-btn.waitlist:hover {
-            background: #1a2d4a;
-        }
-
-        /* Add-ons - PRICE HIDDEN */
+        /* Add-ons */
         .addons-section {
             margin-top: 80px;
             padding-top: 60px;
@@ -705,7 +703,7 @@
 
         .addons-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 24px;
             margin-top: 40px;
         }
@@ -715,6 +713,8 @@
             border: 2px solid var(--light-gray);
             padding: 32px;
             transition: all 0.2s;
+            display: flex;
+            flex-direction: column;
         }
 
         .addon-card:hover {
@@ -735,6 +735,7 @@
             font-size: 15px;
             margin-bottom: 16px;
             line-height: 1.5;
+            flex-grow: 1;
         }
 
         .addon-availability {
@@ -1023,12 +1024,13 @@
                 <div class="hero-badge">Accepting Pilot Partners</div>
                 <h1>Your Phone Rings at 2 AM.<br><span class="highlight">We Filter The Noise.</span></h1>
                 <p class="hero-subtitle">Night Watch is the after-hours safety net for Knoxville contractors. We filter
-                    out the spam and tire-kickers, and instant-dispatch the high-value emergencies directly to your
-                    tech.</p>
+                    out the spam and tire-kickers, and instant-dispatch high-value emergencies directly to your tech.
+                    <br><br><strong>Nights & Weekends Coverage. Daytime Overflow Available.</strong></p>
                 <div class="hero-cta">
                     <button class="btn btn-primary" onclick="scrollToSection('waitlist')">Request Pilot Access</button>
                     <button class="btn btn-secondary" onclick="scrollToSection('demo')">Hear It In Action</button>
                 </div>
+                <!-- [Keep Stats] -->
                 <div class="hero-stats">
                     <div class="stat">
                         <div class="stat-number">$2,000+</div>
@@ -1099,14 +1101,14 @@
                 <div class="step">
                     <div class="step-number">2</div>
                     <h3>Night Watch Handles It</h3>
-                    <p>Answers professionally with your business name. Asks the right questions. Knows what's urgent and
-                        what can wait. Filters out the spam and tire-kickers.</p>
+                    <p>Answers professionally. Uses your customer data to greet repeat clients by name ("Hi Bob, is the
+                        Trane unit acting up again?"). Filters out the spam.</p>
                 </div>
                 <div class="step">
                     <div class="step-number">3</div>
                     <h3>You Get What Matters</h3>
-                    <p>True emergency? You get a call immediately. Everything else? Morning summary with full details.
-                        Spam? Blocked and forgotten.</p>
+                    <p>True emergency? You get a call/text immediately. Everything else? Morning summary with full
+                        details. Spam? Blocked and forgotten.</p>
                 </div>
             </div>
 
@@ -1122,9 +1124,8 @@
                         Your browser doesn't support audio playback.
                     </audio>
                     <div class="demo-context">
-                        <p><strong>The situation:</strong> 11:47 PM call from a property manager. Commercial unit down,
-                            guests checking in tomorrow. Night Watch identifies it as a true emergency and dispatches
-                            immediately.</p>
+                        <p><strong>The situation:</strong> 11:47 PM call. Commercial unit down, guests checking in
+                            tomorrow. Night Watch identifies it as a true emergency and dispatches immediately.</p>
                     </div>
                 </div>
             </div>
@@ -1135,7 +1136,7 @@
                 <div class="features-grid">
                     <div class="feature-item">
                         <span class="feature-check">&#10003;</span>
-                        <span>24/7 after-hours call answering</span>
+                        <span>After-hours & Weekend Coverage</span>
                     </div>
                     <div class="feature-item">
                         <span class="feature-check">&#10003;</span>
@@ -1147,7 +1148,7 @@
                     </div>
                     <div class="feature-item">
                         <span class="feature-check">&#10003;</span>
-                        <span>Custom greeting with your business name</span>
+                        <span>Greets repeat callers by name & equipment</span>
                     </div>
                     <div class="feature-item">
                         <span class="feature-check">&#10003;</span>
@@ -1273,21 +1274,6 @@
                     </ul>
                     <a href="#waitlist" class="pricing-contact-btn">Get A Quote</a>
                 </div>
-                <div class="pricing-card">
-                    <div class="pricing-tier">Enterprise / MSP</div>
-                    <div class="pricing-price">
-                        <span class="pricing-amount">Waitlist</span>
-                    </div>
-                    <p class="pricing-desc">For Property Management portfolios (200+ units) or IT MSPs.</p>
-                    <ul class="pricing-features">
-                        <li>Multi-property routing</li>
-                        <li>Integrations (AppFolio/Buildium via Email)</li>
-                        <li>Custom escalation trees</li>
-                        <li>Dedicated account manager</li>
-                        <li>Priority onboarding</li>
-                    </ul>
-                    <a href="#waitlist" class="pricing-contact-btn waitlist">Join Waitlist</a>
-                </div>
             </div>
 
             <!-- Add-ons -->
@@ -1298,7 +1284,7 @@
                     <div class="addon-card">
                         <div class="addon-name">The Memory</div>
                         <div class="addon-desc">Night Watch remembers your customers. Equipment history, service
-                            contracts, preferences. Greets repeat callers by name.</div>
+                            contracts, even their dog's name. Greets repeat callers like an old friend.</div>
                         <div class="addon-availability">Available on Request</div>
                     </div>
                     <div class="addon-card">
@@ -1311,6 +1297,12 @@
                         <div class="addon-name">The Vault</div>
                         <div class="addon-desc">90-day call recordings with searchable transcripts. Great for
                             he-said-she-said, training new hires, or proving your case.</div>
+                        <div class="addon-availability">Available on Request</div>
+                    </div>
+                    <div class="addon-card">
+                        <div class="addon-name">Daylight Protocol</div>
+                        <div class="addon-desc">Daytime overflow coverage. When your office lines are tied up, Night
+                            Watch catches the spillover so you never hear a busy signal.</div>
                         <div class="addon-availability">Available on Request</div>
                     </div>
                 </div>
@@ -1330,8 +1322,8 @@
                 <div class="faq-item">
                     <h4>How does Night Watch know what's an emergency?</h4>
                     <p>It asks the right questions&mdash;what's happening, how urgent, what equipment is involved. A
-                        flooded basement at a hotel gets escalated. A "just checking prices" call gets logged for
-                        morning. You can customize the rules.</p>
+                        flooded basement gets escalated. A "just checking prices" call gets logged for morning. You
+                        customize the rules.</p>
                 </div>
                 <div class="faq-item">
                     <h4>Will callers know they're not talking to a person?</h4>
@@ -1358,8 +1350,7 @@
                 <div class="faq-item">
                     <h4>What's the catch with the founding member rate?</h4>
                     <p>No catch. We're building this with real contractors and want feedback. In exchange, you get
-                        half-price for life. When the pilot spots fill up, the rate goes to standard pricing. If it's
-                        not for you, cancel anytime.</p>
+                        preferred pricing for life. If it's not for you, cancel anytime.</p>
                 </div>
             </div>
         </div>
@@ -1396,12 +1387,8 @@
             <div class="waitlist-content">
                 <div class="waitlist-info">
                     <h3>Knoxville-First Pilot</h3>
-                    <p>We are currently onboarding a limited number of partners in the 865 area code to ensure quality.
-                        Submit your info to discuss pricing and reserve your setup slot.</p>
-                    <div class="spots-counter">
-                        <span class="number" id="spots-remaining">3</span>
-                        <span>founding spots left</span>
-                    </div>
+                    <p>We are currently onboarding a limited number of HVAC, plumbing, and refrigeration partners in the
+                        865 area code. Submit your info to discuss pricing and reserve your setup slot.</p>
 
                     <div class="guarantee-box">
                         <p><strong>The "Sleep Tight" Guarantee.</strong> If Night Watch misses a genuine emergency
@@ -1412,21 +1399,16 @@
                 <form class="waitlist-form" action="https://formsubmit.co/info@knoxcalls.com" method="POST">
                     <h4>Request Access</h4>
                     <input type="hidden" name="_subject" value="KnoxCalls Pilot Request">
-                    <input type="hidden" name="_captcha" value="false">
                     <input type="hidden" name="_next" value="https://knoxcalls.com?success=true">
-                    <input type="hidden" name="calculated_loss" id="hidden-calc">
 
                     <div class="form-group">
                         <input type="text" name="name" placeholder="Your Name" required>
                     </div>
                     <div class="form-group">
-                        <input type="email" name="email" placeholder="Email Address" required>
-                    </div>
-                    <div class="form-group">
-                        <input type="tel" name="phone" placeholder="Phone Number" required>
-                    </div>
-                    <div class="form-group">
                         <input type="text" name="business" placeholder="Business Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="tel" name="phone" placeholder="Best Phone Number" required>
                     </div>
                     <div class="form-group">
                         <textarea name="notes"
@@ -1470,17 +1452,12 @@
 
             const monthlyLoss = Math.round(calls * value * (missRate / 100));
             document.getElementById('calc-result').textContent = '$' + monthlyLoss.toLocaleString();
-            document.getElementById('hidden-calc').value = '$' + monthlyLoss.toLocaleString() + '/month estimated loss';
         }
 
         document.getElementById('calc-calls').addEventListener('input', updateCalculator);
         document.getElementById('calc-value').addEventListener('input', updateCalculator);
         document.getElementById('calc-miss').addEventListener('input', updateCalculator);
         updateCalculator();
-
-        // Update spots counter
-        document.getElementById('spots-remaining').textContent =
-            SITE_CONFIG.pilot.spotsTotal - SITE_CONFIG.pilot.spotsClaimed;
 
         // Form success
         const urlParams = new URLSearchParams(window.location.search);

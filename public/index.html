@@ -268,15 +268,16 @@
             margin-bottom: 20px;
         }
 
-        /* Fixed Section Number Contrast */
+        /* --- FIXED NUMBER CONTRAST --- */
+        /* Default State (Light Backgrounds) */
         .section-number {
             font-family: 'Bebas Neue', sans-serif;
             font-size: 64px;
             color: var(--deep-navy);
-            /* Changed from orange */
-            opacity: 0.15;
-            /* Subtle watermark look */
-            margin-right: 20px;
+            /* Solid Navy for contrast */
+            opacity: 1;
+            /* Removed transparency/watermark effect */
+            margin-right: 24px;
             line-height: 1;
         }
 
@@ -292,7 +293,7 @@
             margin-bottom: 50px;
         }
 
-        /* Problem Section */
+        /* Dark Background Section Overrides */
         .problem-section {
             background: var(--deep-navy);
             color: white;
@@ -303,8 +304,9 @@
         }
 
         .problem-section .section-number {
-            color: white;
-            opacity: 0.2;
+            color: var(--vols-orange);
+            /* Orange pops against Navy */
+            opacity: 1;
         }
 
         .problem-section .section-subtitle {
@@ -459,7 +461,7 @@
             color: var(--steel-gray);
         }
 
-        /* UPDATED Comparison Section - Row Based for Mobile Fix */
+        /* Comparison Section */
         .comparison-section {
             background: linear-gradient(180deg, var(--warm-white) 0%, #fff 100%);
         }
@@ -528,8 +530,9 @@
         }
 
         .calculator-section .section-number {
-            color: white;
-            opacity: 0.2;
+            color: var(--vols-orange);
+            /* Orange pops against Navy */
+            opacity: 1;
         }
 
         .calculator-section .section-subtitle {
@@ -578,7 +581,6 @@
             background: var(--vols-orange);
             padding: 40px;
             text-align: center;
-            /* Fixed padding/sizing for mobile */
             overflow-wrap: break-word;
             word-wrap: break-word;
         }
@@ -594,7 +596,6 @@
         .calc-result-number {
             font-family: 'Bebas Neue', sans-serif;
             font-size: clamp(48px, 6vw, 72px);
-            /* Responsive font size */
             line-height: 1;
             color: white;
         }
@@ -605,7 +606,7 @@
             margin-top: 8px;
         }
 
-        /* Pricing Section - HIDDEN PRICES */
+        /* Pricing Section */
         .pricing-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -621,7 +622,6 @@
             display: flex;
             flex-direction: column;
             grid-column: 1 / -1;
-            /* Make single card full width on mobile/tablet, centered on desktop */
             max-width: 600px;
             margin: 0 auto;
         }
@@ -662,7 +662,6 @@
         .pricing-amount {
             font-family: 'Bebas Neue', sans-serif;
             font-size: 48px;
-            /* Slightly smaller for 'Custom' text */
             color: var(--deep-navy);
         }
 
@@ -716,7 +715,7 @@
             background: var(--vols-orange-dark);
         }
 
-        /* Add-ons - PRICE HIDDEN */
+        /* Add-ons */
         .addons-section {
             margin-top: 80px;
             padding-top: 60px;
@@ -725,7 +724,7 @@
 
         .addons-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 24px;
             margin-top: 40px;
         }
@@ -845,8 +844,9 @@
         }
 
         .waitlist-section .section-number {
-            color: white;
-            opacity: 0.2;
+            color: var(--deep-navy);
+            /* High contrast against Orange */
+            opacity: 1;
         }
 
         .waitlist-content {
@@ -1529,10 +1529,6 @@
         document.getElementById('calc-value').addEventListener('input', updateCalculator);
         document.getElementById('calc-miss').addEventListener('input', updateCalculator);
         updateCalculator();
-
-        // Update spots counter
-        document.getElementById('spots-remaining').textContent =
-            SITE_CONFIG.pilot.spotsTotal - SITE_CONFIG.pilot.spotsClaimed;
 
         // Form success
         const urlParams = new URLSearchParams(window.location.search);

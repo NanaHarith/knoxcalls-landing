@@ -126,12 +126,71 @@
             font-size: 16px;
             letter-spacing: 1px;
             cursor: pointer;
+            text-decoration: none;
             transition: all 0.2s;
         }
 
         .nav-cta:hover {
             background: var(--vols-orange-dark);
             transform: translateY(-2px);
+        }
+
+        /* Nav Links & Dropdown */
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 32px;
+        }
+
+        .nav-link {
+            color: white;
+            text-decoration: none;
+            font-family: 'Source Sans 3', sans-serif;
+            font-weight: 600;
+            font-size: 16px;
+            transition: color 0.2s;
+            cursor: pointer;
+        }
+
+        .nav-link:hover {
+            color: var(--vols-orange);
+        }
+
+        .nav-dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: var(--deep-navy);
+            min-width: 160px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            z-index: 1001;
+            padding: 8px 0;
+            border-top: 2px solid var(--vols-orange);
+        }
+
+        .nav-dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown-content a {
+            color: white;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            font-family: 'Source Sans 3', sans-serif;
+            font-size: 15px;
+        }
+
+        .dropdown-content a:hover {
+            background-color: rgba(255, 130, 0, 0.1);
+            color: var(--vols-orange);
         }
 
         /* Hero Section */
@@ -981,6 +1040,39 @@
 
         /* Responsive Fixes */
         @media (max-width: 900px) {
+            .nav-content {
+                flex-direction: column;
+                padding: 16px 24px;
+            }
+
+            .nav-links {
+                flex-direction: column;
+                gap: 16px;
+                margin: 16px 0;
+                width: 100%;
+                text-align: center;
+            }
+
+            .nav-cta {
+                width: 100%;
+                text-align: center;
+            }
+
+            .nav-dropdown:hover .dropdown-content {
+                position: static;
+                transform: none;
+                background: transparent;
+                box-shadow: none;
+                text-align: center;
+                border-top: none;
+                padding-top: 0;
+            }
+
+            .dropdown-content a {
+                padding: 8px;
+                font-size: 14px;
+                opacity: 0.8;
+            }
 
             .steps-grid,
             .story-content,
@@ -1061,10 +1153,22 @@
     <!-- Navigation -->
     <nav>
         <div class="container nav-content">
-            <a href="#" class="nav-logo">
+            <a href="/" class="nav-logo">
                 <img src="LogoLetters.jpg" alt="KnoxCalls">
             </a>
-            <button class="nav-cta" onclick="scrollToSection('waitlist')">Get a Quote</button>
+            <div class="nav-links">
+                <a href="/" class="nav-link">Home</a>
+                <a href="/about.html" class="nav-link">About</a>
+                <div class="nav-dropdown">
+                    <span class="nav-link dropdown-trigger">Who We Serve</span>
+                    <div class="dropdown-content">
+                        <a href="/hvac-answering-service.html">HVAC</a>
+                        <a href="/plumber-answering-service.html">Plumbing</a>
+                    </div>
+                </div>
+            </div>
+            <a href="https://nightwatch.knoxcalls.com" class="nav-cta" target="_blank" rel="noopener">Contractor
+                Login</a>
         </div>
     </nav>
 
@@ -1076,7 +1180,8 @@
                 <h1>Your Phone Rings at 2 AM.<br><span class="highlight">We Filter The Noise.</span></h1>
                 <p class="hero-subtitle">Night Watch is the after-hours safety net for Knoxville contractors. We filter
                     out the spam and tire-kickers, and instant-dispatch high-value emergencies directly to your tech.
-                    <br><br><strong>Nights & Weekends Coverage. Daytime Overflow Available.</strong></p>
+                    <br><br><strong>Nights & Weekends Coverage. Daytime Overflow Available.</strong>
+                </p>
                 <div class="hero-cta">
                     <button class="btn btn-primary" onclick="scrollToSection('waitlist')">Request Pilot Access</button>
                     <button class="btn btn-secondary" onclick="scrollToSection('demo')">Hear It In Action</button>

@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO Meta Tags -->
+    <title>HVAC Answering Service Knoxville | Night Watch Dispatch</title>
+    <meta name="description"
+        content="The best after-hours answering service for Knoxville HVAC contractors. We filter spam and dispatch true emergencies like compressor failures and frozen coils.">
+    <meta name="keywords"
+        content="HVAC answering service Knoxville, AC dispatch, heating emergency call center, HVAC after hours, contractor answering service Tennessee">
+    <meta name="robots" content="index, follow">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/jpeg" href="LogoImage.jpg">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Source+Sans+3:wght@400;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Reusing Main Styles from Index (In production we'd move this to a css file) -->
+    <style>
+        :root {
+            --vols-orange: #FF8200;
+            --vols-orange-dark: #e67300;
+            --deep-navy: #0a1628;
+            --warm-white: #faf9f7;
+            --steel-gray: #4a5568;
+            --light-gray: #e8e6e3;
+            --success-green: #2d8a5f;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Source Sans 3', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--warm-white);
+            color: var(--deep-navy);
+            line-height: 1.7;
+        }
+
+        h1,
+        h2,
+        h3 {
+            font-family: 'Bebas Neue', Impact, sans-serif;
+            letter-spacing: 1px;
+            line-height: 1.2;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(10, 22, 40, 0.97);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 12px 0;
+        }
+
+        .nav-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            color: white;
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 24px;
+        }
+
+        .nav-logo img {
+            height: 40px;
+            width: auto;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 32px;
+        }
+
+        .nav-link {
+            color: white;
+            text-decoration: none;
+            font-family: 'Source Sans 3', sans-serif;
+            font-weight: 600;
+            font-size: 16px;
+            transition: color 0.2s;
+            cursor: pointer;
+        }
+
+        .nav-link:hover {
+            color: var(--vols-orange);
+        }
+
+        .nav-dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: var(--deep-navy);
+            min-width: 160px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            z-index: 1001;
+            padding: 8px 0;
+            border-top: 2px solid var(--vols-orange);
+        }
+
+        .nav-dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown-content a {
+            color: white;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            background-color: rgba(255, 130, 0, 0.1);
+            color: var(--vols-orange);
+        }
+
+        .nav-cta {
+            background: var(--vols-orange);
+            color: white;
+            padding: 12px 28px;
+            border: none;
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 16px;
+            letter-spacing: 1px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.2s;
+        }
+
+        .nav-cta:hover {
+            background: var(--vols-orange-dark);
+            transform: translateY(-2px);
+        }
+
+        /* Hero */
+        .industry-hero {
+            background: var(--deep-navy);
+            color: white;
+            padding: 160px 0 100px;
+            text-align: center;
+        }
+
+        .industry-hero h1 {
+            font-size: clamp(42px, 6vw, 72px);
+            margin-bottom: 24px;
+        }
+
+        .industry-hero h1 .highlight {
+            color: var(--vols-orange);
+        }
+
+        /* Content */
+        .section {
+            padding: 80px 0;
+        }
+
+        .pain-points {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 32px;
+            margin-top: 40px;
+        }
+
+        .pain-card {
+            background: white;
+            padding: 32px;
+            border: 2px solid var(--light-gray);
+        }
+
+        .pain-card h3 {
+            font-size: 24px;
+            color: var(--deep-navy);
+            margin-bottom: 12px;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: var(--vols-orange);
+            color: white;
+            text-align: center;
+            padding: 80px 0;
+        }
+
+        .cta-section h2 {
+            font-size: 48px;
+            margin-bottom: 24px;
+        }
+
+        .btn-white {
+            background: white;
+            color: var(--vols-orange);
+            padding: 16px 40px;
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 20px;
+            text-decoration: none;
+            display: inline-block;
+            transition: transform 0.2s;
+        }
+
+        .btn-white:hover {
+            transform: scale(1.05);
+        }
+
+        footer {
+            background: var(--deep-navy);
+            color: white;
+            text-align: center;
+            padding: 60px 0;
+        }
+
+        @media (max-width: 900px) {
+            .nav-content {
+                flex-direction: column;
+                padding: 16px 24px;
+            }
+
+            .nav-links {
+                flex-direction: column;
+                gap: 16px;
+                margin: 16px 0;
+                width: 100%;
+                text-align: center;
+            }
+
+            .nav-cta {
+                width: 100%;
+                text-align: center;
+            }
+
+            .nav-dropdown:hover .dropdown-content {
+                position: static;
+                transform: none;
+                background: transparent;
+                box-shadow: none;
+                text-align: center;
+                border-top: none;
+                padding-top: 0;
+            }
+
+            .dropdown-content a {
+                padding: 8px;
+                font-size: 14px;
+                opacity: 0.8;
+            }
+
+            .industry-hero h1 {
+                font-size: 42px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <div class="container nav-content">
+            <a href="/" class="nav-logo">
+                <img src="LogoLetters.jpg" alt="KnoxCalls">
+            </a>
+            <div class="nav-links">
+                <a href="/" class="nav-link">Home</a>
+                <a href="/about.html" class="nav-link">About</a>
+                <div class="nav-dropdown">
+                    <span class="nav-link dropdown-trigger">Who We Serve</span>
+                    <div class="dropdown-content">
+                        <a href="/hvac-answering-service.html">HVAC</a>
+                        <a href="/plumber-answering-service.html">Plumbing</a>
+                    </div>
+                </div>
+            </div>
+            <a href="https://nightwatch.knoxcalls.com" class="nav-cta" target="_blank" rel="noopener">Contractor
+                Login</a>
+        </div>
+    </nav>
+
+    <header class="industry-hero">
+        <div class="container">
+            <h1>HVAC Dispatch <span class="highlight">Done Right</span></h1>
+            <p style="font-size: 20px; max-width: 650px; margin: 0 auto; color: rgba(255,255,255,0.8);">
+                Stop waking up for "filter change" calls. We only patch through the real money: No A/C, Frozen Coils,
+                and Commercial Emergencies.
+            </p>
+        </div>
+    </header>
+
+    <section class="section">
+        <div class="container">
+            <h2 style="font-size: 36px; text-align: center; margin-bottom: 40px; color: var(--deep-navy);">Why Generic
+                Answering Services Fail HVAC</h2>
+            <div class="pain-points">
+                <div class="pain-card">
+                    <h3>They Don't Know Systems</h3>
+                    <p>Generic agents think a "humidifier not working" is an emergency. We know it can wait until
+                        Monday.</p>
+                </div>
+                <div class="pain-card">
+                    <h3>They Misclassify Leads</h3>
+                    <p>Is it a $5,000 install opportunity or a $89 tire kicker? We ask the right technical questions to
+                        find out.</p>
+                </div>
+                <div class="pain-card">
+                    <h3>They Charge for Spam</h3>
+                    <p>You shouldn't pay per minute for a robocall. Night Watch filters the junk before it ever reaches
+                        your bill.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="container">
+            <h2>Get Your Nights Back</h2>
+            <p style="font-size: 20px; margin-bottom: 32px;">Join the pilot program for Knoxville HVAC pros.</p>
+            <a href="/" class="btn-white">See Pricing</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 KnoxCalls Night Watch. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Structured Data for SEO -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "serviceType": "HVAC Answering Service",
+        "provider": {
+            "@type": "LocalBusiness",
+            "name": "KnoxCalls Night Watch",
+            "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "Knoxville",
+                "addressRegion": "TN"
+            }
+        },
+        "areaServed": {
+            "@type": "City",
+            "name": "Knoxville"
+        },
+        "description": "After-hours answering service specifically for HVAC contractors in Knoxville. Filters spam and dispatches true emergencies like compressor failures."
+    }
+    </script>
+</body>
+
+</html>

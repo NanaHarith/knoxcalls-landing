@@ -1,14 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NagenticAI - Pilot Program Proposal</title>
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+    <title>Night Watch by KnoxCalls - Pilot Program Proposal</title>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Source+Sans+3:wght@400;600;700&display=swap"
+        rel="stylesheet">
     <style>
         :root {
-            --deep-blue: #0a1628;
-            --electric-orange: #ff6b35;
+            --vols-orange: #FF8200;
+            --vols-orange-dark: #e67300;
+            --deep-navy: #0a1628;
             --warm-white: #faf9f7;
             --steel-gray: #4a5568;
             --light-gray: #e8e6e3;
@@ -29,7 +32,7 @@
         body {
             font-family: 'Source Sans 3', sans-serif;
             background: #f0efed;
-            color: var(--deep-blue);
+            color: var(--deep-navy);
         }
 
         .page {
@@ -48,7 +51,7 @@
             right: 0;
             width: 2in;
             height: 2in;
-            background: linear-gradient(135deg, transparent 50%, var(--electric-orange) 50%);
+            background: linear-gradient(135deg, transparent 50%, var(--vols-orange) 50%);
             opacity: 0.1;
         }
 
@@ -64,10 +67,11 @@
             font-family: 'Bebas Neue', sans-serif;
             font-size: 28px;
             letter-spacing: 2px;
+            color: var(--deep-navy);
         }
 
         .logo span {
-            color: var(--electric-orange);
+            color: var(--vols-orange);
         }
 
         .tagline {
@@ -89,7 +93,7 @@
             font-family: 'Bebas Neue', sans-serif;
             font-size: 14px;
             letter-spacing: 2px;
-            color: var(--deep-blue);
+            color: var(--deep-navy);
             margin-bottom: 4px;
         }
 
@@ -98,14 +102,14 @@
             text-align: center;
             margin-bottom: 0.5in;
             padding: 0.4in 0;
-            border-top: 2px solid var(--deep-blue);
-            border-bottom: 2px solid var(--deep-blue);
+            border-top: 2px solid var(--deep-navy);
+            border-bottom: 2px solid var(--deep-navy);
         }
 
         .main-title {
             font-family: 'Bebas Neue', sans-serif;
             font-size: 48px;
-            color: var(--deep-blue);
+            color: var(--deep-navy);
             margin-bottom: 8px;
         }
 
@@ -117,7 +121,7 @@
         .client-name {
             font-family: 'Bebas Neue', sans-serif;
             font-size: 24px;
-            color: var(--electric-orange);
+            color: var(--vols-orange);
             margin-top: 15px;
             padding: 10px 30px;
             border: 2px dashed var(--light-gray);
@@ -138,7 +142,7 @@
         .section-number {
             font-family: 'Bebas Neue', sans-serif;
             font-size: 32px;
-            color: var(--electric-orange);
+            color: var(--vols-orange);
             margin-right: 12px;
             line-height: 1;
         }
@@ -147,7 +151,7 @@
             font-family: 'Bebas Neue', sans-serif;
             font-size: 20px;
             letter-spacing: 1px;
-            color: var(--deep-blue);
+            color: var(--deep-navy);
         }
 
         .section-content {
@@ -159,7 +163,7 @@
 
         /* What's Included Box */
         .included-box {
-            background: var(--deep-blue);
+            background: var(--deep-navy);
             color: white;
             padding: 0.3in;
             margin-left: 44px;
@@ -179,7 +183,7 @@
         }
 
         .included-check {
-            color: var(--electric-orange);
+            color: var(--vols-orange);
             font-weight: bold;
             font-size: 16px;
             flex-shrink: 0;
@@ -211,7 +215,7 @@
         .timeline-dot {
             width: 18px;
             height: 18px;
-            background: var(--electric-orange);
+            background: var(--vols-orange);
             border-radius: 50%;
             flex-shrink: 0;
             margin-right: 15px;
@@ -226,7 +230,7 @@
         .timeline-day {
             font-family: 'Bebas Neue', sans-serif;
             font-size: 14px;
-            color: var(--electric-orange);
+            color: var(--vols-orange);
             letter-spacing: 1px;
         }
 
@@ -238,15 +242,15 @@
 
         /* Deliverable Box */
         .deliverable-box {
-            background: rgba(255, 107, 53, 0.08);
-            border-left: 4px solid var(--electric-orange);
+            background: rgba(255, 130, 0, 0.08);
+            border-left: 4px solid var(--vols-orange);
             padding: 0.25in;
             margin-left: 44px;
         }
 
         .deliverable-title {
             font-weight: 700;
-            color: var(--deep-blue);
+            color: var(--deep-navy);
             margin-bottom: 8px;
             font-size: 14px;
         }
@@ -282,11 +286,57 @@
         .term-value {
             font-family: 'Bebas Neue', sans-serif;
             font-size: 24px;
-            color: var(--deep-blue);
+            color: var(--deep-navy);
         }
 
         .term-value.highlight {
-            color: var(--electric-orange);
+            color: var(--vols-orange);
+        }
+
+        /* Add-ons Section */
+        .addons-box {
+            background: white;
+            border: 2px solid var(--light-gray);
+            padding: 0.25in;
+            margin-left: 44px;
+            margin-top: 0.2in;
+        }
+
+        .addon-item {
+            margin-bottom: 12px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid var(--light-gray);
+        }
+
+        .addon-item:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+
+        .addon-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 4px;
+        }
+
+        .addon-name {
+            font-weight: 700;
+            color: var(--deep-navy);
+            font-size: 13px;
+        }
+
+        .addon-price {
+            font-family: 'Bebas Neue', sans-serif;
+            color: var(--vols-orange);
+            font-size: 16px;
+        }
+
+        .addon-desc {
+            font-size: 12px;
+            color: var(--steel-gray);
+            line-height: 1.5;
         }
 
         /* Signature Section */
@@ -305,7 +355,7 @@
         }
 
         .signature-line {
-            border-bottom: 1px solid var(--deep-blue);
+            border-bottom: 1px solid var(--deep-navy);
             height: 40px;
             margin-bottom: 8px;
         }
@@ -338,14 +388,15 @@
         }
     </style>
 </head>
+
 <body>
     <div class="page">
         <div class="corner-accent"></div>
 
         <header class="header">
             <div class="logo-section">
-                <div class="logo">NAGENTIC<span>AI</span></div>
-                <div class="tagline">Blue-Collar Automation</div>
+                <div class="logo">KNOX<span>CALLS</span></div>
+                <div class="tagline">Night Watch • After-Hours Dispatch</div>
             </div>
             <div class="proposal-meta">
                 <strong>Pilot Proposal</strong>
@@ -356,50 +407,123 @@
 
         <section class="title-section">
             <h1 class="main-title">30-Day Pilot Program</h1>
-            <p class="subtitle">Smart After-Hours Answering for HVAC & Refrigeration</p>
+            <p class="subtitle">Experience the Full Night Watch Premium Package—On Us</p>
             <div class="client-name">[Business Name]</div>
         </section>
 
         <section class="section">
             <div class="section-header">
                 <span class="section-number">01</span>
-                <h2 class="section-title">The Challenge</h2>
+                <h2 class="section-title">The Problem You Know Too Well</h2>
             </div>
             <p class="section-content">
-                You're losing sleep—and revenue—to after-hours calls. Some are real emergencies worth $1,500+. Most aren't. But you can't know which is which without answering, and every missed call is a job for someone else. This pilot will show you exactly what's happening on your phone after 5 PM.
+                Your phone rings at 2 AM. It could be a $2,000+ emergency—or another spam call. You can't know without
+                answering. So you answer everything. And you're exhausted. Meanwhile, 67% of callers won't leave
+                voicemail, meaning every missed call is a job your competitor gets. This pilot will show you exactly
+                what's happening on your after-hours line.
             </p>
         </section>
 
         <section class="section">
             <div class="section-header">
                 <span class="section-number">02</span>
-                <h2 class="section-title">What's Included</h2>
+                <h2 class="section-title">What's Included in Your Pilot</h2>
             </div>
+            <p class="section-content" style="padding-left: 0; margin-bottom: 0.2in;">
+                <strong style="color: var(--vols-orange);">You're getting the complete premium package—not a
+                    stripped-down trial.</strong> We want you to experience everything Night Watch can do for your
+                business.
+            </p>
+
             <div class="included-box">
+                <div
+                    style="margin-bottom: 0.15in; padding-bottom: 0.15in; border-bottom: 1px solid rgba(255,255,255,0.2);">
+                    <div
+                        style="font-family: 'Bebas Neue', sans-serif; font-size: 16px; color: var(--vols-orange); margin-bottom: 10px; letter-spacing: 1px;">
+                        NIGHT WATCH BASE FEATURES</div>
+                </div>
                 <div class="included-grid">
                     <div class="included-item">
                         <span class="included-check">✓</span>
-                        <span>Smart answering on your after-hours line (24/7 emergency coverage)</span>
+                        <span>After-hours & weekend coverage (24/7)</span>
                     </div>
                     <div class="included-item">
                         <span class="included-check">✓</span>
-                        <span>Emergency vs. non-emergency call filtering</span>
+                        <span>Emergency vs. routine call filtering</span>
                     </div>
                     <div class="included-item">
                         <span class="included-check">✓</span>
-                        <span>Instant SMS alerts for true emergencies</span>
+                        <span>Instant dispatch calls for true emergencies</span>
                     </div>
                     <div class="included-item">
                         <span class="included-check">✓</span>
-                        <span>Complete call logs synced to your email or sheet</span>
+                        <span><strong>Memory:</strong> Recognizes repeat callers by name & equipment</span>
                     </div>
                     <div class="included-item">
                         <span class="included-check">✓</span>
-                        <span>Custom greeting using your business name</span>
+                        <span><strong>Vault:</strong> Secure call recordings & transcript storage</span>
                     </div>
                     <div class="included-item">
                         <span class="included-check">✓</span>
-                        <span>End-of-pilot analysis report (yours to keep)</span>
+                        <span>Daily call logs & summaries</span>
+                    </div>
+                    <div class="included-item">
+                        <span class="included-check">✓</span>
+                        <span>Spam & robocall blocking</span>
+                    </div>
+                    <div class="included-item">
+                        <span class="included-check">✓</span>
+                        <span>Works with your existing phone number</span>
+                    </div>
+                    <div class="included-item">
+                        <span class="included-check">✓</span>
+                        <span>Custom business greeting</span>
+                    </div>
+                    <div class="included-item">
+                        <span class="included-check">✓</span>
+                        <span>Contractor dashboard access</span>
+                    </div>
+                </div>
+            </div>
+
+            <div
+                style="background: rgba(255, 130, 0, 0.15); border: 2px solid var(--vols-orange); padding: 0.25in; margin-top: 0.2in; margin-left: 44px;">
+                <div
+                    style="font-family: 'Bebas Neue', sans-serif; font-size: 16px; color: var(--deep-navy); margin-bottom: 12px; letter-spacing: 1px;">
+                    🎁 PREMIUM UPGRADES INCLUDED FREE IN PILOT
+                </div>
+                <div style="font-size: 12px; color: var(--steel-gray); margin-bottom: 15px; font-style: italic;">
+                    Normally reserved for premium subscribers—yours free for 30 days to experience the full power of
+                    Night Watch.
+                </div>
+
+                <div
+                    style="background: white; padding: 15px; margin-bottom: 12px; border-left: 3px solid var(--vols-orange);">
+                    <div style="font-weight: 700; color: var(--deep-navy); font-size: 14px; margin-bottom: 6px;">
+                        ✓ Daytime Overflow Coverage <span
+                            style="font-size: 11px; color: var(--vols-orange); font-family: 'Bebas Neue';">(Premium
+                            Upgrade)</span>
+                    </div>
+                    <div style="font-size: 12px; color: var(--steel-gray); line-height: 1.6;">
+                        • Catch calls during business hours when your line is busy<br>
+                        • Never miss a lead while you're on another call or on-site<br>
+                        • Seamless overflow—customers never get a busy signal<br>
+                        • Perfect for one-person shops or during busy season
+                    </div>
+                </div>
+
+                <div style="background: white; padding: 15px; border-left: 3px solid var(--vols-orange);">
+                    <div style="font-weight: 700; color: var(--deep-navy); font-size: 14px; margin-bottom: 6px;">
+                        ✓ Premium Analytics Dashboard <span
+                            style="font-size: 11px; color: var(--vols-orange); font-family: 'Bebas Neue';">(Premium
+                            Upgrade)</span>
+                    </div>
+                    <div style="font-size: 12px; color: var(--steel-gray); line-height: 1.6;">
+                        • Advanced reporting with call trends & patterns<br>
+                        • ROI tracking—see exactly what Night Watch is worth to you<br>
+                        • Peak time analysis to optimize your staffing<br>
+                        • Caller sentiment scoring & repeat customer insights<br>
+                        • Export to CSV for your CRM or accounting software
                     </div>
                 </div>
             </div>
@@ -408,28 +532,34 @@
         <section class="section">
             <div class="section-header">
                 <span class="section-number">03</span>
-                <h2 class="section-title">Timeline</h2>
+                <h2 class="section-title">How It Works</h2>
             </div>
             <div class="timeline">
                 <div class="timeline-item">
                     <div class="timeline-dot"></div>
                     <div class="timeline-content">
-                        <div class="timeline-day">Day 1</div>
-                        <div class="timeline-desc">15-minute setup call. We configure your greeting, emergency keywords, and notification preferences.</div>
+                        <div class="timeline-day">Day 1 - Setup</div>
+                        <div class="timeline-desc">5-minute onboarding call. Forward your business line to Night Watch.
+                            Configure your greeting, emergency keywords, and dispatch preferences. Enable daytime
+                            overflow if desired.</div>
                     </div>
                 </div>
                 <div class="timeline-item">
                     <div class="timeline-dot"></div>
                     <div class="timeline-content">
-                        <div class="timeline-day">Days 2-30</div>
-                        <div class="timeline-desc">System goes live. All after-hours calls are answered, filtered, and logged. You receive SMS alerts for emergencies only.</div>
+                        <div class="timeline-day">Days 2-30 - Live Coverage</div>
+                        <div class="timeline-desc">Night Watch handles your after-hours (and optionally daytime
+                            overflow). Every call answered, spam filtered, emergencies dispatched immediately. Access
+                            your Premium Analytics Dashboard anytime.</div>
                     </div>
                 </div>
                 <div class="timeline-item">
                     <div class="timeline-dot"></div>
                     <div class="timeline-content">
-                        <div class="timeline-day">Day 31</div>
-                        <div class="timeline-desc">We deliver your call analysis report. You decide whether to continue—no pressure, no obligation.</div>
+                        <div class="timeline-day">Day 31 - Decision</div>
+                        <div class="timeline-desc">Review your 30-day analytics report. See exactly how many calls you
+                            captured, emergencies handled, and revenue protected. Decide if you want to continue—no
+                            pressure, no obligation.</div>
                     </div>
                 </div>
             </div>
@@ -438,34 +568,16 @@
         <section class="section">
             <div class="section-header">
                 <span class="section-number">04</span>
-                <h2 class="section-title">What You'll Get at the End</h2>
-            </div>
-            <div class="deliverable-box">
-                <div class="deliverable-title">Your 30-Day Call Analysis Report</div>
-                <div class="deliverable-list">
-                    • Total after-hours calls received<br>
-                    • Breakdown: emergencies vs. general inquiries vs. spam<br>
-                    • Peak call times (when you're getting hit the most)<br>
-                    • Estimated revenue value of emergency calls captured<br>
-                    • Caller patterns and repeat contacts<br>
-                    <em>This report is yours to keep—even if you don't continue.</em>
-                </div>
-            </div>
-        </section>
-
-        <section class="section">
-            <div class="section-header">
-                <span class="section-number">05</span>
-                <h2 class="section-title">Terms</h2>
+                <h2 class="section-title">Pilot Terms</h2>
             </div>
             <div class="terms-grid">
                 <div class="term-box">
-                    <div class="term-label">Pilot Cost</div>
-                    <div class="term-value highlight">$0</div>
+                    <div class="term-label">30-Day Trial</div>
+                    <div class="term-value highlight">FREE</div>
                 </div>
                 <div class="term-box">
-                    <div class="term-label">Duration</div>
-                    <div class="term-value">30 Days</div>
+                    <div class="term-label">Setup Fee</div>
+                    <div class="term-value highlight">$0</div>
                 </div>
                 <div class="term-box">
                     <div class="term-label">Commitment</div>
@@ -473,7 +585,44 @@
                 </div>
             </div>
             <p class="section-content" style="margin-top: 15px; padding-left: 0;">
-                <strong>After the pilot:</strong> If you choose to continue, service is $299/month flat. No contracts. Cancel anytime. If you don't continue, you keep the report and we part as friends.
+                <strong>30 days completely free.</strong> Full premium package including base features + daytime
+                overflow + premium analytics. No credit card required. No contracts. No obligations. Pilot spots limited
+                to 15 Knoxville contractors.
+            </p>
+        </section>
+
+        <section class="section">
+            <div class="section-header">
+                <span class="section-number">05</span>
+                <h2 class="section-title">What You'll Learn from Your Pilot</h2>
+            </div>
+            <div class="deliverable-box">
+                <div class="deliverable-title">Your 30-Day Analysis Report (Included)</div>
+                <div class="deliverable-list">
+                    • Total after-hours calls received & answered<br>
+                    • Breakdown: Real emergencies vs. routine inquiries vs. spam blocked<br>
+                    • Estimated revenue value of emergency calls captured<br>
+                    • Peak call times (when you're getting hit the most)<br>
+                    • Caller patterns, repeat contacts, and sentiment trends<br>
+                    • ROI analysis—what Night Watch is worth to your business<br>
+                    <br>
+                    <em><strong>This report is yours to keep</strong>—even if you decide not to continue. Many
+                        contractors find the insights alone are worth joining the pilot.</em>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="section-header">
+                <span class="section-number">06</span>
+                <h2 class="section-title">Your Guarantee</h2>
+            </div>
+            <p class="section-content" style="padding-left: 44px;">
+                <strong>Zero risk.</strong> Try the full premium Night Watch experience for 30 days—completely free. If
+                you love it, continue with flexible month-to-month service (no contracts, cancel anytime). If not, keep
+                your analytics report and we part as friends.
+                <br><br>
+                <em>Built in Knoxville for Knoxville contractors. We understand HVAC, Plumbing, and Refrigeration.</em>
             </p>
         </section>
 
@@ -484,14 +633,21 @@
             </div>
             <div class="signature-block">
                 <div class="signature-line"></div>
-                <div class="signature-label">NagenticAI Representative & Date</div>
+                <div class="signature-label">KnoxCalls Representative & Date</div>
             </div>
         </section>
 
         <footer class="footer">
-            <span>NagenticAI • Knoxville, TN</span>
-            <span>Blue-Collar Automation</span>
+            <span>KnoxCalls • Knoxville, TN</span>
+            <span>
+                <a href="/privacy-policy.html"
+                    style="color: var(--steel-gray); text-decoration: none; margin: 0 8px;">Privacy</a> |
+                <a href="/terms-of-service.html"
+                    style="color: var(--steel-gray); text-decoration: none; margin: 0 8px;">Terms</a> |
+                nightwatch.knoxcalls.com
+            </span>
         </footer>
     </div>
 </body>
+
 </html>

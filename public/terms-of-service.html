@@ -26,7 +26,7 @@
         }
 
         .container {
-            max-width: 800px;
+            max-width: 900px;
             margin: 0 auto;
             padding: 40px 24px;
         }
@@ -43,6 +43,16 @@
             font-size: 32px;
             margin-top: 40px;
             margin-bottom: 16px;
+            color: var(--vols-orange);
+            border-bottom: 2px solid var(--vols-orange);
+            padding-bottom: 10px;
+        }
+
+        h3 {
+            font-size: 20px;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            color: var(--deep-navy);
         }
 
         p,
@@ -55,35 +65,134 @@
             padding-left: 20px;
         }
 
+        .highlight-box {
+            background: white;
+            border-left: 4px solid var(--vols-orange);
+            padding: 24px;
+            margin: 24px 0;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+
+        .contact-box {
+            background: #f8f9fa;
+            border: 1px solid #dee2e6;
+            padding: 20px;
+            margin: 30px 0;
+            border-radius: 8px;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-bottom: 30px;
+            color: var(--vols-orange);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+
         a {
             color: var(--vols-orange);
         }
 
-        footer {
-            margin-top: 80px;
-            padding-top: 40px;
-            border-top: 1px solid #e8e6e3;
-            text-align: center;
+        /* Footer */
+        .site-footer {
+            background: var(--deep-navy);
+            color: rgba(255, 255, 255, 0.7);
+            padding: 60px 0 40px;
+            margin-top: 100px;
+            border-top: 1px solid rgba(255, 130, 0, 0.2);
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 24px;
+        }
+
+        .footer-brand p {
+            margin-bottom: 8px;
             font-size: 14px;
+        }
+
+        .footer-tagline {
+            font-size: 12px;
+            opacity: 0.6;
+        }
+
+        .footer-links {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.2s;
+        }
+
+        .footer-links a:hover {
+            color: var(--vols-orange);
+        }
+
+        .footer-divider {
+            color: rgba(255, 255, 255, 0.3);
+        }
+
+        @media (max-width: 900px) {
+            .footer-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .footer-brand {
+                width: 100%;
+            }
         }
     </style>
 </head>
 
 <body>
     <div class="container">
-        <a href="/" style="text-decoration: none; font-weight: bold;">&larr; Back to Night Watch</a>
+        <a href="/" class="back-link">&larr; Back to Night Watch</a>
 
         <h1>Terms of Service</h1>
-        <p><strong>Last Updated: January 14, 2026</strong></p>
+        <p><strong>Last Updated: January 24, 2026</strong></p>
 
         <p>Welcome to KnoxCalls Night Watch. By accessing or using our services, you agree to be bound by these Terms of
-            Service.</p>
+            Service ("Terms"). Please read them carefully.</p>
 
-        <h2>1. Services Provided</h2>
-        <p>Night Watch provides after-hours call answering, triage, and dispatch services for contractors. We act as an
-            agent for your business to filter calls and forward information based on your specified criteria.</p>
+        <h2>1. Acceptance of Terms</h2>
+        <p>By signing up for, accessing, or using the Night Watch service ("Service"), you agree to comply with and be
+            bound by these Terms. If you do not agree to these Terms, you may not use the Service.</p>
 
-        <h2>2. SMS/Text Messaging Terms</h2>
+        <h2>2. Services Provided</h2>
+        <p>Night Watch provides AI-powered after-hours call answering, triage, and emergency dispatch services for
+            contractors and businesses. We act as an agent for your business to:</p>
+        <ul>
+            <li>Answer incoming calls using AI technology</li>
+            <li>Screen and classify calls based on urgency</li>
+            <li>Dispatch emergency notifications to designated contacts</li>
+            <li>Provide call logs, recordings, and transcripts</li>
+            <li>Filter spam and robocalls</li>
+        </ul>
+
+        <h3>2.1 AI Service Limitations</h3>
+        <div class="highlight-box">
+            <p><strong>IMPORTANT:</strong> Our Service uses artificial intelligence technology. While we strive for
+                accuracy, the AI may occasionally misclassify calls or fail to understand complex situations. Night
+                Watch is a screening and notification tool, not a replacement for professional judgment. You remain
+                responsible for responding to emergencies and managing your business operations.</p>
+        </div>
+
+        <h2>3. SMS/Text Messaging Terms</h2>
         <p>By opting in to our service (via web form or written agreement), you agree to receive SMS messages from
             KnoxCalls regarding your account and dispatch alerts.</p>
         <ul>
@@ -92,31 +201,170 @@
             <li><strong>Message Frequency:</strong> Message frequency varies based on your call volume and account
                 activity.</li>
             <li><strong>Cost:</strong> Message and data rates may apply.</li>
-            <li><strong>Opt-Out:</strong> You can cancel the SMS service at any time. Just text "STOP" to the short
-                code. After you send the SMS message "STOP" to us, we will send you an SMS message to confirm that you
-                have been unsubscribed. After this, you will no longer receive SMS messages from us. If you want to join
+            <li><strong>Opt-Out:</strong> You can cancel the SMS service at any time. Just text "STOP" to the number.
+                After you send the SMS message "STOP" to us, we will send you an SMS message to confirm that you have
+                been unsubscribed. After this, you will no longer receive SMS messages from us. If you want to join
                 again, just sign up as you did the first time and we will start sending SMS messages to you again.</li>
             <li><strong>Support:</strong> If you are experiencing issues with the messaging program you can reply with
                 the keyword HELP for more assistance, or you can get help directly at info@knoxcalls.com.</li>
             <li><strong>Carriers:</strong> Carriers are not liable for delayed or undelivered messages.</li>
         </ul>
 
-        <h2>3. User Responsibilities</h2>
-        <p>You verify that the phone number you provided is yours and that you are authorized to receive business
-            communications at that number.</p>
+        <h2>4. User Responsibilities</h2>
+        <p>You agree to:</p>
+        <ul>
+            <li>Verify that the phone number you provided is yours and that you are authorized to receive business
+                communications at that number</li>
+            <li>Provide accurate emergency contact information and keep it up to date</li>
+            <li>Configure appropriate call routing and emergency criteria for your business needs</li>
+            <li>Respond appropriately to emergency notifications received from our Service</li>
+            <li>Maintain the confidentiality of your account credentials</li>
+            <li>Comply with all applicable laws and regulations in your use of the Service</li>
+            <li>Obtain any necessary consents from third parties who may be contacted through the Service</li>
+        </ul>
 
-        <h2>4. Limitation of Liability</h2>
-        <p>KnoxCalls is not liable for any lost revenue, missed jobs, or damages resulting from missed calls, carrier
-            outages, or incorrect information provided by callers.</p>
+        <h2>5. Limitation of Liability</h2>
+        <div class="highlight-box">
+            <p><strong>IMPORTANT LIMITATIONS:</strong></p>
+            <p>KnoxCalls is not liable for any lost revenue, missed jobs, or damages resulting from:</p>
+            <ul>
+                <li>Missed calls or failed call routing</li>
+                <li>AI misclassification of call urgency</li>
+                <li>Carrier outages or telecommunications failures</li>
+                <li>Incorrect information provided by callers</li>
+                <li>Delayed or undelivered SMS notifications</li>
+                <li>Your failure to respond to emergency notifications</li>
+                <li>Any force majeure events beyond our reasonable control</li>
+            </ul>
+            <p>TO THE MAXIMUM EXTENT PERMITTED BY LAW, OUR TOTAL LIABILITY TO YOU FOR ANY CLAIMS ARISING OUT OF OR
+                RELATED TO THE SERVICE SHALL NOT EXCEED THE AMOUNT YOU PAID TO US IN THE TWELVE (12) MONTHS PRECEDING
+                THE CLAIM.</p>
+        </div>
 
-        <h2>5. Changes to Terms</h2>
-        <p>We reserve the right to modify these terms at any time. Continued use of the service constitutes acceptance
-            of modified terms.</p>
+        <h2>6. Service Availability</h2>
+        <p>We strive to provide continuous service availability, but we do not guarantee uninterrupted or error-free
+            operation. We may suspend or terminate the Service for maintenance, updates, or due to circumstances beyond
+            our control. We are not liable for any interruptions or downtime.</p>
 
-        <footer>
-            <p>&copy; 2026 KnoxCalls Night Watch. All rights reserved.</p>
-        </footer>
+        <h2>7. Payment and Billing</h2>
+        <ul>
+            <li>Service fees are billed monthly in advance</li>
+            <li>Payment is due according to the billing schedule specified in your service agreement</li>
+            <li>Failure to pay may result in suspension or termination of service</li>
+            <li>We may change pricing with 30 days' notice</li>
+            <li>Founding member pricing, if applicable, will be honored according to your agreement</li>
+        </ul>
+
+        <h2>8. Term and Termination</h2>
+
+        <h3>8.1 Term</h3>
+        <p>These Terms begin when you first access or use the Service and continue until terminated by either party.</p>
+
+        <h3>8.2 Termination by You</h3>
+        <p>You may cancel your Service at any time by providing written notice to info@knoxcalls.com. Cancellation will
+            be effective at the end of your current billing cycle. No refunds will be provided for partial months.</p>
+
+        <h3>8.3 Termination by Us</h3>
+        <p>We may suspend or terminate your access to the Service immediately, without prior notice, if you:</p>
+        <ul>
+            <li>Violate these Terms</li>
+            <li>Fail to pay fees when due</li>
+            <li>Engage in fraudulent or illegal activity</li>
+            <li>Use the Service in a manner that harms us or other users</li>
+        </ul>
+
+        <h2>9. Intellectual Property</h2>
+        <p>The Service, including all software, AI models, text, graphics, logos, and other content, is owned by
+            KNOXCALLS, LLC and protected by copyright, trademark, and other intellectual property laws. You may not
+            copy, modify, distribute, or reverse engineer any part of the Service without our express written
+            permission.</p>
+
+        <h2>10. Privacy and Data Protection</h2>
+        <p>Your use of the Service is also governed by our <a href="/privacy-policy.html">Privacy Policy</a>, which is
+            incorporated into these Terms by reference. Please review our Privacy Policy to understand how we collect,
+            use, and protect your information.</p>
+
+        <h2>11. Indemnification</h2>
+        <p>You agree to indemnify, defend, and hold harmless KNOXCALLS, LLC, its officers, directors, employees, and
+            agents from any claims, damages, losses, liabilities, and expenses (including reasonable attorneys' fees)
+            arising out of or related to:</p>
+        <ul>
+            <li>Your use of the Service</li>
+            <li>Your violation of these Terms</li>
+            <li>Your violation of any rights of third parties</li>
+            <li>Any inaccurate or incomplete information you provide</li>
+            <li>Your failure to respond appropriately to emergencies</li>
+        </ul>
+
+        <h2>12. Governing Law and Dispute Resolution</h2>
+        <p>These Terms shall be governed by and construed in accordance with the laws of the State of Tennessee, without
+            regard to its conflict of law provisions.</p>
+
+        <p>Any disputes arising out of or related to these Terms or the Service shall be resolved through binding
+            arbitration in Knox County, Tennessee, in accordance with the rules of the American Arbitration Association.
+            You waive any right to a jury trial or to participate in a class action.</p>
+
+        <h2>13. Changes to Terms</h2>
+        <p>We reserve the right to modify these Terms at any time. We will notify you of material changes by posting the
+            updated Terms on our website with a new "Last Updated" date and/or by sending you an email notification.</p>
+
+        <p>Your continued use of the Service after the effective date of the updated Terms constitutes your acceptance
+            of the changes. If you do not agree to the updated Terms, you must stop using the Service and may request
+            termination of your account.</p>
+
+        <h2>14. Miscellaneous</h2>
+
+        <h3>14.1 Entire Agreement</h3>
+        <p>These Terms, together with our Privacy Policy and any service agreement you have signed, constitute the
+            entire agreement between you and KNOXCALLS, LLC regarding the Service.</p>
+
+        <h3>14.2 Severability</h3>
+        <p>If any provision of these Terms is found to be invalid or unenforceable, the remaining provisions will remain
+            in full force and effect.</p>
+
+        <h3>14.3 No Waiver</h3>
+        <p>Our failure to enforce any right or provision of these Terms will not be deemed a waiver of such right or
+            provision.</p>
+
+        <h3>14.4 Assignment</h3>
+        <p>You may not assign or transfer your rights or obligations under these Terms without our prior written
+            consent. We may assign our rights and obligations without restriction.</p>
+
+        <h2>15. Contact Us</h2>
+        <p>If you have questions about these Terms of Service, please contact us:</p>
+
+        <div class="contact-box">
+            <p><strong>KNOXCALLS, LLC</strong><br>
+                <strong>Email:</strong> info@knoxcalls.com<br>
+                <strong>Mail:</strong> Knoxville, TN
+            </p>
+        </div>
+
+        <hr style="margin: 40px 0; border: none; border-top: 1px solid #e8e6e3;">
+
+        <p style="text-align: center; color: #999; font-size: 14px;">
+            By using Night Watch, you acknowledge that you have read, understood, and agree to be bound by these Terms
+            of Service.
+        </p>
     </div>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <p>&copy; 2026 KNOXCALLS, LLC d/b/a Night Watch. All rights reserved.</p>
+                    <p class="footer-tagline">Built in Knoxville for Knoxville Contractors</p>
+                </div>
+                <div class="footer-links">
+                    <a href="/privacy-policy.html">Privacy Policy</a>
+                    <span class="footer-divider">|</span>
+                    <a href="/terms-of-service.html">Terms of Service</a>
+                    <span class="footer-divider">|</span>
+                    <a href="mailto:info@knoxcalls.com">Contact</a>
+                </div>
+            </div>
+        </div>
+    </footer>
 </body>
 
 </html>

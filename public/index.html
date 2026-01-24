@@ -1040,6 +1040,7 @@
 
         /* Responsive Fixes */
         @media (max-width: 900px) {
+
             /* Fix nav overlap on mobile */
             nav {
                 position: relative;
@@ -1154,6 +1155,66 @@
         ::selection {
             background: var(--vols-orange);
             color: white;
+        }
+
+        /* Footer */
+        .site-footer {
+            background: var(--deep-navy);
+            color: rgba(255, 255, 255, 0.7);
+            padding: 60px 0 40px;
+            margin-top: 100px;
+            border-top: 1px solid rgba(255, 130, 0, 0.2);
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 24px;
+        }
+
+        .footer-brand p {
+            margin-bottom: 8px;
+            font-size: 14px;
+        }
+
+        .footer-tagline {
+            font-size: 12px;
+            opacity: 0.6;
+        }
+
+        .footer-links {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.2s;
+        }
+
+        .footer-links a:hover {
+            color: var(--vols-orange);
+        }
+
+        .footer-divider {
+            color: rgba(255, 255, 255, 0.3);
+        }
+
+        @media (max-width: 900px) {
+            .footer-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .footer-brand {
+                width: 100%;
+            }
         }
     </style>
 </head>
@@ -1694,6 +1755,25 @@
         "serviceType": ["Answering Service", "After Hours Dispatch", "Contractor Support"]
     }
     </script>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <p>&copy; 2026 KNOXCALLS, LLC d/b/a Night Watch. All rights reserved.</p>
+                    <p class="footer-tagline">Built in Knoxville for Knoxville Contractors</p>
+                </div>
+                <div class="footer-links">
+                    <a href="/privacy-policy.html">Privacy Policy</a>
+                    <span class="footer-divider">|</span>
+                    <a href="/terms-of-service.html">Terms of Service</a>
+                    <span class="footer-divider">|</span>
+                    <a href="mailto:info@knoxcalls.com">Contact</a>
+                </div>
+            </div>
+        </div>
+    </footer>
 </body>
 
 </html>

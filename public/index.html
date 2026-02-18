@@ -2003,6 +2003,12 @@
                             <textarea id="pilot-setup" name="current_setup"
                                 placeholder="Current after-hours setup? (e.g. Voicemail, Ruby, Answering Service)"></textarea>
                         </div>
+                        <div class="form-group">
+                            <input type="text" id="pilot-referral" name="referral_code" placeholder="Referral Code (optional, e.g. ABCD-1234)"
+                                pattern="[A-Za-z0-9]{4}-[A-Za-z0-9]{4}" maxlength="9"
+                                oninput="this.value=this.value.toUpperCase()"
+                                title="Format: 4 characters, dash, 4 characters (e.g. ABCD-1234)">
+                        </div>
 
                         <div class="sms-consent-box">
                             <input type="checkbox" id="pilot-consent" name="contact_consent" value="yes" required>

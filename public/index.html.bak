@@ -1,0 +1,2151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO Meta Tags -->
+    <title>Night Watch by KnoxCalls | After-Hours Dispatch for Knoxville Contractors</title>
+    <meta name="description"
+        content="Your phone rings at 2 AM—that caller won't try again. Night Watch answers after-hours calls so you don't miss the $500 emergency, lose sleep, or miss family moments. Built in Knoxville for HVAC, Plumbing & Refrigeration.">
+    <meta name="keywords"
+        content="after hours answering service, HVAC answering service, plumbing answering service, Knoxville contractors, emergency call filtering, contractor answering service Tennessee, after hours dispatcher">
+    <meta name="author" content="KnoxCalls">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph / Social -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Night Watch | Your After-Hours Crew for Contractors">
+    <meta property="og:description"
+        content="Your phone rings at 2 AM—that caller won't try again. Night Watch answers so you don't miss the emergency or lose sleep.">
+    <meta property="og:url" content="https://knoxcalls.com">
+    <meta property="og:image" content="https://knoxcalls.com/LogoLetters.jpg">
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://knoxcalls.com">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/jpeg" href="LogoImage.jpg">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Source+Sans+3:wght@400;600;700&display=swap"
+        rel="stylesheet">
+
+    <script>
+        const SITE_CONFIG = {
+            companyName: "KnoxCalls",
+            productName: "Night Watch",
+            pilot: {
+                spotsTotal: 15,
+                spotsClaimed: 12
+            }
+        };
+    </script>
+
+    <style>
+        :root {
+            --vols-orange: #FF8200;
+            --vols-orange-dark: #e67300;
+            --deep-navy: #0a1628;
+            --warm-white: #faf9f7;
+            --steel-gray: #4a5568;
+            --light-gray: #e8e6e3;
+            --success-green: #2d8a5f;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Source Sans 3', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--warm-white);
+            color: var(--deep-navy);
+            line-height: 1.7;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4 {
+            font-family: 'Bebas Neue', Impact, sans-serif;
+            letter-spacing: 1px;
+            line-height: 1.2;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(10, 22, 40, 0.97);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 12px 0;
+        }
+
+        .nav-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            color: white;
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 24px;
+        }
+
+        .nav-logo img {
+            height: 40px;
+            width: auto;
+        }
+
+        .nav-cta {
+            background: var(--vols-orange);
+            color: white;
+            padding: 12px 28px;
+            border: none;
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 16px;
+            letter-spacing: 1px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.2s;
+        }
+
+        .nav-cta:hover {
+            background: var(--vols-orange-dark);
+            transform: translateY(-2px);
+        }
+
+        /* Nav Links & Dropdown */
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 32px;
+        }
+
+        .nav-link {
+            color: white;
+            text-decoration: none;
+            font-family: 'Source Sans 3', sans-serif;
+            font-weight: 600;
+            font-size: 16px;
+            transition: color 0.2s;
+            cursor: pointer;
+        }
+
+        .nav-link:hover {
+            color: var(--vols-orange);
+        }
+
+        .nav-dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: var(--deep-navy);
+            min-width: 160px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            z-index: 1001;
+            padding: 8px 0;
+            border-top: 2px solid var(--vols-orange);
+        }
+
+        .nav-dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown-content a {
+            color: white;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            font-family: 'Source Sans 3', sans-serif;
+            font-size: 15px;
+        }
+
+        .dropdown-content a:hover {
+            background-color: rgba(255, 130, 0, 0.1);
+            color: var(--vols-orange);
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            background: var(--deep-navy);
+            color: white;
+            position: relative;
+            overflow: hidden;
+            padding: 120px 0 80px;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -25%;
+            width: 80%;
+            height: 200%;
+            background: radial-gradient(ellipse, rgba(255, 130, 0, 0.12) 0%, transparent 60%);
+            pointer-events: none;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: rgba(255, 130, 0, 0.15);
+            border: 1px solid var(--vols-orange);
+            color: var(--vols-orange);
+            padding: 8px 20px;
+            font-size: 14px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 24px;
+        }
+
+        .hero h1 {
+            font-size: clamp(42px, 7vw, 72px);
+            line-height: 1.05;
+            margin-bottom: 24px;
+            max-width: 800px;
+        }
+
+        .hero h1 .highlight {
+            color: var(--vols-orange);
+        }
+
+        .hero-subtitle {
+            font-size: 20px;
+            color: rgba(255, 255, 255, 0.75);
+            margin-bottom: 40px;
+            max-width: 600px;
+            line-height: 1.6;
+        }
+
+        .hero-cta {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+            margin-bottom: 60px;
+        }
+
+        .btn {
+            padding: 16px 36px;
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 18px;
+            letter-spacing: 1px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.2s;
+            text-decoration: none;
+            display: inline-block;
+            text-align: center;
+        }
+
+        .btn-primary {
+            background: var(--vols-orange);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: var(--vols-orange-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255, 130, 0, 0.3);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--vols-orange);
+            color: var(--vols-orange);
+        }
+
+        .hero-stats {
+            display: flex;
+            gap: 48px;
+            padding-top: 40px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .stat-number {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 42px;
+            color: var(--vols-orange);
+            line-height: 1;
+        }
+
+        .stat-label {
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.6);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 4px;
+        }
+
+        /* Sections */
+        .section {
+            padding: 100px 0;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        /* --- FIXED NUMBER CONTRAST --- */
+        /* Default State (Light Backgrounds) */
+        .section-number {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 64px;
+            color: var(--vols-orange);
+            /* Solid Orange for contrast */
+            opacity: 1;
+            /* Removed transparency/watermark effect */
+            margin-right: 24px;
+            line-height: 1;
+        }
+
+        .section-title {
+            font-size: 42px;
+            color: var(--deep-navy);
+        }
+
+        .section-subtitle {
+            font-size: 18px;
+            color: var(--steel-gray);
+            max-width: 650px;
+            margin-bottom: 50px;
+        }
+
+        /* Dark Background Section Overrides */
+        .problem-section {
+            background: var(--deep-navy);
+            color: white;
+        }
+
+        .problem-section .section-title {
+            color: white;
+        }
+
+        .problem-section .section-number {
+            color: var(--vols-orange);
+            /* Orange pops against Navy */
+            opacity: 1;
+        }
+
+        .problem-section .section-subtitle {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .problem-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+        }
+
+        .problem-card {
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            padding: 36px;
+        }
+
+        .problem-icon {
+            font-size: 36px;
+            margin-bottom: 16px;
+        }
+
+        .problem-card h3 {
+            font-size: 26px;
+            margin-bottom: 12px;
+        }
+
+        .problem-card p {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 16px;
+        }
+
+        /* How It Works */
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+
+        .step-number {
+            width: 64px;
+            height: 64px;
+            background: var(--vols-orange);
+            color: white;
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .step h3 {
+            font-size: 26px;
+            margin-bottom: 12px;
+        }
+
+        .step p {
+            color: var(--steel-gray);
+            font-size: 16px;
+        }
+
+        /* Demo Call Player */
+        .demo-section {
+            background: var(--deep-navy);
+            padding: 48px;
+            margin-top: 20px;
+        }
+
+        .demo-header {
+            text-align: center;
+            margin-bottom: 32px;
+        }
+
+        .demo-header h3 {
+            color: white;
+            font-size: 32px;
+            margin-bottom: 8px;
+        }
+
+        .demo-header p {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 16px;
+        }
+
+        .demo-player {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .demo-player audio {
+            width: 100%;
+            height: 54px;
+        }
+
+        .demo-context {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 20px;
+            margin-top: 20px;
+            border-left: 3px solid var(--vols-orange);
+        }
+
+        .demo-context p {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 15px;
+            margin: 0;
+        }
+
+        .demo-context strong {
+            color: var(--vols-orange);
+        }
+
+        /* Features Box */
+        .features-box {
+            background: white;
+            border: 2px solid var(--light-gray);
+            padding: 48px;
+            margin-top: 60px;
+        }
+
+        .features-box h3 {
+            font-size: 28px;
+            margin-bottom: 32px;
+            text-align: center;
+            color: var(--deep-navy);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+            padding: 12px 0;
+        }
+
+        .feature-check {
+            color: var(--vols-orange);
+            font-size: 22px;
+            font-weight: bold;
+            flex-shrink: 0;
+        }
+
+        .feature-item span {
+            font-size: 16px;
+            color: var(--steel-gray);
+        }
+
+        /* Comparison Section */
+        .comparison-section {
+            background: linear-gradient(180deg, var(--warm-white) 0%, #fff 100%);
+        }
+
+        .compare-rows {
+            background: white;
+            border: 2px solid var(--light-gray);
+        }
+
+        .compare-row {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            border-bottom: 1px solid var(--light-gray);
+        }
+
+        .compare-row:last-child {
+            border-bottom: none;
+        }
+
+        .compare-header {
+            background: var(--deep-navy);
+            color: white;
+            padding: 20px;
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 20px;
+            letter-spacing: 1px;
+            text-align: center;
+        }
+
+        .compare-header.highlight {
+            background: var(--vols-orange);
+        }
+
+        .compare-cell {
+            padding: 20px 24px;
+            display: flex;
+            align-items: center;
+        }
+
+        .compare-feature {
+            font-weight: 600;
+            color: var(--deep-navy);
+            background: #f8f9fa;
+        }
+
+        .compare-check {
+            justify-content: center;
+            color: var(--success-green);
+            font-size: 22px;
+        }
+
+        .compare-x {
+            justify-content: center;
+            color: #ccc;
+            font-size: 22px;
+        }
+
+        /* Calculator Section */
+        .calculator-section {
+            background: var(--deep-navy);
+            color: white;
+        }
+
+        .calculator-section .section-title {
+            color: white;
+        }
+
+        .calculator-section .section-number {
+            color: var(--vols-orange);
+            /* Orange pops against Navy */
+            opacity: 1;
+        }
+
+        .calculator-section .section-subtitle {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .calculator {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 48px;
+        }
+
+        .calc-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 24px;
+            margin-bottom: 32px;
+        }
+
+        .calc-input label {
+            display: block;
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.6);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+        }
+
+        .calc-input input {
+            width: 100%;
+            padding: 16px;
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 28px;
+            color: var(--vols-orange);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            background: rgba(255, 255, 255, 0.05);
+            text-align: center;
+        }
+
+        .calc-input input:focus {
+            outline: none;
+            border-color: var(--vols-orange);
+        }
+
+        .calc-result {
+            background: var(--vols-orange);
+            padding: 40px;
+            text-align: center;
+            overflow-wrap: break-word;
+            word-wrap: break-word;
+        }
+
+        .calc-result-label {
+            font-size: 16px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            opacity: 0.9;
+            margin-bottom: 8px;
+        }
+
+        .calc-result-number {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: clamp(48px, 6vw, 72px);
+            line-height: 1;
+            color: white;
+        }
+
+        .calc-result-note {
+            font-size: 16px;
+            opacity: 0.9;
+            margin-top: 8px;
+        }
+
+        /* Pricing Section */
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 32px;
+            margin-top: 50px;
+        }
+
+        .pricing-card {
+            background: white;
+            border: 2px solid var(--light-gray);
+            padding: 44px;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            grid-column: 1 / -1;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .pricing-card.featured {
+            border-color: var(--vols-orange);
+            box-shadow: 0 10px 40px rgba(255, 130, 0, 0.15);
+        }
+
+        .pricing-badge {
+            position: absolute;
+            top: -14px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--vols-orange);
+            color: white;
+            padding: 8px 24px;
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 14px;
+            letter-spacing: 1px;
+        }
+
+        .pricing-tier {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 28px;
+            color: var(--steel-gray);
+            margin-bottom: 8px;
+            text-align: center;
+        }
+
+        .pricing-price {
+            display: flex;
+            align-items: baseline;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .pricing-amount {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 48px;
+            color: var(--deep-navy);
+        }
+
+        .pricing-desc {
+            color: var(--steel-gray);
+            margin-bottom: 24px;
+            padding-bottom: 24px;
+            border-bottom: 1px solid var(--light-gray);
+            font-size: 16px;
+            text-align: center;
+        }
+
+        .pricing-features {
+            list-style: none;
+            flex-grow: 1;
+        }
+
+        .pricing-features li {
+            padding: 10px 0;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: var(--steel-gray);
+            font-size: 16px;
+        }
+
+        .pricing-features li::before {
+            content: "\2713";
+            color: var(--vols-orange);
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        .pricing-contact-btn {
+            width: 100%;
+            background: var(--vols-orange);
+            color: white;
+            border: none;
+            padding: 16px;
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 20px;
+            letter-spacing: 1px;
+            cursor: pointer;
+            margin-top: 30px;
+            text-decoration: none;
+            text-align: center;
+            display: block;
+        }
+
+        .pricing-contact-btn:hover {
+            background: var(--vols-orange-dark);
+        }
+
+        /* Add-ons */
+        .addons-section {
+            margin-top: 80px;
+            padding-top: 60px;
+            border-top: 1px solid var(--light-gray);
+        }
+
+        .addons-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+            margin-top: 40px;
+        }
+
+        .addon-card {
+            background: white;
+            border: 2px solid var(--light-gray);
+            padding: 32px;
+            transition: all 0.2s;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .addon-card:hover {
+            border-color: var(--vols-orange);
+            transform: translateY(-4px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+        }
+
+        .addon-name {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 26px;
+            margin-bottom: 10px;
+            color: var(--deep-navy);
+        }
+
+        .addon-desc {
+            color: var(--steel-gray);
+            font-size: 15px;
+            margin-bottom: 16px;
+            line-height: 1.5;
+            flex-grow: 1;
+        }
+
+        .addon-availability {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 18px;
+            color: var(--success-green);
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            background: linear-gradient(180deg, #fff 0%, var(--warm-white) 100%);
+        }
+
+        .faq-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(480px, 1fr));
+            gap: 24px;
+        }
+
+        .faq-item {
+            background: white;
+            border: 1px solid var(--light-gray);
+            padding: 28px 32px;
+        }
+
+        .faq-item h4 {
+            font-size: 20px;
+            color: var(--deep-navy);
+            margin-bottom: 12px;
+        }
+
+        .faq-item p {
+            color: var(--steel-gray);
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        /* Local Story Section */
+        .story-section {
+            background: var(--deep-navy);
+            color: white;
+        }
+
+        .story-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .story-text h2 {
+            font-size: 48px;
+            color: white;
+            margin-bottom: 24px;
+        }
+
+        .story-text h2 span {
+            color: var(--vols-orange);
+        }
+
+        .story-text p {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 18px;
+            margin-bottom: 20px;
+            line-height: 1.7;
+        }
+
+        .story-image {
+            text-align: center;
+        }
+
+        .story-image img {
+            max-width: 300px;
+            opacity: 0.9;
+        }
+
+        /* Waitlist Section */
+        .waitlist-section {
+            background: var(--vols-orange);
+            color: white;
+        }
+
+        .waitlist-section .section-title {
+            color: white;
+        }
+
+        .waitlist-section .section-number {
+            color: var(--deep-navy);
+            /* High contrast against Orange */
+            opacity: 1;
+        }
+
+        .waitlist-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: start;
+        }
+
+        .waitlist-info h3 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        .waitlist-info p {
+            font-size: 18px;
+            opacity: 0.95;
+            margin-bottom: 28px;
+            line-height: 1.6;
+        }
+
+        .spots-counter {
+            display: inline-flex;
+            align-items: center;
+            gap: 14px;
+            background: rgba(0, 0, 0, 0.2);
+            padding: 18px 28px;
+        }
+
+        .spots-counter .number {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 36px;
+        }
+
+        .guarantee-box {
+            margin-top: 32px;
+            padding: 20px 24px;
+            background: rgba(0, 0, 0, 0.15);
+            border-left: 4px solid white;
+        }
+
+        .guarantee-box p {
+            margin: 0;
+            font-size: 16px;
+        }
+
+        .waitlist-form {
+            background: white;
+            padding: 44px;
+        }
+
+        .waitlist-form h4 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 28px;
+            color: var(--deep-navy);
+            margin-bottom: 28px;
+        }
+
+        .form-group {
+            margin-bottom: 18px;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 16px;
+            border: 2px solid var(--light-gray);
+            font-family: 'Source Sans 3', sans-serif;
+            font-size: 16px;
+            transition: border-color 0.2s;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--vols-orange);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 90px;
+        }
+
+        .waitlist-form button {
+            width: 100%;
+            padding: 18px;
+            background: var(--deep-navy);
+            color: white;
+            border: none;
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 20px;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .waitlist-form button:hover {
+            background: #1a2d4a;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--deep-navy);
+            color: white;
+            padding: 60px 0 30px;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 30px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            margin-bottom: 30px;
+        }
+
+        .footer-logo img {
+            height: 50px;
+        }
+
+        .footer-tagline {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 15px;
+        }
+
+        .footer-bottom {
+            display: flex;
+            justify-content: space-between;
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        /* SMS Signup Banner */
+        .sms-signup-banner {
+            background: var(--vols-orange);
+            padding: 48px 24px;
+            text-align: center;
+        }
+
+        .sms-banner-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .sms-banner-content h3 {
+            font-family: 'Bebas Neue', sans-serif;
+            color: white;
+            font-size: 36px;
+            letter-spacing: 1px;
+            margin-bottom: 12px;
+        }
+
+        .sms-banner-content p {
+            color: rgba(255, 255, 255, 0.95);
+            font-size: 17px;
+            margin-bottom: 28px;
+            line-height: 1.6;
+        }
+
+        .sms-cta {
+            display: inline-block;
+            background: var(--deep-navy);
+            color: white;
+            padding: 16px 40px;
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 18px;
+            letter-spacing: 1px;
+            text-decoration: none;
+            transition: all 0.2s;
+        }
+
+        .sms-cta:hover {
+            background: #1a2d4a;
+            transform: translateY(-2px);
+        }
+
+        /* Two-Part Form Section */
+        .form-section {
+            padding: 100px 0;
+            background: var(--warm-white);
+        }
+
+        .form-section .section-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .form-section .section-subtitle {
+            font-size: 18px;
+            color: var(--steel-gray);
+            max-width: 650px;
+            margin-bottom: 50px;
+        }
+
+        .form-container {
+            display: grid;
+            grid-template-columns: 1fr auto 1fr;
+            gap: 40px;
+            align-items: start;
+        }
+
+        .form-part {
+            background: white;
+            padding: 44px;
+        }
+
+        .sms-signup-part {
+            border: 3px solid var(--vols-orange);
+            box-shadow: 0 10px 40px rgba(255, 130, 0, 0.12);
+        }
+
+        .pilot-request-part {
+            border: 2px solid var(--light-gray);
+        }
+
+        .form-part h2 {
+            font-family: 'Bebas Neue', sans-serif;
+            color: var(--deep-navy);
+            font-size: 28px;
+            margin-bottom: 12px;
+        }
+
+        .form-part h3 {
+            font-family: 'Bebas Neue', sans-serif;
+            color: var(--deep-navy);
+            font-size: 24px;
+            margin-bottom: 12px;
+        }
+
+        .form-description {
+            color: var(--steel-gray);
+            font-size: 15px;
+            margin-bottom: 28px;
+            line-height: 1.6;
+        }
+
+        .form-part .form-group input,
+        .form-part .form-group textarea {
+            width: 100%;
+            padding: 16px;
+            border: 2px solid var(--light-gray);
+            font-family: 'Source Sans 3', sans-serif;
+            font-size: 16px;
+            transition: border-color 0.2s;
+        }
+
+        .form-part .form-group input:focus,
+        .form-part .form-group textarea:focus {
+            outline: none;
+            border-color: var(--vols-orange);
+        }
+
+        .form-part .form-group textarea {
+            resize: vertical;
+            min-height: 90px;
+        }
+
+        /* SMS Consent Box */
+        .sms-consent-box {
+            background: rgba(255, 130, 0, 0.08);
+            padding: 16px;
+            border-left: 4px solid var(--vols-orange);
+            margin: 24px 0;
+            display: flex;
+            gap: 12px;
+            align-items: flex-start;
+        }
+
+        .sms-consent-box input[type="checkbox"] {
+            width: 20px;
+            height: 20px;
+            margin-top: 2px;
+            cursor: pointer;
+            flex-shrink: 0;
+        }
+
+        .sms-consent-box label {
+            cursor: pointer;
+            font-size: 14px;
+            color: var(--steel-gray);
+            line-height: 1.5;
+        }
+
+        .sms-consent-box label strong {
+            color: var(--deep-navy);
+        }
+
+        .legal-text {
+            margin: 20px 0;
+            padding: 14px;
+            background: #f5f4f2;
+        }
+
+        .legal-text small {
+            color: var(--steel-gray);
+            line-height: 1.6;
+            font-size: 12px;
+        }
+
+        .legal-text a {
+            color: var(--vols-orange);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .legal-text a:hover {
+            text-decoration: underline;
+        }
+
+        .sms-submit {
+            width: 100%;
+            padding: 18px;
+            background: var(--vols-orange);
+            color: white;
+            border: none;
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 20px;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .sms-submit:hover {
+            background: var(--vols-orange-dark);
+        }
+
+        .pilot-submit {
+            width: 100%;
+            padding: 18px;
+            background: var(--deep-navy);
+            color: white;
+            border: none;
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 20px;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .pilot-submit:hover {
+            background: #1a2d4a;
+        }
+
+        /* Form Divider */
+        .form-divider {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            color: var(--steel-gray);
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 18px;
+            letter-spacing: 1px;
+        }
+
+        .form-divider::before,
+        .form-divider::after {
+            content: '';
+            width: 1px;
+            height: 60px;
+            background: var(--light-gray);
+        }
+
+        /* Responsive Fixes */
+        @media (max-width: 900px) {
+
+            /* Fix nav overlap on mobile */
+            nav {
+                position: relative;
+            }
+
+            .hero {
+                padding-top: 40px;
+            }
+
+            .nav-content {
+                flex-direction: column;
+                padding: 16px 24px;
+            }
+
+            .nav-links {
+                flex-direction: column;
+                gap: 16px;
+                margin: 16px 0;
+                width: 100%;
+                text-align: center;
+            }
+
+            .nav-cta {
+                width: 100%;
+                text-align: center;
+            }
+
+            .nav-dropdown:hover .dropdown-content {
+                position: static;
+                transform: none;
+                background: transparent;
+                box-shadow: none;
+                text-align: center;
+                border-top: none;
+                padding-top: 0;
+            }
+
+            .dropdown-content a {
+                padding: 8px;
+                font-size: 14px;
+                opacity: 0.8;
+            }
+
+            .steps-grid,
+            .story-content,
+            .waitlist-content {
+                grid-template-columns: 1fr;
+            }
+
+            .faq-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-stats {
+                flex-direction: column;
+                gap: 24px;
+            }
+
+            .footer-content,
+            .footer-bottom {
+                flex-direction: column;
+                text-align: center;
+                gap: 20px;
+            }
+
+            .story-image {
+                order: -1;
+            }
+
+            /* SMS Banner & Form Mobile */
+            .form-container {
+                grid-template-columns: 1fr;
+            }
+
+            .form-divider {
+                flex-direction: row;
+            }
+
+            .form-divider::before,
+            .form-divider::after {
+                width: 60px;
+                height: 1px;
+            }
+
+            .form-part {
+                padding: 28px;
+            }
+
+            /* Comparison Table Mobile Fix */
+            .compare-row {
+                grid-template-columns: 1fr;
+                gap: 10px;
+                padding-bottom: 20px;
+                border-bottom: 2px solid var(--light-gray);
+            }
+
+            .compare-header {
+                display: none;
+                /* Hide header row on mobile */
+            }
+
+            .compare-cell {
+                padding: 5px 20px;
+                display: flex;
+                justify-content: space-between;
+                /* Spread out label vs value */
+            }
+
+            .compare-feature {
+                background: var(--deep-navy);
+                color: white;
+                padding: 10px 20px;
+                justify-content: center;
+            }
+
+            /* Add pseudo-labels for context on mobile */
+            .compare-check::before,
+            .compare-x::before {
+                content: attr(data-label);
+                font-size: 14px;
+                color: var(--steel-gray);
+                font-weight: 600;
+                margin-right: auto;
+            }
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        ::selection {
+            background: var(--vols-orange);
+            color: white;
+        }
+
+        /* Footer */
+        .site-footer {
+            background: var(--deep-navy);
+            color: rgba(255, 255, 255, 0.7);
+            padding: 60px 0 40px;
+            margin-top: 100px;
+            border-top: 1px solid rgba(255, 130, 0, 0.2);
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 24px;
+        }
+
+        .footer-brand p {
+            margin-bottom: 8px;
+            font-size: 14px;
+        }
+
+        .footer-tagline {
+            font-size: 12px;
+            opacity: 0.6;
+        }
+
+        .footer-links {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: 700;
+            transition: color 0.2s;
+        }
+
+        .footer-links a:hover {
+            color: var(--vols-orange);
+        }
+
+        .footer-divider {
+            color: rgba(255, 255, 255, 0.3);
+        }
+
+        @media (max-width: 900px) {
+            .footer-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .footer-brand {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="container nav-content">
+            <a href="/" class="nav-logo">
+                <img src="LogoImage.jpg" alt="KnoxCalls">
+                <span>Knox<span style="color: var(--vols-orange)">Calls</span></span>
+            </a>
+            <div class="nav-links">
+                <a href="/" class="nav-link">Home</a>
+                <a href="/about.html" class="nav-link">About</a>
+                <a href="#sms-form" class="nav-link">Get SMS Updates</a>
+                <div class="nav-dropdown">
+                    <span class="nav-link dropdown-trigger">Who We Serve</span>
+                    <div class="dropdown-content">
+                        <a href="/hvacr-dispatch.html">HVACR</a>
+                        <a href="/plumbing-dispatch.html">Plumbing</a>
+                    </div>
+                </div>
+            </div>
+            <a href="https://nightwatch.knoxcalls.com" class="nav-cta" rel="noopener">Contractor
+                Login</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-badge">Accepting Pilot Partners</div>
+                <h1>Your Phone Rings at 2 AM.<br><span class="highlight">That Caller Won't Try Again.</span></h1>
+                <p class="hero-subtitle">Night Watch answers so you don't miss the $500 emergency—or lose sleep to the
+                    spam.</p>
+                <p
+                    style="font-family: 'Bebas Neue', sans-serif; font-size: 28px; color: var(--vols-orange); letter-spacing: 2px; margin-bottom: 40px;">
+                    We Answer. You Profit.</p>
+                <div class="hero-cta">
+                    <button class="btn btn-primary" onclick="scrollToSection('sms-form')">Request Pilot Access</button>
+                    <button class="btn btn-secondary" onclick="scrollToSection('demo')">Hear It In Action</button>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <div class="stat-number">$500+</div>
+                        <div class="stat-label">Avg Emergency Job</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">67%</div>
+                        <div class="stat-label">Won't Leave Voicemail</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">15 min</div>
+                        <div class="stat-label">Setup Time</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SMS Signup Banner -->
+    <section class="sms-signup-banner" id="sms-updates">
+        <div class="sms-banner-content">
+            <h3>Stay Updated Via SMS</h3>
+            <p>Get exclusive updates about Night Watch availability in your area, pilot program announcements, and
+                service notifications.</p>
+            <a href="#sms-form" class="sms-cta">Sign Up for SMS Updates</a>
+        </div>
+    </section>
+
+    <!-- Problem Section -->
+    <section class="section problem-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-number">01</span>
+                <h2 class="section-title">The Problem You Know Too Well</h2>
+            </div>
+            <p class="section-subtitle">You didn't get into this trade to answer phones at midnight. But here you are.
+            </p>
+            <div class="problem-grid">
+                <div class="problem-card">
+                    <div class="problem-icon">&#9790;</div>
+                    <h3>You're Running on Empty</h3>
+                    <p>Every after-hours ring could be a $500 emergency or another spam call. You can't know without
+                        answering. So you answer everything. And you're exhausted.</p>
+                </div>
+                <div class="problem-card">
+                    <div class="problem-icon">&#128181;</div>
+                    <h3>Jobs Are Walking Out the Door</h3>
+                    <p>67% of callers won't leave a voicemail. They just call the next name on Google. That emergency
+                        job you slept through? Your competitor got it.</p>
+                </div>
+                <div class="problem-card">
+                    <div class="problem-icon">&#9917;</div>
+                    <h3>You're Missing Life's Moments</h3>
+                    <p>It's not just about sleep. It's about being present at dinner, focused at your kid's ball game,
+                        or actually relaxing on vacation without checking your phone.</p>
+                </div>
+                <div class="problem-card">
+                    <div class="problem-icon">&#128222;</div>
+                    <h3>Answering Services Don't Get It</h3>
+                    <p>Generic call centers read scripts. They don't know a compressor from a condenser. They treat a
+                        flooded basement the same as a pricing question.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works + Demo -->
+    <section class="section" id="demo">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-number">02</span>
+                <h2 class="section-title">How Night Watch Works</h2>
+            </div>
+            <p class="section-subtitle">Set it up before dinner. Sleep through the night. Wake up to a summary of what
+                happened&mdash;and only get called for the real stuff.</p>
+
+            <div class="steps-grid">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Forward Your Line</h3>
+                    <p>At 5 PM (or whenever you're done), forward your business line to Night Watch. Takes 30 seconds.
+                        Your customers call the same number they always have.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>Night Watch Handles It</h3>
+                    <p>Answers professionally. Recognizes your repeat customers by name ("Hi Bob, is the Trane unit
+                        acting up again?"). Filters out the spam.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>You Get What Matters</h3>
+                    <p>True emergency? You get a priority dispatch call immediately. Everything else? Morning summary
+                        with full details. Spam? Blocked and forgotten.</p>
+                </div>
+            </div>
+
+            <!-- Demo Call Player -->
+            <div class="demo-section">
+                <div class="demo-header">
+                    <h3>Hear Night Watch In Action</h3>
+                    <p>A real call. Real customer. Real emergency triage.</p>
+                </div>
+                <div class="demo-player">
+                    <audio controls preload="metadata">
+                        <source src="call1.wav" type="audio/wav">
+                        Your browser doesn't support audio playback.
+                    </audio>
+                    <div class="demo-context">
+                        <p><strong>The situation:</strong> 11:47 PM call. Commercial unit down, guests checking in
+                            tomorrow. Night Watch identifies it as a true emergency and dispatches immediately.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Features Box -->
+            <div class="features-box">
+                <h3>Everything You Get</h3>
+                <div class="features-grid">
+                    <div class="feature-item">
+                        <span class="feature-check">&#10003;</span>
+                        <span>After-hours & Weekend Coverage</span>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-check">&#10003;</span>
+                        <span>Knows emergency from routine</span>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-check">&#10003;</span>
+                        <span>Instant dispatch calls for true emergencies</span>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-check">&#10003;</span>
+                        <span>Answers instantly (Zero hold times)</span>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-check">&#10003;</span>
+                        <span>Complete call logs every morning</span>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-check">&#10003;</span>
+                        <span>Spam and robocall blocking</span>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-check">&#10003;</span>
+                        <span>Works with your existing phone number</span>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-check">&#10003;</span>
+                        <span>No contracts, cancel anytime</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Add-ons (Moved) -->
+            <div class="addons-section" style="margin-top: 60px;">
+                <h3 style="font-size: 32px; margin-bottom: 12px; text-align: center;">Power-Ups</h3>
+                <p class="section-subtitle">Make Night Watch even smarter. Custom configurations available.</p>
+                <div class="addons-grid">
+                    <div class="addon-card">
+                        <div class="addon-name">The Memory</div>
+                        <div class="addon-desc">Night Watch remembers your customers—including equipment history,
+                            service
+                            contracts, and even their dog's name. Greets repeat callers like an old friend.</div>
+                        <div class="addon-availability">Available on Request</div>
+                    </div>
+                    <div class="addon-card">
+                        <div class="addon-name">The Bulldog</div>
+                        <div class="addon-desc">For true emergencies, Night Watch doesn't stop. It persistently pages
+                            your techs based on schedules you define and escalates until someone acknowledges.</div>
+                        <div class="addon-availability">Available on Request</div>
+                    </div>
+                    <div class="addon-card">
+                        <div class="addon-name">The Vault</div>
+                        <div class="addon-desc">90-day recordings, searchable transcripts, and Caller Mood
+                            Detection. Know who was "Frustrated" regarding a gas leak versus who was
+                            "Grateful" for the quick pickup.</div>
+                        <div class="addon-availability">Available on Request</div>
+                    </div>
+                    <div class="addon-card">
+                        <div class="addon-name">Daylight Protocol</div>
+                        <div class="addon-desc">Daytime overflow coverage. When your office lines are tied up, Night
+                            Watch catches the spillover so you never hear a busy signal.</div>
+                        <div class="addon-availability">Available on Request</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Comparison Section (UPDATED) -->
+    <section class="section comparison-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-number">03</span>
+                <h2 class="section-title">Why Not a Regular Answering Service?</h2>
+            </div>
+            <p class="section-subtitle">You've tried them. Or you've heard the horror stories. Here's why Night Watch is
+                different.</p>
+
+            <div class="compare-rows">
+                <!-- Header Row -->
+                <div class="compare-row compare-header">
+                    <div></div>
+                    <div class="highlight">Night Watch</div>
+                    <div>Typical Service</div>
+                </div>
+
+                <!-- Feature Rows -->
+                <div class="compare-row">
+                    <div class="compare-cell compare-feature">Knows HVAC & plumbing lingo</div>
+                    <div class="compare-cell compare-check" data-label="Night Watch">&#10003;</div>
+                    <div class="compare-cell compare-x" data-label="Typical Service">&#10007;</div>
+                </div>
+
+                <div class="compare-row">
+                    <div class="compare-cell compare-feature">Filters real emergencies from routine</div>
+                    <div class="compare-cell compare-check" data-label="Night Watch">&#10003;</div>
+                    <div class="compare-cell compare-x" data-label="Typical Service">&#10007;</div>
+                </div>
+
+                <div class="compare-row">
+                    <div class="compare-cell compare-feature">Flat monthly rate (no per-minute fees)</div>
+                    <div class="compare-cell compare-check" data-label="Night Watch">&#10003;</div>
+                    <div class="compare-cell compare-x" data-label="Typical Service">&#10007;</div>
+                </div>
+
+                <div class="compare-row">
+                    <div class="compare-cell compare-feature">Wakes you only for real money</div>
+                    <div class="compare-cell compare-check" data-label="Night Watch">&#10003;</div>
+                    <div class="compare-cell compare-x" data-label="Typical Service">&#10007;</div>
+                </div>
+
+                <div class="compare-row">
+                    <div class="compare-cell compare-feature">No long-term contracts</div>
+                    <div class="compare-cell compare-check" data-label="Night Watch">&#10003;</div>
+                    <div class="compare-cell compare-x" data-label="Typical Service">&#10007;</div>
+                </div>
+
+                <div class="compare-row">
+                    <div class="compare-cell compare-feature">Setup in under 15 minutes</div>
+                    <div class="compare-cell compare-check" data-label="Night Watch">&#10003;</div>
+                    <div class="compare-cell compare-x" data-label="Typical Service">&#10007;</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Calculator Section -->
+    <section class="section calculator-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-number">04</span>
+                <h2 class="section-title">The Cost of "Missed Calls"</h2>
+            </div>
+            <p class="section-subtitle">You aren't just losing sleep and family time. You are losing revenue to
+                competitors who answer
+                the phone.</p>
+
+            <div class="calculator">
+                <div class="calc-grid">
+                    <div class="calc-input">
+                        <label>After-Hours Calls/Month</label>
+                        <input type="number" id="calc-calls" value="10" min="0">
+                    </div>
+                    <div class="calc-input">
+                        <label>Average Job Value ($)</label>
+                        <input type="number" id="calc-value" value="500" min="0">
+                    </div>
+                    <div class="calc-input">
+                        <label>Voicemail Hangup Rate (%)</label>
+                        <input type="number" id="calc-miss" value="65" min="0" max="100">
+                    </div>
+                </div>
+                <div class="calc-result">
+                    <div class="calc-result-label">Monthly Revenue at Risk</div>
+                    <div class="calc-result-number" id="calc-result">$13,000</div>
+                    <div class="calc-result-note">Night Watch captures this revenue for a flat monthly fee.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="section" id="pricing">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-number">05</span>
+                <h2 class="section-title">Pilot Program Access</h2>
+            </div>
+            <p class="section-subtitle">We don't charge per-minute fees. We don't have hidden surcharges. We offer a
+                flat "Safety Net" rate for local contractors.</p>
+
+            <div class="pricing-grid">
+                <div class="pricing-card featured">
+                    <div class="pricing-badge">Most Popular</div>
+                    <div class="pricing-tier">Pilot Partner</div>
+                    <div class="pricing-price">
+                        <span class="pricing-amount">Custom Quote</span>
+                    </div>
+                    <p class="pricing-desc">For local HVAC, Plumbing & Electrical fleets with 2-15 trucks.</p>
+                    <ul class="pricing-features">
+                        <li>Unlimited after-hours screening</li>
+                        <li>Instant Dispatch Call to On-Call Tech</li>
+                        <li>Spam & Robocall Blocking</li>
+                        <li>Morning Call Logs</li>
+                        <li><strong>Founding Member Pricing (Locked in)</strong></li>
+                    </ul>
+                    <a href="#sms-form" class="pricing-contact-btn">Get A Quote</a>
+                </div>
+            </div>
+
+
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="section faq-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-number">06</span>
+                <h2 class="section-title">Questions Contractors Ask</h2>
+            </div>
+
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <h4>How does Night Watch know what's an emergency?</h4>
+                    <p>It asks the right questions&mdash;what's happening, how urgent, what equipment is involved. A
+                        flooded basement gets escalated. A "just checking prices" call gets logged for morning. You
+                        customize the rules.</p>
+                </div>
+                <div class="faq-item">
+                    <h4>Will callers know they're not talking to a person?</h4>
+                    <p>Most can't tell. Night Watch answers naturally, uses your business name, and handles
+                        conversations like your best dispatcher would. We've tested it&mdash;people think they're
+                        talking to your team.</p>
+                </div>
+                <div class="faq-item">
+                    <h4>What if I don't respond to an emergency alert?</h4>
+                    <p>With the Bulldog add-on, Night Watch keeps trying. It will persist until someone acknowledges.
+                        Without Bulldog, you get a single priority dispatch call and can respond on your schedule.</p>
+                </div>
+                <div class="faq-item">
+                    <h4>Can I change when Night Watch is active?</h4>
+                    <p>Absolutely. Forward when you're done for the day, un-forward when you start. Most contractors do
+                        5 PM to 7 AM plus weekends. But you're in control.</p>
+                </div>
+                <div class="faq-item">
+                    <h4>Do I need to change my business phone number?</h4>
+                    <p>No. You keep your number. Just forward it to Night Watch when you want coverage. Your customers
+                        call the same number they always have.</p>
+                </div>
+                <div class="faq-item">
+                    <h4>What's the catch with the founding member rate?</h4>
+                    <p>No catch. We're building this with real contractors and want feedback. In exchange, you get
+                        preferred pricing for life. If it's not for you, cancel anytime.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Local Story Section -->
+    <section class="section story-section" style="text-align: center;">
+        <div class="container">
+            <div class="story-content" style="display: block; max-width: 800px; margin: 0 auto;">
+                <div class="story-text">
+                    <h2>Built in <span style="color: var(--vols-orange)">Knoxville</span>,<br>for Knoxville</h2>
+                    <p>KnoxCalls started with a simple observation: local contractors were losing sleep and losing jobs
+                        to missed after-hours calls. The big answering services didn't get the trades. And voicemail was
+                        costing real money.</p>
+                    <p>So we built Night Watch&mdash;an after-hours crew that actually understands HVAC, plumbing, and
+                        refrigeration. That knows what's urgent and what's not. That works as hard as you do.</p>
+                    <p>We're based here. We answer to you. And we're not going anywhere.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SMS Signup & Pilot Request Section -->
+    <section class="form-section section" id="sms-form">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-number">07</span>
+                <h2 class="section-title">Get Started</h2>
+            </div>
+            <p class="section-subtitle">
+                Want to stay in the loop? Sign up below to receive SMS updates about Night Watch availability
+                in your area. Already interested in becoming a pilot partner? Request full pilot program access
+                and we'll discuss pricing and get you set up.
+            </p>
+
+            <div class="form-container">
+
+                <!-- PART 1: SMS SIGNUP (PRIMARY) -->
+                <div class="form-part sms-signup-part">
+                    <h2>Get SMS Updates</h2>
+                    <p class="form-description">
+                        Receive text messages from KnoxCalls Night Watch with pilot program availability,
+                        updates, and service notifications for your area.
+                    </p>
+
+                    <form id="sms-signup-form" action="https://api.web3forms.com/submit" method="POST">
+                        <input type="hidden" name="access_key" value="09de1101-2362-4c64-92f8-9ace3ed222a1">
+                        <input type="hidden" name="subject" value="KnoxCalls SMS Signup">
+                        <input type="hidden" name="redirect" value="https://knoxcalls.com?success=sms">
+                        <input type="hidden" name="form_type" value="sms_signup">
+                        <input type="checkbox" name="botcheck" style="display: none;">
+
+                        <div class="form-group">
+                            <input type="text" id="sms-name" name="name" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="sms-email" name="email" placeholder="Email Address" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" id="sms-phone" name="phone" placeholder="Phone Number (for SMS)" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" id="sms-zip" name="zip_code" placeholder="Zip Code" required
+                                pattern="[0-9]{5}" maxlength="5" inputmode="numeric">
+                        </div>
+
+                        <div class="sms-consent-box">
+                            <input type="checkbox" id="sms-consent" name="sms_consent" value="yes" required>
+                            <label for="sms-consent">
+                                <strong>I want to receive SMS text messages from KnoxCalls Night Watch</strong>
+                                with updates about pilot program availability, service announcements, and dispatch
+                                information. <em style="color: var(--steel-gray); font-style: italic;">Message & data
+                                    rates may apply.</em>
+                            </label>
+                        </div>
+
+                        <div class="legal-text">
+                            <p>
+                                <small>
+                                    By checking this box, I agree to receive SMS text messages from KnoxCalls Night
+                                    Watch
+                                    regarding pilot availability and service updates. Message & data rates may apply.
+                                    Reply STOP to opt out.
+                                    <a href="/privacy-policy.html" target="_blank">Privacy Policy</a> &
+                                    <a href="/terms-of-service.html" target="_blank">Terms of Service</a>.
+                                </small>
+                            </p>
+                        </div>
+
+                        <button type="submit" class="sms-submit">Sign Up for SMS Updates</button>
+                    </form>
+                </div>
+
+                <!-- DIVIDER -->
+                <div class="form-divider">
+                    <span>OR</span>
+                </div>
+
+                <!-- PART 2: REQUEST PILOT ACCESS (SECONDARY) -->
+                <div class="form-part pilot-request-part">
+                    <h3>Request Pilot Program Access</h3>
+                    <p class="form-description">
+                        Interested in the full pilot program? Tell us about your business and we'll
+                        discuss pricing and get you set up.
+                    </p>
+
+                    <form id="pilot-request-form" action="https://api.web3forms.com/submit" method="POST">
+                        <input type="hidden" name="access_key" value="09de1101-2362-4c64-92f8-9ace3ed222a1">
+                        <input type="hidden" name="subject" value="KnoxCalls Pilot Request">
+                        <input type="hidden" name="redirect" value="https://knoxcalls.com?success=pilot">
+                        <input type="hidden" name="form_type" value="pilot_request">
+                        <input type="checkbox" name="botcheck" style="display: none;">
+                        <input type="hidden" name="calculated_loss" id="hidden-calc">
+
+                        <div class="form-group">
+                            <input type="text" id="pilot-name" name="name" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="pilot-email" name="email" placeholder="Email Address" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" id="pilot-phone" name="phone" placeholder="Phone Number" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" id="pilot-business" name="business_name" placeholder="Business Name"
+                                required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" id="pilot-zip" name="zip_code" placeholder="Zip Code" required
+                                pattern="[0-9]{5}" maxlength="5" inputmode="numeric">
+                        </div>
+                        <div class="form-group">
+                            <textarea id="pilot-setup" name="current_setup"
+                                placeholder="Current after-hours setup? (e.g. Voicemail, Ruby, Answering Service)"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" id="pilot-referral" name="referral_code" placeholder="Referral Code (optional, e.g. ABCD-1234)"
+                                pattern="[A-Za-z0-9]{4}-[A-Za-z0-9]{4}" maxlength="9"
+                                oninput="this.value=this.value.toUpperCase()"
+                                title="Format: 4 characters, dash, 4 characters (e.g. ABCD-1234)">
+                        </div>
+
+                        <div class="sms-consent-box">
+                            <input type="checkbox" id="pilot-consent" name="contact_consent" value="yes" required>
+                            <label for="pilot-consent">
+                                <strong>I agree to receive communications from KnoxCalls Night Watch</strong>
+                                regarding my pilot application, pricing, and service updates.
+                                <em style="color: var(--steel-gray); font-style: italic;">Message & data rates may
+                                    apply.</em>
+                            </label>
+                        </div>
+
+                        <div class="sms-consent-box"
+                            style="background: transparent; border-left-color: var(--light-gray);">
+                            <input type="checkbox" id="pilot-sms-consent" name="sms_consent" value="yes">
+                            <label for="pilot-sms-consent">
+                                <strong>I also want to receive SMS updates</strong> about availability in my area
+                                and service announcements. (Optional)
+                            </label>
+                        </div>
+
+                        <div class="legal-text">
+                            <p>
+                                <small>
+                                    By submitting this form, I agree to receive communications from KnoxCalls.
+                                    Reply STOP to opt out of SMS messages.
+                                    <a href="/privacy-policy.html" target="_blank">Privacy Policy</a> &
+                                    <a href="/terms-of-service.html" target="_blank">Terms of Service</a>.
+                                </small>
+                            </p>
+                        </div>
+
+                        <button type="submit" class="pilot-submit">Request Pilot Access</button>
+                    </form>
+
+                    <div class="guarantee-box"
+                        style="margin-top: 24px; background: rgba(10, 22, 40, 0.05); border-left: 4px solid var(--vols-orange);">
+                        <p style="margin: 0; font-size: 14px; color: var(--steel-gray);">
+                            <strong style="color: var(--deep-navy);">The "Sleep Tight" Guarantee.</strong> If Night
+                            Watch misses a genuine emergency
+                            dispatch in your first 30 days, your first month is on the house.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <a href="/" class="footer-logo"
+                    style="text-decoration: none; display: flex; align-items: center; gap: 10px; color: white; font-family: 'Bebas Neue', sans-serif; font-size: 24px;">
+                    <img src="LogoImage.jpg" alt="KnoxCalls" style="height: 40px;">
+                    <span>Knox<span style="color: var(--vols-orange)">Calls</span></span>
+                </a>
+                <div class="footer-tagline">
+                    Night Watch&mdash;Your After-Hours Crew<br>
+                    Built in Knoxville for East Tennessee contractors
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <span>&copy; 2026 KnoxCalls. All rights reserved.</span>
+                <span style="display: flex; gap: 20px;">
+                    <a href="/privacy-policy.html" style="color: rgba(255,255,255,0.5); text-decoration: none;">Privacy
+                        Policy</a>
+                    <a href="/terms-of-service.html" style="color: rgba(255,255,255,0.5); text-decoration: none;">Terms
+                        of Service</a>
+                    <a href="mailto:info@knoxcalls.com"
+                        style="color: rgba(255,255,255,0.5); text-decoration: none;">Contact</a>
+                </span>
+                <span>Go Vols.</span>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function scrollToSection(id) {
+            document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Calculator
+        function updateCalculator() {
+            const calls = parseInt(document.getElementById('calc-calls').value) || 0;
+            const value = parseInt(document.getElementById('calc-value').value) || 0;
+            const missRate = parseInt(document.getElementById('calc-miss').value) || 0;
+
+            const monthlyLoss = Math.round(calls * value * (missRate / 100));
+            document.getElementById('calc-result').textContent = '$' + monthlyLoss.toLocaleString();
+            document.getElementById('hidden-calc').value = '$' + monthlyLoss.toLocaleString() + '/month estimated loss';
+        }
+
+        document.getElementById('calc-calls').addEventListener('input', updateCalculator);
+        document.getElementById('calc-value').addEventListener('input', updateCalculator);
+        document.getElementById('calc-miss').addEventListener('input', updateCalculator);
+        updateCalculator();
+
+        // Form success
+        const urlParams = new URLSearchParams(window.location.search);
+        if (urlParams.get('success') === 'sms') {
+            alert('You\'re signed up for SMS updates! We\'ll text you when Night Watch is available in your area.');
+            window.history.replaceState({}, document.title, window.location.pathname);
+        } else if (urlParams.get('success') === 'pilot') {
+            alert('Pilot request received! We\'ll be in touch within 24 hours.');
+            window.history.replaceState({}, document.title, window.location.pathname);
+        } else if (urlParams.get('success') === 'true') {
+            alert('Application received! We\'ll be in touch within 24 hours.');
+            window.history.replaceState({}, document.title, window.location.pathname);
+        }
+    </script>
+
+    <!-- Structured Data for SEO -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "KnoxCalls",
+        "description": "After-hours answering service for HVAC, plumbing, and refrigeration contractors in Knoxville and East Tennessee.",
+        "url": "https://knoxcalls.com",
+        "logo": "https://knoxcalls.com/LogoLetters.jpg",
+        "image": "https://knoxcalls.com/LogoImage.jpg",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Knoxville",
+            "addressRegion": "TN"
+        },
+        "areaServed": {
+            "@type": "State",
+            "name": "Tennessee"
+        },
+        "priceRange": "$$",
+        "serviceType": ["Answering Service", "After Hours Dispatch", "Contractor Support"]
+    }
+    </script>
+
+
+</body>
+
+</html>

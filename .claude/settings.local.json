@@ -11,7 +11,9 @@
       "Bash(curl.exe:*)",
       "Bash(curl:*)",
       "Bash(git commit -m \"$\\(cat <<''EOF''\nRedesign landing page with clean numbered sections and Vols Orange\n\n- New professional design matching pilot-proposal.html style\n- TN Vols Orange \\(#FF8200\\) color scheme\n- Numbered sections \\(01-05\\) with Bebas Neue typography\n- Interactive ROI calculator and add-on selector\n- Both pricing tiers \\(founding $149 / standard $299\\)\n- SEO meta tags, Open Graph, and Schema.org structured data\n- Config variables at top for easy updates\n- Mobile responsive design\n\nCo-Authored-By: Claude Opus 4.5 <noreply@anthropic.com>\nEOF\n\\)\")",
-      "Bash(findstr:*)"
+      "Bash(findstr:*)",
+      "Bash(cmd /c:*)",
+      "Bash(git -C \"C:/Users/naray/Documents/knoxcalls-landing\" stash)"
     ]
   }
 }

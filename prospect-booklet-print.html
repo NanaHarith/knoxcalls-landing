@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KnoxCalls - Prospect Booklet</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+            background: white;
+            color: #333;
+        }
+
+        @page {
+            size: 8.5in 11in;
+            margin: 0;
+        }
+
+        @media print {
+            body { margin: 0; padding: 0; }
+            .page { page-break-after: always; }
+        }
+
+        :root {
+            --navy: #0a1628;
+            --orange: #FF8200;
+            --white: #ffffff;
+            --dark-gray: #333333;
+            --light-gray: #f5f5f5;
+        }
+
+        .page {
+            width: 8.5in;
+            height: 11in;
+            display: flex;
+            flex-direction: column;
+            background: white;
+            margin: 0 auto;
+            position: relative;
+            box-shadow: 0 0 0 1px #ddd;
+        }
+
+        /* PAGE 1: FRONT COVER */
+        .page.cover {
+            background: var(--navy);
+            color: white;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 1in;
+        }
+
+        .page.cover .accent-stripe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 0.6in;
+            background: var(--orange);
+        }
+
+        .page.cover h1 {
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 0.3in;
+            position: relative;
+            z-index: 1;
+        }
+
+        .page.cover .tagline {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--orange);
+            margin-bottom: 0.2in;
+            position: relative;
+            z-index: 1;
+        }
+
+        .page.cover .company {
+            font-size: 12px;
+            margin-top: 3in;
+            position: relative;
+            z-index: 1;
+        }
+
+        .page.cover .company-name {
+            font-size: 12px;
+            font-weight: 700;
+        }
+
+        .page.cover .company-tag {
+            font-size: 10px;
+            color: #aaa;
+            margin-top: 0.1in;
+        }
+
+        .page.cover .motto {
+            position: absolute;
+            bottom: 0.8in;
+            left: 0;
+            right: 0;
+            font-size: 11px;
+            font-style: italic;
+            color: var(--orange);
+        }
+
+        /* INTERIOR PAGES */
+        .page.interior {
+            padding: 0.6in;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .page.interior h1 {
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--navy);
+            margin-bottom: 0.15in;
+            line-height: 1.2;
+        }
+
+        .page.interior .divider {
+            width: 2in;
+            height: 0.08in;
+            background: var(--orange);
+            margin-bottom: 0.2in;
+        }
+
+        .page.interior h2 {
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--navy);
+            margin-top: 0.2in;
+            margin-bottom: 0.08in;
+        }
+
+        .page.interior p {
+            font-size: 10px;
+            line-height: 1.5;
+            color: var(--dark-gray);
+            margin-bottom: 0.12in;
+        }
+
+        .page.interior ul {
+            list-style: none;
+            margin: 0.1in 0;
+        }
+
+        .page.interior li {
+            font-size: 10px;
+            line-height: 1.4;
+            margin-bottom: 0.1in;
+            color: var(--dark-gray);
+            margin-left: 0.3in;
+        }
+
+        .page.interior li:before {
+            content: "✓";
+            color: var(--orange);
+            font-weight: 700;
+            margin-right: 0.1in;
+            margin-left: -0.3in;
+        }
+
+        .page.interior .highlight-box {
+            background: #f5f5f5;
+            padding: 0.15in;
+            margin: 0.15in 0;
+            border-left: 3px solid var(--orange);
+        }
+
+        .page.interior .highlight-box strong {
+            color: var(--navy);
+            font-weight: 700;
+        }
+
+        .page.interior .stat-box {
+            background: var(--orange);
+            color: white;
+            padding: 0.15in;
+            margin: 0.15in 0;
+            font-weight: 700;
+            font-size: 11px;
+            text-align: center;
+        }
+
+        .page.interior .guarantee-box {
+            background: var(--orange);
+            color: white;
+            padding: 0.2in;
+            margin: 0.15in 0;
+            text-align: center;
+        }
+
+        .page.interior .guarantee-box .title {
+            font-size: 13px;
+            font-weight: 700;
+            margin-bottom: 0.08in;
+        }
+
+        .page.interior .guarantee-box .content {
+            font-size: 10px;
+            line-height: 1.4;
+        }
+
+        .page.interior .pricing-table {
+            width: 100%;
+            margin: 0.15in 0;
+            font-size: 10px;
+        }
+
+        .page.interior .pricing-row {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 0.2in;
+            padding: 0.1in 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .page.interior .pricing-row:last-child {
+            border-bottom: none;
+        }
+
+        .page.interior .pricing-label {
+            font-weight: 700;
+            color: var(--navy);
+        }
+
+        .page.interior .pricing-price {
+            color: var(--orange);
+            font-weight: 700;
+            text-align: right;
+        }
+
+        .page.interior .pricing-desc {
+            font-size: 9px;
+            color: var(--dark-gray);
+            padding-left: 0.3in;
+            margin-top: 0.05in;
+        }
+
+        .page.interior .cta-button {
+            background: var(--navy);
+            color: white;
+            padding: 0.15in;
+            text-align: center;
+            font-weight: 700;
+            font-size: 12px;
+            margin: 0.15in 0;
+            letter-spacing: 0.5px;
+        }
+
+        .page.interior .footer-section {
+            background: #f5f5f5;
+            padding: 0.15in;
+            margin: 0.15in 0;
+            font-size: 10px;
+            line-height: 1.4;
+        }
+
+        .page.interior .footer-section strong {
+            color: var(--navy);
+            font-weight: 700;
+            display: block;
+            margin-bottom: 0.05in;
+        }
+
+        .page.interior .footer-motto {
+            text-align: right;
+            font-style: italic;
+            color: var(--orange);
+            margin-top: 0.1in;
+            font-size: 10px;
+            font-weight: 600;
+        }
+
+        .page.interior .content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .page.interior .step {
+            display: flex;
+            gap: 0.15in;
+            margin-bottom: 0.15in;
+            align-items: flex-start;
+        }
+
+        .page.interior .step-number {
+            width: 0.25in;
+            height: 0.25in;
+            background: var(--orange);
+            color: white;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            flex-shrink: 0;
+            font-size: 11px;
+        }
+
+        .page.interior .step-content {
+            font-size: 10px;
+            line-height: 1.4;
+            color: var(--dark-gray);
+        }
+
+        .page.interior .step-title {
+            font-weight: 700;
+            color: var(--navy);
+            margin-bottom: 0.05in;
+        }
+
+        /* PAGE 2: PROBLEM */
+        .page.problem-page {
+        }
+
+        /* PAGE 3: HOW IT WORKS */
+        .page.how-page {
+        }
+
+        /* PAGE 4: DIFFERENCES */
+        .page.diff-page {
+        }
+
+        /* PAGE 5: GUARANTEE */
+        .page.guarantee-page {
+        }
+
+        /* PAGE 6: PRICING */
+        .page.pricing-page {
+        }
+    </style>
+</head>
+<body>
+
+<!-- PAGE 1: FRONT COVER -->
+<div class="page cover">
+    <div class="accent-stripe"></div>
+    <h1>NIGHT WATCH</h1>
+    <div class="tagline">Your After-Hours Crew<br>That Actually Gets It</div>
+    <div class="company">
+        <div class="company-name">By KnoxCalls</div>
+        <div class="company-tag">Built in Knoxville for Knoxville contractors</div>
+    </div>
+    <div class="motto">We Answer. You Profit.</div>
+</div>
+
+<!-- PAGE 2: THE PROBLEM -->
+<div class="page interior problem-page">
+    <div class="content">
+        <div>
+            <h1>The Problem You<br>Know Too Well</h1>
+            <div class="divider"></div>
+            <p style="margin-top: 0.15in;">You didn't get into this trade to answer phones at midnight. But here you are.</p>
+
+            <h2>Running on Empty</h2>
+            <p>You answer everything because you can't know what's on the other end. And you're exhausted.</p>
+
+            <h2>Jobs Walking Out the Door</h2>
+            <p>67% of callers won't leave voicemail. They just call the next name on Google. Your $500 job went to your competitor.</p>
+
+            <h2>Missing Life</h2>
+            <p>It's not just sleep. It's family dinner. Your kid's game. Vacation. All interrupted by the phone.</p>
+
+            <h2>Bad Services</h2>
+            <p>Generic call centers read scripts. They don't know a compressor from a condenser. Every call gets the same treatment.</p>
+
+            <div class="highlight-box" style="margin-top: 0.2in;">
+                <strong style="display: block; margin-bottom: 0.08in;">The Math That Matters:</strong>
+                <p style="margin: 0;">$500+ average emergency job × ~3 missed calls per month = $1,500/month in lost revenue</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- PAGE 3: HOW IT WORKS -->
+<div class="page interior how-page">
+    <div class="content">
+        <div>
+            <h1>How Night Watch Works</h1>
+            <div class="divider"></div>
+            <p style="margin-top: 0.15in;">Set it up before dinner. Sleep through the night. Wake up to a summary—and only get called for the real stuff.</p>
+
+            <div class="step" style="margin-top: 0.2in;">
+                <div class="step-number">1</div>
+                <div class="step-content">
+                    <div class="step-title">Forward Your Line</div>
+                    At 5 PM, forward your business line to Night Watch. Takes 30 seconds. Your customers call the same number they always have.
+                </div>
+            </div>
+
+            <div class="step">
+                <div class="step-number">2</div>
+                <div class="step-content">
+                    <div class="step-title">We Handle It</div>
+                    We answer professionally. We recognize your repeat customers by name. We filter the spam. We know what's urgent.
+                </div>
+            </div>
+
+            <div class="step">
+                <div class="step-number">3</div>
+                <div class="step-content">
+                    <div class="step-title">You Get What Matters</div>
+                    True emergency? Immediate dispatch call. Everything else? Morning summary. Spam? Blocked and forgotten.
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- PAGE 4: WHY WE'RE DIFFERENT -->
+<div class="page interior diff-page">
+    <div class="content">
+        <div>
+            <h1>Why We're Different</h1>
+            <div class="divider"></div>
+            <p style="margin-top: 0.15in;">You've tried generic answering services. Or heard the horror stories. Here's why Night Watch is built differently:</p>
+
+            <h2 style="margin-top: 0.25in;">✓ AI That Knows Your Trade</h2>
+            <p>Not a script-reader. We understand HVAC, plumbing, refrigeration. We ask the right questions.</p>
+
+            <h2>✓ Flat Pricing. No Hidden Fees.</h2>
+            <p>No per-minute charges that blow up your bill. No setup fees. No surprises. $199/month. That's it.</p>
+
+            <h2>✓ Built Locally. Built Right.</h2>
+            <p>We're Knoxville-based. We answer to you, not to some corporate call center.</p>
+
+            <h2>✓ Emergency Triage That Works</h2>
+            <p>We separate real emergencies from routine calls. You only get woken up when it matters.</p>
+        </div>
+    </div>
+</div>
+
+<!-- PAGE 5: GUARANTEE -->
+<div class="page interior guarantee-page">
+    <div class="content">
+        <div>
+            <h1>The Sleep Tight Guarantee</h1>
+            <div class="divider"></div>
+
+            <div class="guarantee-box" style="margin-top: 0.3in;">
+                <div class="title">Miss a genuine emergency dispatch<br>in your first 30 days?<br><br>Your first month is on us.</div>
+            </div>
+
+            <p style="margin-top: 0.25in;">We're so confident in our AI triage and industry expertise, we'll eat the cost if we miss.</p>
+            <p>That puts the risk on us, not on you.</p>
+            <p style="margin-top: 0.2in;"><strong>No catch. No fine print. Just peace of mind.</strong></p>
+        </div>
+    </div>
+</div>
+
+<!-- PAGE 6: PRICING & BACK COVER -->
+<div class="page interior pricing-page">
+    <div class="content">
+        <div>
+            <h1>Pricing & Getting Started</h1>
+            <div class="divider"></div>
+
+            <div class="pricing-table" style="margin-top: 0.2in;">
+                <div class="pricing-row">
+                    <div class="pricing-label">Night Watch (Base)</div>
+                    <div class="pricing-price">$199/mo</div>
+                </div>
+                <div class="pricing-desc">24/7 emergency triage, morning summaries, spam blocking</div>
+
+                <div class="pricing-row" style="margin-top: 0.1in;">
+                    <div class="pricing-label">Add: The Bulldog</div>
+                    <div class="pricing-price">+$49/mo</div>
+                </div>
+                <div class="pricing-desc">Persistent dispatch escalation</div>
+
+                <div class="pricing-row" style="margin-top: 0.1in;">
+                    <div class="pricing-label">Add: The Memory</div>
+                    <div class="pricing-price">+$49/mo</div>
+                </div>
+                <div class="pricing-desc">Customer history & personalization</div>
+            </div>
+
+            <div class="highlight-box" style="margin-top: 0.2in;">
+                <strong>Founding Member Pricing:</strong>
+                <p style="margin: 0.05in 0 0;">Lock in your rate for life. No price increases.</p>
+            </div>
+
+            <div class="cta-button" style="margin-top: 0.2in;">REQUEST PILOT ACCESS</div>
+
+            <div style="margin-top: 0.2in; text-align: center; font-size: 10px; color: var(--dark-gray);">
+                knoxcalls.com<br>
+                info@knoxcalls.com
+            </div>
+        </div>
+
+        <div>
+            <div class="footer-section">
+                <strong>Built in Knoxville for Knoxville</strong>
+                <p style="margin: 0;">We're not a faceless call center. We answer to you. And we're not going anywhere.</p>
+            </div>
+            <div class="footer-motto">Go Vols.</div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

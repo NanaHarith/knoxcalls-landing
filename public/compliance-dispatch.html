@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO Meta Tags -->
+    <title>SMS Compliance & Consent | KnoxCalls Night Watch</title>
+    <meta name="description"
+        content="How KnoxCalls Night Watch collects SMS consent from end-users. Documents website opt-in and technician dispatch enrollment consent flows.">
+    <meta name="robots" content="index, follow">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/jpeg" href="LogoImage.jpg">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Source+Sans+3:wght@400;600;700&display=swap"
+        rel="stylesheet">
+
+    <style>
+        :root {
+            --vols-orange: #FF8200;
+            --vols-orange-dark: #e67300;
+            --deep-navy: #0a1628;
+            --warm-white: #faf9f7;
+            --steel-gray: #4a5568;
+            --light-gray: #e8e6e3;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Source Sans 3', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--warm-white);
+            color: var(--deep-navy);
+            line-height: 1.7;
+        }
+
+        h1,
+        h2,
+        h3 {
+            font-family: 'Bebas Neue', Impact, sans-serif;
+            letter-spacing: 1px;
+            line-height: 1.2;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(10, 22, 40, 0.97);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 12px 0;
+        }
+
+        .nav-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            color: white;
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 24px;
+        }
+
+        .nav-logo img {
+            height: 40px;
+            width: auto;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 32px;
+        }
+
+        .nav-link {
+            color: white;
+            text-decoration: none;
+            font-family: 'Source Sans 3', sans-serif;
+            font-weight: 600;
+            font-size: 16px;
+            transition: color 0.2s;
+            cursor: pointer;
+        }
+
+        .nav-link:hover {
+            color: var(--vols-orange);
+        }
+
+        .nav-dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: var(--deep-navy);
+            min-width: 160px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            z-index: 1001;
+            padding: 8px 0;
+            border-top: 2px solid var(--vols-orange);
+        }
+
+        .nav-dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown-content a {
+            color: white;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            background-color: rgba(255, 130, 0, 0.1);
+            color: var(--vols-orange);
+        }
+
+        .nav-cta {
+            background: var(--vols-orange);
+            color: white;
+            padding: 12px 28px;
+            border: none;
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 16px;
+            letter-spacing: 1px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.2s;
+        }
+
+        .nav-cta:hover {
+            background: var(--vols-orange-dark);
+            transform: translateY(-2px);
+        }
+
+        /* Hero */
+        .page-header {
+            background: var(--deep-navy);
+            color: white;
+            padding: 160px 0 80px;
+            text-align: center;
+        }
+
+        .page-header h1 {
+            font-size: clamp(40px, 6vw, 64px);
+            margin-bottom: 24px;
+        }
+
+        .page-header p {
+            font-size: 20px;
+            color: rgba(255, 255, 255, 0.8);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* Content */
+        .section {
+            padding: 80px 0;
+        }
+
+        .content-block {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .content-block h2 {
+            font-size: 32px;
+            color: var(--vols-orange);
+            margin-bottom: 24px;
+            border-bottom: 2px solid var(--vols-orange);
+            padding-bottom: 10px;
+        }
+
+        .content-block h3 {
+            font-size: 22px;
+            color: var(--deep-navy);
+            margin-top: 32px;
+            margin-bottom: 16px;
+        }
+
+        .content-block p,
+        .content-block ul {
+            margin-bottom: 16px;
+            font-size: 17px;
+            color: var(--steel-gray);
+        }
+
+        .content-block ul {
+            padding-left: 24px;
+        }
+
+        .content-block li {
+            margin-bottom: 8px;
+        }
+
+        .content-block a {
+            color: var(--vols-orange);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .content-block a:hover {
+            text-decoration: underline;
+        }
+
+        .highlight-box {
+            background: white;
+            border-left: 4px solid var(--vols-orange);
+            padding: 32px;
+            margin: 32px 0;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+        }
+
+        .highlight-box h3 {
+            color: var(--vols-orange);
+            font-size: 24px;
+            margin-bottom: 16px;
+            margin-top: 0;
+        }
+
+        .highlight-box p {
+            margin-bottom: 12px;
+        }
+
+        .highlight-box p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* SMS Message Preview */
+        .sms-preview {
+            background: #e8f4e8;
+            border: 1px solid #c3dcc3;
+            border-radius: 12px;
+            padding: 20px 24px;
+            margin: 24px 0;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            font-size: 15px;
+            color: #1a1a1a;
+            line-height: 1.5;
+            max-width: 480px;
+            position: relative;
+        }
+
+        .sms-preview::before {
+            content: "SMS Preview";
+            display: block;
+            font-family: 'Source Sans 3', sans-serif;
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--steel-gray);
+            margin-bottom: 12px;
+        }
+
+        /* Consent Flow Diagram */
+        .flow-diagram {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+            margin: 40px 0;
+        }
+
+        .flow-step {
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+        }
+
+        .flow-connector {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-width: 48px;
+        }
+
+        .flow-number {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: var(--vols-orange);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 22px;
+            flex-shrink: 0;
+        }
+
+        .flow-line {
+            width: 3px;
+            height: 40px;
+            background: var(--light-gray);
+        }
+
+        .flow-content {
+            padding: 10px 0 30px;
+        }
+
+        .flow-content strong {
+            display: block;
+            font-size: 17px;
+            color: var(--deep-navy);
+            margin-bottom: 4px;
+        }
+
+        .flow-content span {
+            font-size: 15px;
+            color: var(--steel-gray);
+        }
+
+        /* Consent Methods Grid */
+        .consent-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 32px;
+            margin: 40px 0;
+        }
+
+        .consent-card {
+            background: white;
+            padding: 32px;
+            border: 1px solid var(--light-gray);
+            border-top: 4px solid var(--vols-orange);
+        }
+
+        .consent-card h3 {
+            font-size: 22px;
+            margin: 0 0 8px;
+            color: var(--deep-navy);
+        }
+
+        .consent-card .card-subtitle {
+            font-size: 14px;
+            color: var(--vols-orange);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 16px;
+        }
+
+        .consent-card p {
+            font-size: 15px;
+            color: var(--steel-gray);
+            margin-bottom: 12px;
+        }
+
+        /* Keyword Table */
+        .keyword-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 24px 0;
+        }
+
+        .keyword-table th,
+        .keyword-table td {
+            padding: 14px 20px;
+            text-align: left;
+            border-bottom: 1px solid var(--light-gray);
+        }
+
+        .keyword-table th {
+            background: var(--deep-navy);
+            color: white;
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 16px;
+            letter-spacing: 1px;
+        }
+
+        .keyword-table td {
+            font-size: 15px;
+            color: var(--steel-gray);
+        }
+
+        .keyword-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .keyword-table .keyword {
+            font-weight: 700;
+            color: var(--deep-navy);
+            font-family: monospace;
+            font-size: 16px;
+        }
+
+        /* Contact Box */
+        .contact-box {
+            background: #f8f9fa;
+            border: 1px solid #dee2e6;
+            padding: 24px;
+            margin: 32px 0;
+            border-radius: 8px;
+        }
+
+        .contact-box p {
+            margin-bottom: 8px;
+        }
+
+        /* Footer */
+        .site-footer {
+            background: var(--deep-navy);
+            color: rgba(255, 255, 255, 0.7);
+            padding: 60px 0 40px;
+            margin-top: 100px;
+            border-top: 1px solid rgba(255, 130, 0, 0.2);
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 24px;
+        }
+
+        .footer-brand p {
+            margin-bottom: 8px;
+            font-size: 14px;
+        }
+
+        .footer-tagline {
+            font-size: 12px;
+            opacity: 0.6;
+        }
+
+        .footer-links {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: 700;
+            transition: color 0.2s;
+        }
+
+        .footer-links a:hover {
+            color: var(--vols-orange);
+        }
+
+        .footer-divider {
+            color: rgba(255, 255, 255, 0.3);
+        }
+
+        /* Responsive */
+        @media (max-width: 900px) {
+            .nav-content {
+                flex-direction: column;
+                padding: 16px 24px;
+            }
+
+            .nav-links {
+                flex-direction: column;
+                gap: 16px;
+                margin: 16px 0;
+                width: 100%;
+                text-align: center;
+            }
+
+            .nav-cta {
+                width: 100%;
+                text-align: center;
+            }
+
+            .nav-dropdown:hover .dropdown-content {
+                position: static;
+                transform: none;
+                background: transparent;
+                box-shadow: none;
+                text-align: center;
+                border-top: none;
+                padding-top: 0;
+            }
+
+            .dropdown-content a {
+                padding: 8px;
+                font-size: 14px;
+                opacity: 0.8;
+            }
+
+            .page-header h1 {
+                font-size: 42px;
+            }
+
+            .consent-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <div class="container nav-content">
+            <a href="/" class="nav-logo">
+                <img src="LogoImage.jpg" alt="KnoxCalls">
+                <span>Knox<span style="color: var(--vols-orange)">Calls</span></span>
+            </a>
+            <div class="nav-links">
+                <a href="/" class="nav-link">Home</a>
+                <a href="/about.html" class="nav-link">About</a>
+                <div class="nav-dropdown">
+                    <span class="nav-link dropdown-trigger">Who We Serve</span>
+                    <div class="dropdown-content">
+                        <a href="/hvacr-dispatch.html">HVACR</a>
+                        <a href="/plumbing-dispatch.html">Plumbing</a>
+                    </div>
+                </div>
+            </div>
+            <a href="https://nightwatch.knoxcalls.com" class="nav-cta" rel="noopener">Contractor
+                Login</a>
+        </div>
+    </nav>
+
+    <header class="page-header">
+        <div class="container">
+            <h1>SMS Compliance & Consent</h1>
+            <p>How KnoxCalls Night Watch obtains and manages end-user consent for SMS communications.</p>
+        </div>
+    </header>
+
+    <section class="section">
+        <div class="container content-block">
+
+            <!-- Overview -->
+            <h2>Overview</h2>
+            <p>KnoxCalls Night Watch sends SMS messages for two purposes: <strong>service updates</strong> to
+                business owners who sign up on our website, and <strong>emergency dispatch alerts</strong> to
+                on-call technicians enrolled through the Night Watch Dashboard. Both consent flows require
+                explicit end-user action before any messages are sent.</p>
+
+            <div class="highlight-box">
+                <h3>Consent Principle</h3>
+                <p>No SMS message is ever sent to a phone number that has not been explicitly confirmed by the
+                    end-user who owns that number. Business owners cannot unilaterally enroll a technician—the
+                    technician must independently confirm via SMS reply.</p>
+            </div>
+
+            <!-- Two Consent Methods -->
+            <h2>Consent Methods</h2>
+
+            <div class="consent-grid">
+                <div class="consent-card">
+                    <div class="card-subtitle">Method 1</div>
+                    <h3>Website SMS Opt-In</h3>
+                    <p>Business owners and prospects visit <strong>knoxcalls.com</strong> and submit the SMS
+                        signup form. The form requires:</p>
+                    <ul>
+                        <li>Name, email, and phone number</li>
+                        <li>Checking the explicit consent checkbox: <em>"I want to receive SMS text messages from
+                                KnoxCalls Night Watch"</em></li>
+                        <li>Clicking <strong>"Sign Up for SMS Updates"</strong></li>
+                    </ul>
+                    <p>Messages include pilot program availability, service announcements, and account
+                        notifications.</p>
+                </div>
+                <div class="consent-card">
+                    <div class="card-subtitle">Method 2</div>
+                    <h3>Technician Dispatch Enrollment</h3>
+                    <p>Business owners add technicians to their dispatch roster via the <strong>Night Watch
+                            Dashboard</strong>. The owner confirms:</p>
+                    <ul>
+                        <li>The technician has been informed about the SMS alerts</li>
+                        <li>A consent checkbox: <em>"I confirm this technician has consented to receive automated
+                                dispatch alerts. An opt-in confirmation text will be sent."</em></li>
+                    </ul>
+                    <p>The technician must then independently confirm via the SMS handshake described below.</p>
+                </div>
+            </div>
+
+            <!-- Technician Opt-In Flow -->
+            <h2>Technician Dispatch Opt-In Flow</h2>
+            <p>When a business owner adds a technician to their emergency dispatch roster, the following
+                sequence occurs:</p>
+
+            <div class="flow-diagram">
+                <div class="flow-step">
+                    <div class="flow-connector">
+                        <div class="flow-number">1</div>
+                        <div class="flow-line"></div>
+                    </div>
+                    <div class="flow-content">
+                        <strong>Owner Initiates</strong>
+                        <span>The business owner opens the Night Watch Dashboard, navigates to "Manage
+                            Technicians," and clicks "Add Technician." They enter the technician's name and
+                            phone number, then check the consent confirmation box.</span>
+                    </div>
+                </div>
+
+                <div class="flow-step">
+                    <div class="flow-connector">
+                        <div class="flow-number">2</div>
+                        <div class="flow-line"></div>
+                    </div>
+                    <div class="flow-content">
+                        <strong>Opt-In SMS Sent</strong>
+                        <span>The system sends an opt-in confirmation SMS to the technician's phone number.
+                            The technician is not yet enrolled—no dispatch alerts are sent until confirmation.</span>
+                    </div>
+                </div>
+
+                <div class="flow-step">
+                    <div class="flow-connector">
+                        <div class="flow-number">3</div>
+                        <div class="flow-line"></div>
+                    </div>
+                    <div class="flow-content">
+                        <strong>Technician Confirms</strong>
+                        <span>The technician replies <strong>START</strong> to confirm they wish to receive
+                            emergency dispatch alerts. This reply is logged with a timestamp for compliance
+                            records.</span>
+                    </div>
+                </div>
+
+                <div class="flow-step">
+                    <div class="flow-connector">
+                        <div class="flow-number">4</div>
+                    </div>
+                    <div class="flow-content">
+                        <strong>Alerts Activated</strong>
+                        <span>Only after the technician replies START are they added to the active dispatch
+                            roster. They will now receive emergency dispatch alerts when the AI system triages
+                            an urgent call for their assigned business.</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Exact SMS Text -->
+            <h3>Opt-In Confirmation SMS</h3>
+            <p>The following is the exact text of the opt-in confirmation SMS sent to technicians:</p>
+
+            <div class="sms-preview">
+                KnoxCalls: You've been added to <strong>[Company Name]</strong>'s emergency dispatch roster.
+                Reply START to confirm you wish to receive urgent alerts on this number.
+                Msg&amp;data rates may apply. Reply STOP to opt out, HELP for help.
+            </div>
+
+            <p>If the technician does not reply START, they remain in a "pending" state and will
+                <strong>not</strong> receive any dispatch messages.
+            </p>
+
+            <!-- Keywords -->
+            <h2>SMS Keywords & Opt-Out</h2>
+            <p>All KnoxCalls SMS messages support the following standard keywords:</p>
+
+            <table class="keyword-table">
+                <thead>
+                    <tr>
+                        <th>Keyword</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="keyword">START</td>
+                        <td>Confirms opt-in and activates SMS alerts for the number.</td>
+                    </tr>
+                    <tr>
+                        <td class="keyword">STOP</td>
+                        <td>Immediately opts the user out of all SMS messages. A final confirmation SMS is
+                            sent. No further messages will be delivered.</td>
+                    </tr>
+                    <tr>
+                        <td class="keyword">HELP</td>
+                        <td>Returns support information and a link to contact KnoxCalls at
+                            info@knoxcalls.com.</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <!-- Message Details -->
+            <h2>Message Details</h2>
+            <ul>
+                <li><strong>Program Name:</strong> KnoxCalls Night Watch</li>
+                <li><strong>Message Types:</strong> Emergency dispatch alerts, service updates, account
+                    notifications, and opt-in/opt-out confirmations.</li>
+                <li><strong>Message Frequency:</strong> Varies based on call volume and account activity.
+                    Dispatch alerts are sent only when the AI triages an urgent after-hours call.</li>
+                <li><strong>Cost:</strong> Message and data rates may apply. KnoxCalls does not charge for
+                    SMS messages, but standard carrier rates apply.</li>
+                <li><strong>Third-Party Sharing:</strong> Mobile information will not be shared with third
+                    parties or affiliates for marketing or promotional purposes. All categories exclude text
+                    messaging originator opt-in data and consent; this information will not be shared with
+                    any third parties.</li>
+            </ul>
+
+            <!-- Consent Not Required -->
+            <h2>Consent Is Not a Condition of Purchase</h2>
+            <p>Your consent to receive text messages from KnoxCalls Night Watch is not required as a
+                condition of purchasing any goods or services. You may use Night Watch without opting in
+                to SMS alerts, though doing so may limit dispatch notification functionality.</p>
+
+            <!-- How to Rejoin -->
+            <h2>How to Rejoin</h2>
+            <p>If you previously opted out by replying STOP and wish to receive messages again:</p>
+            <ul>
+                <li>Reply <strong>START</strong> or <strong>UNSTOP</strong> from the same mobile number
+                    to re-enroll in SMS alerts.</li>
+                <li>Alternatively, contact us at <a href="mailto:info@knoxcalls.com">info@knoxcalls.com</a>
+                    and request to be re-enrolled.</li>
+                <li>You may also opt in again via our <a href="/sms-consent.html">SMS Opt-In</a> page.</li>
+            </ul>
+
+            <!-- Legal Links -->
+            <h2>Legal & Contact</h2>
+            <div class="contact-box">
+                <p><strong>KNOXCALLS, LLC</strong></p>
+                <p><strong>Email:</strong> <a href="mailto:info@knoxcalls.com">info@knoxcalls.com</a></p>
+                <p><strong>Address:</strong> Knoxville, TN</p>
+                <p style="margin-top: 16px;">
+                    <a href="/privacy-policy.html">Privacy Policy</a> &nbsp;|&nbsp;
+                    <a href="/terms-of-service.html">Terms of Service</a> &nbsp;|&nbsp;
+                    <a href="/sms-consent.html">SMS Opt-In</a>
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <p>&copy; 2026 KNOXCALLS, LLC. All rights reserved.</p>
+                    <p class="footer-tagline">Built in Knoxville for Knoxville Contractors</p>
+                </div>
+                <div class="footer-links">
+                    <a href="/privacy-policy.html">Privacy Policy</a>
+                    <span class="footer-divider">|</span>
+                    <a href="/terms-of-service.html">Terms of Service</a>
+                    <span class="footer-divider">|</span>
+                    <a href="/sms-consent.html">SMS Opt-In</a>
+                    <span class="footer-divider">|</span>
+                    <a href="/compliance-dispatch.html">SMS Compliance</a>
+                    <span class="footer-divider">|</span>
+                    <a href="mailto:info@knoxcalls.com">Contact</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>

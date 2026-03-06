@@ -561,54 +561,42 @@
 
             <!-- Overview -->
             <h2>Overview</h2>
-            <p>KnoxCalls Night Watch sends SMS messages for two purposes: <strong>service updates</strong> to
-                business owners who sign up on our website, and <strong>emergency dispatch alerts</strong> to
-                on-call technicians enrolled through the Night Watch Dashboard. Both consent flows require
-                explicit end-user action before any messages are sent.</p>
+            <p>KnoxCalls Night Watch sends SMS messages to the business owner who signed up for the service.
+                In the base Night Watch plan, the owner is also the on-call contact — they receive emergency
+                dispatch alerts and service notifications on the same number they registered with.</p>
 
             <div class="highlight-box">
                 <h3>Consent Principle</h3>
-                <p>No SMS message is ever sent to a phone number that has not been explicitly confirmed by the
-                    end-user who owns that number. Business owners cannot unilaterally enroll a technician—the
-                    technician must independently confirm via SMS reply.</p>
+                <p>No SMS message is ever sent to a phone number that has not explicitly opted in. The
+                    business owner provides consent at the time of signup via the website form. All dispatch
+                    alerts and service notifications go to that consented number only.</p>
             </div>
 
-            <!-- Two Consent Methods -->
-            <h2>Consent Methods</h2>
+            <!-- Consent Method -->
+            <h2>How Consent Is Collected</h2>
 
-            <div class="consent-grid">
+            <div class="consent-grid" style="grid-template-columns: 1fr;">
                 <div class="consent-card">
-                    <div class="card-subtitle">Method 1</div>
-                    <h3>Website SMS Opt-In</h3>
-                    <p>Business owners and prospects visit <strong>knoxcalls.com</strong> and submit the SMS
-                        signup form. The form requires:</p>
+                    <div class="card-subtitle">Website Opt-In</div>
+                    <h3>Pilot Program Request Form</h3>
+                    <p>The business owner visits <strong>knoxcalls.com</strong> and submits the pilot access
+                        form. SMS consent requires:</p>
                     <ul>
-                        <li>Name, email, and phone number</li>
-                        <li>Checking the explicit consent checkbox: <em>"I want to receive SMS text messages from
-                                KnoxCalls Night Watch"</em></li>
-                        <li>Clicking <strong>"Sign Up for SMS Updates"</strong></li>
+                        <li>Entering name, phone number, and business details</li>
+                        <li>Checking the explicit SMS consent checkbox: <em>"I agree to receive SMS text
+                                messages from KnoxCalls Night Watch regarding pilot program availability,
+                                service announcements, and account notifications."</em></li>
+                        <li>Clicking <strong>"Request Pilot Access"</strong></li>
                     </ul>
-                    <p>Messages include pilot program availability, service announcements, and account
-                        notifications.</p>
-                </div>
-                <div class="consent-card">
-                    <div class="card-subtitle">Method 2</div>
-                    <h3>Technician Dispatch Enrollment</h3>
-                    <p>Business owners add technicians to their dispatch roster via the <strong>Night Watch
-                            Dashboard</strong>. The owner confirms:</p>
-                    <ul>
-                        <li>The technician has been informed about the SMS alerts</li>
-                        <li>A consent checkbox: <em>"I confirm this technician has consented to receive automated
-                                dispatch alerts. An opt-in confirmation text will be sent."</em></li>
-                    </ul>
-                    <p>The technician must then independently confirm via the SMS handshake described below.</p>
+                    <p>The checkbox is unchecked by default. Consent is not a condition of purchase.
+                        Full disclosure language — including message frequency, data rates, STOP/HELP
+                        instructions, and links to Privacy Policy and Terms of Service — is displayed
+                        inline with the checkbox.</p>
                 </div>
             </div>
 
-            <!-- Technician Opt-In Flow -->
-            <h2>Technician Dispatch Opt-In Flow</h2>
-            <p>When a business owner adds a technician to their emergency dispatch roster, the following
-                sequence occurs:</p>
+            <!-- Opt-In Flow -->
+            <h2>Opt-In Flow</h2>
 
             <div class="flow-diagram">
                 <div class="flow-step">
@@ -617,10 +605,10 @@
                         <div class="flow-line"></div>
                     </div>
                     <div class="flow-content">
-                        <strong>Owner Initiates</strong>
-                        <span>The business owner opens the Night Watch Dashboard, navigates to "Manage
-                            Technicians," and clicks "Add Technician." They enter the technician's name and
-                            phone number, then check the consent confirmation box.</span>
+                        <strong>Owner Submits Form</strong>
+                        <span>The business owner visits <a href="https://knoxcalls.com/sms-opt-in">knoxcalls.com/sms-opt-in</a>
+                            or the pilot request form at knoxcalls.com, enters their name and mobile number,
+                            checks the SMS consent checkbox, and submits.</span>
                     </div>
                 </div>
 
@@ -630,51 +618,34 @@
                         <div class="flow-line"></div>
                     </div>
                     <div class="flow-content">
-                        <strong>Opt-In SMS Sent</strong>
-                        <span>The system sends an opt-in confirmation SMS to the technician's phone number.
-                            The technician is not yet enrolled—no dispatch alerts are sent until confirmation.</span>
+                        <strong>Consent Recorded</strong>
+                        <span>The opt-in is logged with a timestamp. No SMS is sent to the number until
+                            the owner's Night Watch account is active.</span>
                     </div>
                 </div>
 
                 <div class="flow-step">
                     <div class="flow-connector">
                         <div class="flow-number">3</div>
-                        <div class="flow-line"></div>
                     </div>
                     <div class="flow-content">
-                        <strong>Technician Confirms</strong>
-                        <span>The technician replies <strong>START</strong> to confirm they wish to receive
-                            emergency dispatch alerts. This reply is logged with a timestamp for compliance
-                            records.</span>
-                    </div>
-                </div>
-
-                <div class="flow-step">
-                    <div class="flow-connector">
-                        <div class="flow-number">4</div>
-                    </div>
-                    <div class="flow-content">
-                        <strong>Alerts Activated</strong>
-                        <span>Only after the technician replies START are they added to the active dispatch
-                            roster. They will now receive emergency dispatch alerts when the AI system triages
-                            an urgent call for their assigned business.</span>
+                        <strong>Messages Begin</strong>
+                        <span>Once active, the owner receives emergency dispatch alerts and service
+                            notifications on their registered number. They can reply STOP at any time
+                            to opt out.</span>
                     </div>
                 </div>
             </div>
 
-            <!-- Exact SMS Text -->
-            <h3>Opt-In Confirmation SMS</h3>
-            <p>The following is the exact text of the opt-in confirmation SMS sent to technicians:</p>
+            <!-- Opt-In Confirmation SMS -->
+            <h3>Welcome SMS</h3>
+            <p>The following confirmation is sent when the owner's account goes live:</p>
 
             <div class="sms-preview">
-                KnoxCalls: You've been added to <strong>[Company Name]</strong>'s emergency dispatch roster.
-                Reply START to confirm you wish to receive urgent alerts on this number.
-                Msg&amp;data rates may apply. Reply STOP to opt out, HELP for help.
+                KnoxCalls Night Watch: You're all set. Night Watch is active and monitoring your calls.
+                Msg freq varies. Msg&amp;data rates may apply. Reply STOP to opt out. Reply HELP for help.
             </div>
 
-            <p>If the technician does not reply START, they remain in a "pending" state and will
-                <strong>not</strong> receive any dispatch messages.
-            </p>
 
             <!-- Keywords -->
             <h2>SMS Keywords & Opt-Out</h2>
@@ -743,7 +714,8 @@
             <div class="contact-box">
                 <p><strong>KNOXCALLS, LLC</strong></p>
                 <p><strong>Email:</strong> <a href="mailto:info@knoxcalls.com">info@knoxcalls.com</a></p>
-                <p><strong>Address:</strong> Knoxville, TN</p>
+                <p><strong>Phone:</strong> <a href="tel:+18654090190">(865) 409-0190</a></p>
+                <p><strong>Address:</strong> 8805 Gatwick Dr, Knoxville, TN 37922</p>
                 <p style="margin-top: 16px;">
                     <a href="/privacy-policy.html">Privacy Policy</a> &nbsp;|&nbsp;
                     <a href="/terms-of-service.html">Terms of Service</a> &nbsp;|&nbsp;

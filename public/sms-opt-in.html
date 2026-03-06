@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SMS Opt-In | KnoxCalls Night Watch</title>
+    <meta name="description" content="Sign up to receive SMS updates from KnoxCalls Night Watch about pilot program availability and service announcements.">
+    <meta name="robots" content="index, follow">
+    <link rel="icon" type="image/jpeg" href="LogoImage.jpg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --vols-orange: #FF8200;
+            --vols-orange-dark: #e67300;
+            --deep-navy: #0a1628;
+            --warm-white: #faf9f7;
+            --steel-gray: #4a5568;
+            --light-gray: #e8e6e3;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Source Sans 3', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--warm-white);
+            color: var(--deep-navy);
+            line-height: 1.7;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Bebas Neue', Impact, sans-serif;
+            letter-spacing: 1px;
+            line-height: 1.2;
+        }
+
+        nav {
+            background: var(--deep-navy);
+            padding: 16px 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            color: white;
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 24px;
+        }
+
+        .nav-logo img { height: 40px; width: auto; }
+
+        .page-header {
+            background: var(--deep-navy);
+            color: white;
+            padding: 60px 24px 48px;
+            text-align: center;
+        }
+
+        .page-header h1 { font-size: clamp(36px, 5vw, 54px); margin-bottom: 16px; }
+
+        .page-header p {
+            font-size: 18px;
+            color: rgba(255, 255, 255, 0.8);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .form-wrapper {
+            max-width: 600px;
+            margin: 60px auto;
+            padding: 0 24px 80px;
+        }
+
+        .form-group { margin-bottom: 16px; }
+
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 6px;
+            color: var(--deep-navy);
+        }
+
+        .form-group input[type="text"],
+        .form-group input[type="tel"] {
+            width: 100%;
+            padding: 14px 16px;
+            font-size: 16px;
+            font-family: inherit;
+            border: 2px solid var(--light-gray);
+            background: white;
+            color: var(--deep-navy);
+            transition: border-color 0.2s;
+        }
+
+        .form-group input:focus {
+            outline: none;
+            border-color: var(--vols-orange);
+        }
+
+        .consent-box {
+            background: rgba(255, 130, 0, 0.07);
+            border-left: 4px solid var(--vols-orange);
+            padding: 20px;
+            margin: 24px 0;
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+        }
+
+        .consent-box input[type="checkbox"] {
+            width: 20px;
+            height: 20px;
+            margin-top: 2px;
+            flex-shrink: 0;
+            accent-color: var(--vols-orange);
+            cursor: pointer;
+        }
+
+        .consent-box label {
+            font-size: 14px;
+            line-height: 1.5;
+            cursor: pointer;
+            color: var(--steel-gray);
+        }
+
+        .consent-box label strong { color: var(--deep-navy); }
+
+        .consent-box label a {
+            color: var(--vols-orange);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .consent-box label a:hover { text-decoration: underline; }
+
+        .submit-btn {
+            width: 100%;
+            padding: 18px;
+            background: var(--vols-orange);
+            color: white;
+            border: none;
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 20px;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: background 0.2s, transform 0.1s;
+        }
+
+        .submit-btn:hover {
+            background: var(--vols-orange-dark);
+            transform: translateY(-2px);
+        }
+
+        .sms-terms {
+            margin-top: 40px;
+            padding-top: 32px;
+            border-top: 1px solid var(--light-gray);
+        }
+
+        .sms-terms h3 {
+            font-size: 20px;
+            color: var(--deep-navy);
+            margin-bottom: 16px;
+        }
+
+        .sms-terms ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .sms-terms li {
+            font-size: 14px;
+            color: var(--steel-gray);
+            padding: 8px 0;
+            border-bottom: 1px solid var(--light-gray);
+        }
+
+        .sms-terms li:last-child { border-bottom: none; }
+
+        .sms-terms li strong { color: var(--deep-navy); }
+
+        .site-footer {
+            background: var(--deep-navy);
+            color: rgba(255, 255, 255, 0.6);
+            padding: 32px 24px;
+            text-align: center;
+            font-size: 14px;
+        }
+
+        .site-footer a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            margin: 0 8px;
+        }
+
+        .site-footer a:hover { color: var(--vols-orange); }
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <a href="/" class="nav-logo">
+            <img src="LogoImage.jpg" alt="KnoxCalls">
+            <span>Knox<span style="color: var(--vols-orange)">Calls</span></span>
+        </a>
+        <a href="/" style="color: rgba(255,255,255,0.7); text-decoration: none; font-size: 15px; font-weight: 600;">&larr; Back to Home</a>
+    </nav>
+
+    <header class="page-header">
+        <h1>Get SMS Updates</h1>
+        <p>Receive SMS messages from KnoxCalls Night Watch with pilot program availability, service announcements, and account notifications for contractors in East Tennessee.</p>
+    </header>
+
+    <div class="form-wrapper">
+
+        <form id="sms-optin-form" action="https://api.web3forms.com/submit" method="POST">
+            <input type="hidden" name="access_key" value="09de1101-2362-4c64-92f8-9ace3ed222a1">
+            <input type="hidden" name="subject" value="KnoxCalls SMS Opt-In">
+            <input type="hidden" name="redirect" value="https://knoxcalls.com/sms-opt-in?success=1">
+            <input type="hidden" name="form_type" value="sms_optin_page">
+            <input type="checkbox" name="botcheck" style="display: none;">
+
+            <div class="form-group">
+                <label for="optin-name">Your Name *</label>
+                <input type="text" id="optin-name" name="name" placeholder="First and Last Name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="optin-phone">Mobile Phone Number *</label>
+                <input type="tel" id="optin-phone" name="phone" placeholder="(865) 555-1234" required>
+            </div>
+
+            <div class="consent-box">
+                <input type="checkbox" id="sms-consent" name="sms_consent" value="yes" required>
+                <label for="sms-consent">
+                    <strong>I agree to receive SMS text messages from KnoxCalls Night Watch</strong>
+                    regarding pilot program availability, service announcements, and account notifications.
+                    Message frequency varies. Message and data rates may apply. Reply STOP to opt out at any time.
+                    Reply HELP for help. Consent is not a condition of purchase. I am 18 years of age or older.
+                    <a href="/privacy-policy.html" target="_blank">Privacy Policy</a> |
+                    <a href="/terms-of-service.html" target="_blank">Terms of Service</a>.
+                </label>
+            </div>
+
+            <button type="submit" class="submit-btn">Sign Up for SMS Updates</button>
+        </form>
+
+        <div class="sms-terms">
+            <h3>SMS Terms & Conditions</h3>
+            <ul>
+                <li><strong>Program Name:</strong> KnoxCalls Night Watch</li>
+                <li><strong>Message Types:</strong> Pilot program availability, service announcements, account notifications</li>
+                <li><strong>Message Frequency:</strong> Varies based on call volume and account activity</li>
+                <li><strong>Message &amp; Data Rates:</strong> May apply. KnoxCalls does not charge for SMS messages.</li>
+                <li><strong>Opt-Out:</strong> Reply STOP to any message to unsubscribe at any time</li>
+                <li><strong>Help:</strong> Reply HELP or contact <a href="mailto:info@knoxcalls.com" style="color: var(--vols-orange);">info@knoxcalls.com</a></li>
+                <li><strong>Privacy:</strong> Mobile information will not be shared with third parties for marketing purposes</li>
+                <li><strong>Consent:</strong> Not a condition of purchase of any goods or services</li>
+            </ul>
+        </div>
+
+    </div>
+
+    <footer class="site-footer">
+        <p>&copy; 2026 KnoxCalls, LLC &mdash; 8805 Gatwick Dr, Knoxville, TN 37922 &mdash; <a href="tel:+18654090190">(865) 409-0190</a> &mdash; <a href="mailto:info@knoxcalls.com">info@knoxcalls.com</a></p>
+        <p style="margin-top: 8px;">
+            <a href="/privacy-policy.html">Privacy Policy</a> |
+            <a href="/terms-of-service.html">Terms of Service</a> |
+            <a href="/compliance-dispatch.html">SMS Compliance</a>
+        </p>
+    </footer>
+
+    <script>
+        const params = new URLSearchParams(window.location.search);
+        if (params.get('success') === '1') {
+            document.querySelector('form').innerHTML = '<div style="text-align:center; padding: 40px 0;"><h2 style="font-family: Bebas Neue, sans-serif; font-size: 36px; color: var(--deep-navy); margin-bottom: 16px;">You\'re signed up.</h2><p style="color: var(--steel-gray); font-size: 18px;">We\'ll text you when Night Watch availability opens in your area.<br>Reply STOP at any time to opt out.</p></div>';
+            window.history.replaceState({}, document.title, window.location.pathname);
+        }
+    </script>
+
+</body>
+</html>

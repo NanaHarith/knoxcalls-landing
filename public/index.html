@@ -1103,9 +1103,8 @@
 
         .form-container {
             display: grid;
-            grid-template-columns: 1fr auto 1fr;
-            gap: 40px;
-            align-items: start;
+            grid-template-columns: minmax(0, 640px);
+            justify-content: center;
         }
 
         .form-part {
@@ -1119,7 +1118,8 @@
         }
 
         .pilot-request-part {
-            border: 2px solid var(--light-gray);
+            border: 3px solid var(--vols-orange);
+            box-shadow: 0 10px 40px rgba(255, 130, 0, 0.12);
         }
 
         .form-part h2 {
@@ -1487,7 +1487,7 @@
             <div class="nav-links">
                 <a href="/" class="nav-link">Home</a>
                 <a href="/about.html" class="nav-link">About</a>
-                <a href="#sms-form" class="nav-link">Get SMS Updates</a>
+                <a href="#sms-form" class="nav-link">Request Access</a>
                 <div class="nav-dropdown">
                     <span class="nav-link dropdown-trigger">Who We Serve</span>
                     <div class="dropdown-content">
@@ -1535,13 +1535,12 @@
         </div>
     </section>
 
-    <!-- SMS Signup Banner -->
+    <!-- Pilot CTA Banner -->
     <section class="sms-signup-banner" id="sms-updates">
         <div class="sms-banner-content">
-            <h3>Stay Updated Via SMS</h3>
-            <p>Get exclusive updates about Night Watch availability in your area, pilot program announcements, and
-                service notifications.</p>
-            <a href="#sms-form" class="sms-cta">Sign Up for SMS Updates</a>
+            <h3>Pilot Spots Are Limited</h3>
+            <p>Lock in the $179/mo founding rate before May 31, 2026. Once the pilot fills, it fills.</p>
+            <a href="#sms-form" class="sms-cta">Request Pilot Access</a>
         </div>
     </section>
 
@@ -1968,80 +1967,16 @@
                 <h2 class="section-title">Get Started</h2>
             </div>
             <p class="section-subtitle">
-                Want to stay in the loop? Sign up below to receive SMS updates about Night Watch availability
-                in your area. Already interested in becoming a pilot partner? Request full pilot program access
-                and we'll discuss pricing and get you set up.
+                Tell us about your business and we'll reach out to discuss pricing and get you set up.
             </p>
 
             <div class="form-container">
 
-                <!-- PART 1: SMS SIGNUP (PRIMARY) -->
-                <div class="form-part sms-signup-part">
-                    <h2>Get SMS Updates</h2>
-                    <p class="form-description">
-                        Receive text messages from KnoxCalls Night Watch with pilot program availability,
-                        updates, and service notifications for your area.
-                    </p>
-
-                    <form id="sms-signup-form" action="https://api.web3forms.com/submit" method="POST">
-                        <input type="hidden" name="access_key" value="09de1101-2362-4c64-92f8-9ace3ed222a1">
-                        <input type="hidden" name="subject" value="KnoxCalls SMS Signup">
-                        <input type="hidden" name="redirect" value="https://knoxcalls.com?success=sms">
-                        <input type="hidden" name="form_type" value="sms_signup">
-                        <input type="checkbox" name="botcheck" style="display: none;">
-
-                        <div class="form-group">
-                            <input type="text" id="sms-name" name="name" placeholder="Your Name" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="email" id="sms-email" name="email" placeholder="Email Address" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="tel" id="sms-phone" name="phone" placeholder="Phone Number (for SMS)" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="text" id="sms-zip" name="zip_code" placeholder="Zip Code" required
-                                pattern="[0-9]{5}" maxlength="5" inputmode="numeric">
-                        </div>
-
-                        <div class="sms-consent-box">
-                            <input type="checkbox" id="sms-consent" name="sms_consent" value="yes" required>
-                            <label for="sms-consent">
-                                <strong>I want to receive SMS text messages from KnoxCalls Night Watch</strong>
-                                with updates about pilot program availability, service announcements, and dispatch
-                                information. <em style="color: var(--steel-gray); font-style: italic;">Message & data
-                                    rates may apply.</em>
-                            </label>
-                        </div>
-
-                        <div class="legal-text">
-                            <p>
-                                <small>
-                                    By checking this box, I agree to receive SMS text messages from KnoxCalls Night
-                                    Watch
-                                    regarding pilot availability and service updates. Message & data rates may apply.
-                                    Reply STOP to opt out.
-                                    <a href="/privacy-policy.html" target="_blank">Privacy Policy</a> &
-                                    <a href="/terms-of-service.html" target="_blank">Terms of Service</a>.
-                                </small>
-                            </p>
-                        </div>
-
-                        <button type="submit" class="sms-submit">Sign Up for SMS Updates</button>
-                    </form>
-                </div>
-
-                <!-- DIVIDER -->
-                <div class="form-divider">
-                    <span>OR</span>
-                </div>
-
-                <!-- PART 2: REQUEST PILOT ACCESS (SECONDARY) -->
+                <!-- PILOT REQUEST FORM -->
                 <div class="form-part pilot-request-part">
-                    <h3>Request Pilot Program Access</h3>
+                    <h2>Request Pilot Program Access</h2>
                     <p class="form-description">
-                        Interested in the full pilot program? Tell us about your business and we'll
-                        discuss pricing and get you set up.
+                        Spots are limited. Lock in the $179/mo founding rate before May 31, 2026.
                     </p>
 
                     <form id="pilot-request-form" action="https://api.web3forms.com/submit" method="POST">
@@ -2095,20 +2030,14 @@
                             style="background: transparent; border-left-color: var(--light-gray);">
                             <input type="checkbox" id="pilot-sms-consent" name="sms_consent" value="yes">
                             <label for="pilot-sms-consent">
-                                <strong>I also want to receive SMS updates</strong> about availability in my area
-                                and service announcements. (Optional)
+                                <strong>I agree to receive SMS text messages from KnoxCalls Night Watch</strong>
+                                regarding pilot program availability, service announcements, and account notifications.
+                                (Optional) Message frequency varies. Message and data rates may apply.
+                                Reply STOP to opt out at any time. Reply HELP for help.
+                                Consent is not a condition of purchase.
+                                <a href="/privacy-policy.html" target="_blank">Privacy Policy</a> |
+                                <a href="/terms-of-service.html" target="_blank">Terms of Service</a>.
                             </label>
-                        </div>
-
-                        <div class="legal-text">
-                            <p>
-                                <small>
-                                    By submitting this form, I agree to receive communications from KnoxCalls.
-                                    Reply STOP to opt out of SMS messages.
-                                    <a href="/privacy-policy.html" target="_blank">Privacy Policy</a> &
-                                    <a href="/terms-of-service.html" target="_blank">Terms of Service</a>.
-                                </small>
-                            </p>
                         </div>
 
                         <button type="submit" class="pilot-submit">Request Pilot Access</button>
